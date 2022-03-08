@@ -11,7 +11,7 @@
 #Region "Properties"
 
 
-    Public Property IntCodigoProvincia1 As Integer
+    Public Property CodigoProvincia As Integer
         Get
             Return intCodigoProvincia
         End Get
@@ -20,7 +20,7 @@
         End Set
     End Property
 
-    Public Property StrProvincia1 As String
+    Public Property Provincia As String
         Get
             Return strProvincia
         End Get
@@ -29,7 +29,7 @@
         End Set
     End Property
 
-    Public Property StrCanton1 As String
+    Public Property Canton As String
         Get
             Return strCanton
         End Get
@@ -38,7 +38,7 @@
         End Set
     End Property
 
-    Public Property StrDistrito1 As String
+    Public Property Distrito As String
         Get
             Return strDistrito
         End Get
@@ -47,7 +47,7 @@
         End Set
     End Property
 
-    Public Property StrDireccionExacta1 As String
+    Public Property DireccionExacta As String
         Get
             Return strDireccionExacta
         End Get
