@@ -1,11 +1,11 @@
 ﻿Public Class ClienteVeterinaria
 #Region "Variables"
-    Dim strNombreCliente As String
-    Dim strApellidosCliente As String
-    Dim intIdentificacionCliente As Integer
-    Dim strDireccion As Direccion
-    Dim intTelefono As Integer
-    Dim strCorreoelectronico As String
+    Private strNombreCliente As String
+    Private strApellidosCliente As String
+    Private intIdentificacionCliente As Integer
+    Private strDireccion As Direccion
+    Private intTelefono As Integer
+    Private strCorreoelectronico As String
 
 #End Region
 

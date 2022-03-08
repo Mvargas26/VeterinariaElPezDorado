@@ -1,7 +1,7 @@
 ﻿Public Class TipoMascota
 #Region "variables"
-    Dim intCodigotipoMascota As Integer
-    Dim strDescripcionTipoMascota As String
+    Private intCodigotipoMascota As Integer
+    Private strDescripcionTipoMascota As String
 
 #End Region
 

@@ -1,10 +1,10 @@
 ﻿Public Class Direccion
 #Region "Variables"
-    Dim intCodigoProvincia As Integer
-    Dim strProvincia As String
-    Dim strCanton As String
-    Dim strDistrito As String
-    Dim strDireccionExacta As String
+    Private intCodigoProvincia As Integer
+    Private strProvincia As String
+    Private strCanton As String
+    Private strDistrito As String
+    Private strDireccionExacta As String
 
 #End Region
 
