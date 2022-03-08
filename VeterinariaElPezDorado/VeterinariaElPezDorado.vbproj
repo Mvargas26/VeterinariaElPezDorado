@@ -284,6 +284,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.vbproj">
+      <Project>{ce5adbdd-10b5-497d-8880-b9bac4bdc246}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Negocios\Negocios.vbproj">
       <Project>{0ceeccb5-8039-40da-a52d-9e453d8ac7be}</Project>
       <Name>Negocios</Name>
