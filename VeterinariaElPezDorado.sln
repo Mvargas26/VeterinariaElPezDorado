@@ -7,6 +7,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VeterinariaElPezDorado", "V
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Negocios", "Negocios\Negocios.vbproj", "{0CEECCB5-8039-40DA-A52D-9E453D8AC7BE}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Datos", "Datos\Datos.vbproj", "{14B34E3C-5686-4C67-AA92-DA12080E9CD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0CEECCB5-8039-40DA-A52D-9E453D8AC7BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CEECCB5-8039-40DA-A52D-9E453D8AC7BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CEECCB5-8039-40DA-A52D-9E453D8AC7BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14B34E3C-5686-4C67-AA92-DA12080E9CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14B34E3C-5686-4C67-AA92-DA12080E9CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14B34E3C-5686-4C67-AA92-DA12080E9CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14B34E3C-5686-4C67-AA92-DA12080E9CD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
