@@ -9,7 +9,6 @@
     Private intPeso As Integer
     Private strEstadoSalud As String
     Private dteFechaNacimiento As Date
-    Dim prueba As String = "esto es la prueba del brunch"
 
 #End Region
 
