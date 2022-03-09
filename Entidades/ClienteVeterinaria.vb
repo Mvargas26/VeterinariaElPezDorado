@@ -5,8 +5,8 @@
     Private intIdentificacionCliente As Integer
     Private strDireccion As Direccion
     Private intTelefono As Integer
-    Private strCorreoelectronico As String
-
+    Private strCorreoElectronico As String
+    'Prueba para github
 #End Region
 
 #Region "Properties"
