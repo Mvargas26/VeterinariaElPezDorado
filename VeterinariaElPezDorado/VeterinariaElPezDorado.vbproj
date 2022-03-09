@@ -150,6 +150,15 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Paginas\AcercaDe.aspx" />
+    <Content Include="Paginas\Clientes.aspx" />
+    <Content Include="Paginas\ConsultasServicios.aspx" />
+    <Content Include="Paginas\ConsultasCliente.aspx" />
+    <Content Include="Paginas\Mascotas.aspx" />
+    <Content Include="Paginas\RegistroServicios.aspx" />
+    <Content Include="Paginas\Servicios.aspx" />
+    <Content Include="Paginas\TiposMascotas.aspx" />
+    <Content Include="Paginas\Usuarios.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -226,6 +235,69 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Paginas\AcercaDe.aspx.designer.vb">
+      <DependentUpon>AcercaDe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\AcercaDe.aspx.vb">
+      <DependentUpon>AcercaDe.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Clientes.aspx.designer.vb">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Clientes.aspx.vb">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\ConsultasServicios.aspx.designer.vb">
+      <DependentUpon>ConsultasServicios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\ConsultasServicios.aspx.vb">
+      <DependentUpon>ConsultasServicios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\ConsultasCliente.aspx.designer.vb">
+      <DependentUpon>ConsultasCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\ConsultasCliente.aspx.vb">
+      <DependentUpon>ConsultasCliente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Mascotas.aspx.designer.vb">
+      <DependentUpon>Mascotas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Mascotas.aspx.vb">
+      <DependentUpon>Mascotas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\RegistroServicios.aspx.designer.vb">
+      <DependentUpon>RegistroServicios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\RegistroServicios.aspx.vb">
+      <DependentUpon>RegistroServicios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Servicios.aspx.designer.vb">
+      <DependentUpon>Servicios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Servicios.aspx.vb">
+      <DependentUpon>Servicios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\TiposMascotas.aspx.designer.vb">
+      <DependentUpon>TiposMascotas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\TiposMascotas.aspx.vb">
+      <DependentUpon>TiposMascotas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Usuarios.aspx.designer.vb">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Usuarios.aspx.vb">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Site.Master.designer.vb">
       <DependentUpon>Site.Master</DependentUpon>
