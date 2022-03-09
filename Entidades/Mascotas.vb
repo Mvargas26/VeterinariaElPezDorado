@@ -9,6 +9,7 @@
     Private intPeso As Integer
     Private strEstadoSalud As String
     Private dteFechaNacimiento As Date
+    'Cambio
 
 #End Region
 
