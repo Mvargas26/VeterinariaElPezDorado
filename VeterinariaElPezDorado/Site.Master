@@ -18,7 +18,7 @@
 </head>
 <body>
     <form runat="server" class="needs-validation" novalidate>
-        <asp:ScriptManager runat="server">
+        <asp:ScriptManager runat="server" >
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework Scripts--%>
@@ -37,49 +37,64 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Veterinaria</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           <%-- <div class="container">--%>
+
+
+                <%--<div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" runat="server" href="~/">Veterinaria El Pez Dorado</a>
-                </div>
+                </div>--%>
 
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown-submenu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Veterinaria</span><span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a runat="server" href="~/Paginas/Clientes">Clientes</a></li>
-                                <li><a runat="server" href="~/Paginas/Mascotas">Mascotas</a></li>
-                                <li><a runat="server" href="~/Paginas/RegistroServicios">Registro Servicios</a></li>
-                            </ul>
+
+                <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">                 
+                        <li class="nav-item" >
+                            <li class="nav-item dropdown" style="margin: 20px">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="nav-label">Veterinaria</span><span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a runat="server" href="~/Paginas/Clientes">Clientes</a></li>
+                                    <li><a runat="server" href="~/Paginas/Mascotas">Mascotas</a></li>
+                                    <li><a runat="server" href="~/Paginas/RegistroServicios">Registro Servicios</a></li>
+                                </ul>
+                            </li>
                         </li>
-                        <li class="dropdown-submenu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Consultas</span><span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a runat="server" href="~/Paginas/ConsultasCliente">Consultas por cliente</a></li>
-                                <li><a runat="server" href="~/Paginas/ConsultasServicios">Consultas por servicios brindados</a></li>                                
-                            </ul>
+                        <li class="nav-item">
+                            <li class="nav-item dropdown" style="margin: 20px">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="nav-label">Consultas</span><span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a runat="server" href="~/Paginas/ConsultasCliente">Consultas por cliente</a></li>
+                                    <li><a runat="server" href="~/Paginas/ConsultasServicios">Consultas por servicios brindados</a></li>
+                                </ul>
+                            </li>
                         </li>
-                        <li class="dropdown-submenu">
+                       
+
+                        <li class="nav-item"><li class="nav-item dropdown" style="margin: 20px">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Mantenimientos</span><span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a runat="server" href="~/Paginas/Usuarios">Usuarios</a></li>
                                 <li><a runat="server" href="~/Paginas/TiposMascotas">Tipos mascotas</a></li>
                                 <li><a runat="server" href="~/Paginas/Servicios">Servicios</a></li>
                             </ul>
-                        </li>
-                        <li>
+                        </li></li>
+
+                        
+                        <li style="margin: 20px">
                             <a runat="server" href="~/Paginas/AcercaDe">Acerca De</a>
                         </li>
                     </ul>
                 </div>
-            </div>
-        </div>
+            <%--</div>--%>
+        </nav>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
@@ -90,12 +105,12 @@
         </div>
 
     </form>
-
     <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function () {
             'use strict';
             window.addEventListener('load', function () {
-                //Validar styles boostrad
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
                 var forms = document.getElementsByClassName('needs-validation');
                 // Loop over them and prevent submission
                 var validation = Array.prototype.filter.call(forms, function (form) {
@@ -110,6 +125,5 @@
             }, false);
         })();
     </script>
-
 </body>
 </html>
