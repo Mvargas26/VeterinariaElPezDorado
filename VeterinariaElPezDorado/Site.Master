@@ -17,7 +17,7 @@
 
 </head>
 <body>
-    <form runat="server">
+    <form runat="server" class="needs-validation" novalidate>
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -47,6 +47,7 @@
                     </button>
                     <a class="navbar-brand" runat="server" href="~/">Veterinaria El Pez Dorado</a>
                 </div>
+
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown-submenu">
@@ -89,5 +90,26 @@
         </div>
 
     </form>
+
+    <script>
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                //Validar styles boostrad
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+
 </body>
 </html>
