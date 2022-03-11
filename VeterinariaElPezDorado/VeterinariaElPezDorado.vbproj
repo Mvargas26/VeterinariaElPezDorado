@@ -143,6 +143,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Paginas\frmPaginaError.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -348,6 +349,13 @@
     </Compile>
     <Compile Include="Paginas\ConsultasCliente.aspx.vb">
       <DependentUpon>ConsultasCliente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\frmPaginaError.aspx.designer.vb">
+      <DependentUpon>frmPaginaError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\frmPaginaError.aspx.vb">
+      <DependentUpon>frmPaginaError.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Paginas\Mascotas.aspx.designer.vb">
