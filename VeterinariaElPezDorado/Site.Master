@@ -42,20 +42,9 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-           <%-- <div class="container">--%>
 
-
-                <%--<div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Veterinaria El Pez Dorado</a>
-                </div>--%>
-
-
-                <div class="navbar-collapse collapse" id="navbarSupportedContent">
+          
+            <div class="navbar-collapse collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">                 
                         <li class="nav-item" >
                             <li class="nav-item dropdown" style="margin: 20px">

@@ -5,7 +5,7 @@
     <div class="form-row">
         <div class="col-md-4 mb-3">
             <label for="Nombre">Nombre</label>
-            <asp:TextBox ID="txtNombre" runat="server" class="form-control" placeholder="Nombre" required="required"></asp:TextBox>
+            <asp:TextBox ID="txtNombre" runat="server" class="form-control"  placeholder="Nombre" required="required"></asp:TextBox>
            </div>
         <div class="col-md-4 mb-3">
             <label for="PrimerApellido">Primer Apellido</label>
@@ -51,6 +51,7 @@
             <div class="invalid-feedback">Seleccione una provincia</div>
         </div>
 
+
         <div class="form-group col-md-4">
             <select class="custom-select" required>
                 <option value="">Cantón</option>
@@ -74,7 +75,7 @@
 
     <div>
         <asp:Button ID="btnRegistrarCliente" runat="server" Cssclass="btn btn-info" Text="Registrar" />
-             <a href="ConsultasCliente.aspx" class="btn btn-danger" >Cancelar</a>
+             <a href="../Default.aspx"  class="btn btn-danger" >Cancelar</a>
      </div>
     
     <!-- Manejo de errores  -->
