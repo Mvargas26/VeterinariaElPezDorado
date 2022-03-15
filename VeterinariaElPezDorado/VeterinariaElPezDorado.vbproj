@@ -142,6 +142,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Imagenes\AcercaDe.jpg" />
     <Content Include="Imagenes\esloganVeterinaria.jpg" />
     <Content Include="Paginas\frmPaginaError.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
