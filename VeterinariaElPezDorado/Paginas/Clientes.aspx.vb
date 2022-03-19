@@ -8,7 +8,7 @@
             Me.lblError.Visible = False
 
         Catch ex As Exception
-            'envio a la pag de erroe porque hubo problemas cuando apenas se estab construyendo
+            'envio a la pag de error porque hubo problemas cuando apenas se estaba construyendo
             Session("Error") = ex
             Response.Redirect("~/Paginas/frmPaginaError", False)
         End Try

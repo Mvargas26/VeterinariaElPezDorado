@@ -12,4 +12,11 @@
   <img src="../Imagenes/AcercaDe.jpg" class="rounded" alt="...">
 </div>
 
+
+
+
+    <!-- Manejo de errores  -->
+        <div id="lblError" runat="server" visible="false" class="alert alert-danger" role="alert">
+            <asp:Label ID="lblMensajeError" runat="server" Text=""></asp:Label>
+        </div>
 </asp:Content>
