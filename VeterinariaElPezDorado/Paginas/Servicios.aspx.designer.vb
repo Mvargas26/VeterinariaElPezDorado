@@ -14,6 +14,96 @@ Option Explicit On
 Partial Public Class Servicios
 
     '''<summary>
+    '''mnSeleccion control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents mnSeleccion As Global.System.Web.UI.WebControls.Menu
+
+    '''<summary>
+    '''cboServicios control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cboServicios As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''btnConsultar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnConsultar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''divServicios control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents divServicios As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''txtNombreServicio control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtNombreServicio As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtCosto control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtCosto As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtPorcentajeImpuesto control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtPorcentajeImpuesto As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''btnMantenimientoServicios control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnMantenimientoServicios As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Div1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Div1 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''Label1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''lblError control.
     '''</summary>
     '''<remarks>
