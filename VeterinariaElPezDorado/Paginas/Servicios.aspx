@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <label for="txtCosto">Peso</label>
+                <label for="txtCosto">Costo del Servicio</label>
                 <asp:TextBox runat="server" class="form-control" ID="txtCosto" placeholder="Costo del servicio" pattern="[.]{0,1}+[0-9]+" required="required"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique el costo del servicio.
