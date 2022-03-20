@@ -50,6 +50,15 @@ Partial Public Class Clientes
     Protected WithEvents Cliente As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''lblNombre control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblNombre As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''txtNombre control.
     '''</summary>
     '''<remarks>
@@ -57,6 +66,15 @@ Partial Public Class Clientes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtNombre As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''lblPrimerApellido control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblPrimerApellido As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''txtPrimerApellido control.
@@ -68,6 +86,15 @@ Partial Public Class Clientes
     Protected WithEvents txtPrimerApellido As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''lblSegundoApellido control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblSegundoApellido As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''txtSegundoNombre control.
     '''</summary>
     '''<remarks>
@@ -75,6 +102,15 @@ Partial Public Class Clientes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtSegundoNombre As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''lblIdentificacion control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblIdentificacion As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''txtIdentificacion control.
@@ -86,6 +122,15 @@ Partial Public Class Clientes
     Protected WithEvents txtIdentificacion As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''lblTelefono control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblTelefono As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''txtTeléfono control.
     '''</summary>
     '''<remarks>
@@ -93,6 +138,15 @@ Partial Public Class Clientes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtTeléfono As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''lblCorreo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblCorreo As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''txtCorreo control.

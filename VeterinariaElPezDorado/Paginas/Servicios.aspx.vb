@@ -17,6 +17,7 @@
 
     Protected Sub mnSeleccion_MenuItemClick(sender As Object, e As MenuEventArgs) Handles mnSeleccion.MenuItemClick
         Try
+            Me.limpiar()
             Me.btnMantenimientoServicios.Visible = True
             Me.divServicios.Visible = False
             Me.cboServicios.Visible = False
@@ -53,4 +54,51 @@
         End Try
     End Sub
 
+    Protected Sub limpiar()
+        Me.txtNombreServicio.Text = ""
+        Me.txtCosto.Text = 0
+        Me.txtPorcentajeImpuesto.Text = "0"
+    End Sub
+
+    Protected Sub btnConsultar_Click(sender As Object, e As EventArgs) Handles btnConsultar.Click
+        Try
+
+            If Page.IsValid Then
+
+                Me.btnConsultar.Visible = False
+                Me.cboServicios.Visible = False
+                Me.txtNombreServicio.Text = Me.cboServicios.Text
+                Me.txtCosto.Text = 2500
+                Me.txtPorcentajeImpuesto.Text = "10%"
+                Me.divServicios.Visible = True
+            End If
+
+        Catch ex As Exception
+            Me.lblError.Visible = True
+            Me.lblMensajeError.Text = ex.Message
+        End Try
+    End Sub
+
+    Protected Sub btnMantenimientoServicios_Click(sender As Object, e As EventArgs) Handles btnMantenimientoServicios.Click
+        Try
+            Me.lblMensajeError.Visible = False
+            shtValor = Me.mnSeleccion.SelectedValue
+            If Page.IsValid Then
+                Select Case shtValor
+                    Case 1
+                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se registro correctamente');", True)
+                    Case 2
+                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se eliminó correctamente');", True)
+                    Case 3
+                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se modificó correctamente');", True)
+                End Select
+            End If
+
+            Me.limpiar()
+
+        Catch ex As Exception
+            Me.lblError.Visible = True
+            Me.lblMensajeError.Text = ex.Message
+        End Try
+    End Sub
 End Class

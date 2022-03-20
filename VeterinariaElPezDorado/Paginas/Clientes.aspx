@@ -23,7 +23,7 @@
     <div id="Cliente" runat="server" visible="false">
         <div class="form-row">
             <div class="col-md-4 mb-3">
-                <label for="Nombre">Nombre</label>
+                <label runat="server" id="lblNombre" for="Nombre">Nombre</label>
                 <asp:TextBox ID="txtNombre" runat="server" class="form-control" placeholder="Nombre" required="required" pattern="[A-Za-z]+"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique solo letras en su nombre
@@ -31,7 +31,7 @@
             </div>
 
             <div class="col-md-4 mb-3">
-                <label for="PrimerApellido">Primer Apellido</label>
+                <label runat="server" id="lblPrimerApellido" for="PrimerApellido">Primer Apellido</label>
                 <asp:TextBox runat="server" class="form-control" ID="txtPrimerApellido" placeholder="Primer Apellido" required="required" pattern="[A-Za-z]+"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique solo letras en su apellido
@@ -39,7 +39,7 @@
             </div>
 
             <div class="col-md-4 mb-3">
-                <label for="SegundoApellido">Segundo Apellido</label>
+                <label runat="server" id="lblSegundoApellido" for="SegundoApellido">Segundo Apellido</label>
                 <div class="input-group">
                     <asp:TextBox runat="server" class="form-control" ID="txtSegundoNombre" placeholder="Segundo Apellido" pattern="[A-Za-z]+"></asp:TextBox>
                     <div class="invalid-feedback">
@@ -51,14 +51,14 @@
         </div>
         <div class="form-row">
             <div class="col-md-4 mb-3">
-                <label for="Identificacion">Identificación</label>
+                <label runat="server" id="lblIdentificacion" for="Identificacion">Identificación</label>
                 <asp:TextBox runat="server" class="form-control" ID="txtIdentificacion" placeholder="102340567" required="required" pattern="[A-Za-z0-9]{5,40}"></asp:TextBox>
                 <div class="invalid-feedback">
                     Por favor indique su cédula, sin guiones.
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <label for="Telefono">Teléfono</label>
+                <label runat="server" id="lblTelefono" for="Telefono">Teléfono</label>
                 <asp:TextBox runat="server" class="form-control" ID="txtTeléfono" placeholder="88888888" pattern="[0-9]{8,12}" required="required"></asp:TextBox>
                 <div class="invalid-feedback">
                     Ejemplo: 22225555
@@ -66,7 +66,7 @@
             </div>
 
             <div class="col-md-4 mb-3">
-                <label for="Correo">Correo Electrónico</label>
+                <label runat="server" id="lblCorreo" for="Correo">Correo Electrónico</label>
                 <asp:TextBox runat="server" class="form-control" ID="txtCorreo" placeholder="correoelectronico@example.com" required="required" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique un correo valido.
