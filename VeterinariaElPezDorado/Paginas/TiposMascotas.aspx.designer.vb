@@ -14,6 +14,69 @@ Option Explicit On
 Partial Public Class TiposMascotas
 
     '''<summary>
+    '''mnSeleccion control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents mnSeleccion As Global.System.Web.UI.WebControls.Menu
+
+    '''<summary>
+    '''lblAccionMenu control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblAccionMenu As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''cboTipoMascotas control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cboTipoMascotas As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''btnConsultar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnConsultar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''divTipoMascotas control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents divTipoMascotas As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''txtTipoMascosta control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtTipoMascosta As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''btnMantenimientoTipoMascotas control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnMantenimientoTipoMascotas As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''lblError control.
     '''</summary>
     '''<remarks>

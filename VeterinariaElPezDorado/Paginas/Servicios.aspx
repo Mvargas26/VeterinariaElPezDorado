@@ -1,23 +1,26 @@
 ﻿<%@ Page Title="Servicios" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Servicios.aspx.vb" Inherits="VeterinariaElPezDorado.Servicios" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-     <div>
+    <div>
         <asp:Menu ID="mnSeleccion" runat="server" Font-Size="20pt" BorderWidth="60px" BorderColor="#FFFFFF">
             <Items>
-                <asp:MenuItem Text="Menú Servicios" Value="0">
-                    <asp:MenuItem Text="Registrar" Value="1"></asp:MenuItem>
-                    <asp:MenuItem Text="Eliminar" Value="2"></asp:MenuItem>
-                    <asp:MenuItem Text="Actualizar" Value="3"></asp:MenuItem>
-                    <asp:MenuItem Text="Consultar" Value="4"></asp:MenuItem>
+                <asp:MenuItem Text="Menú Servicios" Value=0>
+                    <asp:MenuItem Text="Registrar" Value=1></asp:MenuItem>
+                    <asp:MenuItem Text="Eliminar" Value=2></asp:MenuItem>
+                    <asp:MenuItem Text="Modificar" Value=3></asp:MenuItem>
+                    <asp:MenuItem Text="Consultar" Value=4></asp:MenuItem>
                 </asp:MenuItem>
             </Items>
         </asp:Menu>
-        <asp:DropDownList ID="cboServicios" runat="server" required="required" Visible="false"></asp:DropDownList>        
-        <asp:Button ID="btnConsultar" runat="server" Visible="false" Text="Button" BorderWidth="20px" BorderColor="#FFFFFF" />
+         <div class="form-row">
+            <asp:Label ID="lblAccionMenu" runat="server" Text="" Visible="false" CssClass="col-md-12" Font-Size="XX-Large"  ></asp:Label>
+        </div>
+        <asp:DropDownList ID="cboServicios" runat="server" required="required" Visible="false" style="width:200px"></asp:DropDownList>
+        <asp:Button ID="btnConsultar" runat="server" Visible="false" Text="Continuar" BorderWidth="20px" BorderColor="#FFFFFF" CssClass="btn btn-info" />
     </div>
 
     <div id="divServicios" runat="server" visible="false">
-    <div class="form-row">
+        <div class="form-row">
             <div class="col-md-4 mb-3">
                 <label for="txtNombreServicio">Nombre del servicio</label>
                 <asp:TextBox runat="server" class="form-control" ID="txtNombreServicio" placeholder="Nombre del Servicio" required="required" pattern="[A-Za-z]{1,40}+"></asp:TextBox>
@@ -41,19 +44,15 @@
                 </div>
             </div>
         </div>
+
         <div>
             <asp:Button ID="btnMantenimientoServicios" runat="server" CssClass="btn btn-info" Text="Registrar" />
         </div>
 
+
         <!-- Manejo de errores  -->
-        <div id="Div1" runat="server" visible="false" class="alert alert-danger" role="alert">
-            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
-        </div>
-    </div>
-
-
-    <!-- Manejo de errores  -->
         <div id="lblError" runat="server" visible="false" class="alert alert-danger" role="alert">
             <asp:Label ID="lblMensajeError" runat="server" Text=""></asp:Label>
         </div>
+    </div>
 </asp:Content>

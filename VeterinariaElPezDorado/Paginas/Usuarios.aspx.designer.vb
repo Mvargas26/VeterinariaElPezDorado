@@ -14,6 +14,78 @@ Option Explicit On
 Partial Public Class Usuarios
 
     '''<summary>
+    '''mnSeleccion control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents mnSeleccion As Global.System.Web.UI.WebControls.Menu
+
+    '''<summary>
+    '''lblAccionMenu control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblAccionMenu As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''cboUsuarios control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cboUsuarios As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''btnConsultar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnConsultar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''divUsuarios control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents divUsuarios As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''txtNombreUsuario control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtNombreUsuario As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtClaveUsuario control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtClaveUsuario As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''btnMantenimientoUsuarios control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnMantenimientoUsuarios As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''lblError control.
     '''</summary>
     '''<remarks>

@@ -14,7 +14,7 @@
             </Items>
         </asp:Menu>
         <asp:TextBox ID="txtIdentificacionConsulta" class="form-control" runat="server" Visible="false" placeholder="Identificación" required="required" minlength="8" MaxLength="12"></asp:TextBox>
-        <asp:Button ID="btnConsultar" runat="server" Visible="false" Text="Button" BorderWidth="20px" BorderColor="#FFFFFF" />
+        <asp:Button ID="btnConsultar" runat="server" Visible="false" Text="Continuar" BorderWidth="20px" BorderColor="#FFFFFF" />
         <div class="invalid-feedback">
             Indique un cédula de minimo 8 digitos
         </div>

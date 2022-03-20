@@ -6,15 +6,15 @@
         <asp:Menu ID="mnSeleccion" runat="server" Font-Size="20pt" BorderWidth="60px" BorderColor="#FFFFFF">
             <Items>
                 <asp:MenuItem Text="Menú Mascotas" Value="0">
-                    <asp:MenuItem Text="Registrar" Value="1"></asp:MenuItem>
-                    <asp:MenuItem Text="Eliminar" Value="2"></asp:MenuItem>
-                    <asp:MenuItem Text="Actualizar" Value="3"></asp:MenuItem>
-                    <asp:MenuItem Text="Consultar" Value="4"></asp:MenuItem>
+                    <asp:MenuItem Text="Registrar" Value=1></asp:MenuItem>
+                    <asp:MenuItem Text="Eliminar" Value=2></asp:MenuItem>
+                    <asp:MenuItem Text="Actualizar" Value=3></asp:MenuItem>
+                    <asp:MenuItem Text="Consultar" Value=4></asp:MenuItem>
                 </asp:MenuItem>
             </Items>
         </asp:Menu>
         <asp:TextBox ID="txtIdentificacionConsulta" class="form-control" runat="server" Visible="false" placeholder="Identificación" required="required" minlength="8" MaxLength="12"></asp:TextBox>
-        <asp:Button ID="btnConsultar" runat="server" Visible="false" Text="Button" BorderWidth="20px" BorderColor="#FFFFFF" />
+        <asp:Button ID="btnConsultar" runat="server" Visible="false" Text="Continuar" BorderWidth="20px" BorderColor="#FFFFFF" CssClass="btn btn-info"/>
         <div class="invalid-feedback">
             Indique la cédula del dueño de la mascota (mínimo 8 digitos)
         </div>
@@ -41,13 +41,13 @@
             <div class="col-md-4 mb-3">
                 <label for="cboTipoMascota">Tipo de mascota</label>                
                     <asp:DropDownList ID="cboTipoMascota" runat="server" Width=200px CssClass=" form-control">
-                        <asp:ListItem Text="Tortuga" Value="1">Tortuga</asp:ListItem>
-                        <asp:ListItem Text="Pez" Value="2">Pez</asp:ListItem>
-                        <asp:ListItem Text="Conejo" Value="3">Conejo</asp:ListItem>
-                        <asp:ListItem Text="Ave" Value="4">Ave</asp:ListItem>
-                        <asp:ListItem Text="Perro" Value="5">Perro</asp:ListItem>
-                        <asp:ListItem Text="Gato" Value="6">Gato</asp:ListItem>
-                        <asp:ListItem Text="Ratón" Value="7">Ratón</asp:ListItem>
+                        <asp:ListItem Text="Tortuga" Value=1>Tortuga</asp:ListItem>
+                        <asp:ListItem Text="Pez" Value=2>Pez</asp:ListItem>
+                        <asp:ListItem Text="Conejo" Value=3>Conejo</asp:ListItem>
+                        <asp:ListItem Text="Ave" Value=4>Ave</asp:ListItem>
+                        <asp:ListItem Text="Perro" Value=5>Perro</asp:ListItem>
+                        <asp:ListItem Text="Gato" Value=6>Gato</asp:ListItem>
+                        <asp:ListItem Text="Ratón" Value=7>Ratón</asp:ListItem>
                 </asp:DropDownList>
             </div>
         </div>

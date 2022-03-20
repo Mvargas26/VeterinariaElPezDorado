@@ -31,14 +31,20 @@
                     Me.cboServicios.Visible = True
                     Me.btnConsultar.Visible = True
                     Me.btnMantenimientoServicios.Text = "Eliminar"
+                    Me.lblAccionMenu.Visible = True
+                    Me.lblAccionMenu.Text = "Eliminar"
                 Case 3
                     Me.cboServicios.Visible = True
                     Me.btnConsultar.Visible = True
                     Me.btnMantenimientoServicios.Text = "Modificar"
+                    Me.lblAccionMenu.Visible = True
+                    Me.lblAccionMenu.Text = "Modificar"
                 Case 4
                     Me.cboServicios.Visible = True
                     Me.btnConsultar.Visible = True
                     Me.btnMantenimientoServicios.Visible = False
+                    Me.lblAccionMenu.Visible = True
+                    Me.lblAccionMenu.Text = "Consultar"
             End Select
 
         Catch ex As Exception
