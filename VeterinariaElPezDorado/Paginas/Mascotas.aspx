@@ -8,7 +8,7 @@
                 <asp:MenuItem Text="Menú Mascotas" Value="0">
                     <asp:MenuItem Text="Registrar" Value=1></asp:MenuItem>
                     <asp:MenuItem Text="Eliminar" Value=2></asp:MenuItem>
-                    <asp:MenuItem Text="Actualizar" Value=3></asp:MenuItem>
+                    <asp:MenuItem Text="Modificar" Value=3></asp:MenuItem>
                     <asp:MenuItem Text="Consultar" Value=4></asp:MenuItem>
                 </asp:MenuItem>
             </Items>
@@ -23,7 +23,7 @@
     <div id="Mascotas" runat="server" visible="false">
         <div class="form-row">
             <div class="col-md-4 mb-3">
-                <label for="txtidentificacionDueno">Identificación dueño</label>
+                <label runat="server" id="lblIdentificacionDueno" for="txtidentificacionDueno">Identificación dueño</label>
                 <asp:TextBox ID="txtidentificacionDueno" runat="server" class="form-control" placeholder="Identificación Dueño" required="required" pattern="[A-Za-z0-9]{5,40}+"></asp:TextBox>
                 <div class="invalid-feedback">
                     Por favor indique la identificación del cliente
@@ -31,7 +31,7 @@
             </div>
 
             <div class="col-md-4 mb-3">
-                <label for="txtNombreMascota">Nombre Mascota</label>
+                <label runat="server" id="lblNombreMascota" for="txtNombreMascota">Nombre Mascota</label>
                 <asp:TextBox runat="server" class="form-control" ID="txtNombreMascota" placeholder="Nombre Mascota" required="required" pattern="[A-Za-z]{2,40}+"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique el nombre de la mascota (Indique solamente letras)
@@ -39,7 +39,7 @@
             </div>
 
             <div class="col-md-4 mb-3">
-                <label for="cboTipoMascota">Tipo de mascota</label>                
+                <label runat="server" id="lblTipoMascota" for="cboTipoMascota">Tipo de mascota</label>                
                     <asp:DropDownList ID="cboTipoMascota" runat="server" Width=200px CssClass=" form-control">
                         <asp:ListItem Text="Tortuga" Value=1>Tortuga</asp:ListItem>
                         <asp:ListItem Text="Pez" Value=2>Pez</asp:ListItem>
@@ -53,14 +53,14 @@
         </div>
         <div class="form-row">
             <div class="col-md-4 mb-3">
-                <label for="txtRaza">Raza</label>
+                <label runat="server" id="lblRaza" for="txtRaza">Raza</label>
                 <asp:TextBox runat="server" class="form-control" ID="txtRaza" placeholder="Raza" pattern="[A-Za-z]"></asp:TextBox>
                 <div class="invalid-feedback">
                     Al indicar la raza no utilice números.
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <label for="txtPeso">Peso</label>
+                <label runat="server" id="lblPeso" for="txtPeso">Peso</label>
                 <asp:TextBox runat="server" class="form-control" ID="txtPeso" placeholder="Peso" pattern="[.]{0,1}+[0-9]+" required="required"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique el peso de la mascota.
@@ -68,7 +68,7 @@
             </div>
 
             <div class="col-md-4 mb-3">
-                <label for="txtEstadoSalud">Estado de salud</label>
+                <label runat="server" id="lblEstadoSalud" for="txtEstadoSalud">Estado de salud</label>
                 <asp:TextBox runat="server" class="form-control" ID="txtEstadoSalud" placeholder="Descripción del estado de salud." required="required" pattern="[A-Za-z0-9]{5,40}+"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique el estado de salud de la mascota (Máximo 40 caracteres).
@@ -78,7 +78,7 @@
 
         <div class="form-row">
             <div class="form-group col-md-4">
-                <label for="txtFechaNacimiento">Fecha de nacimiento</label>
+                <label runat="server" id="lblFechaNacimiento" for="txtFechaNacimiento">Fecha de nacimiento</label>
                 <asp:TextBox ID="txtFechaNacimiento" runat="server" class=" form-control"  required="required" TextMode="Date"></asp:TextBox>
                 <div class="invalid-feedback">Seleccione una fecha</div>
             </div>

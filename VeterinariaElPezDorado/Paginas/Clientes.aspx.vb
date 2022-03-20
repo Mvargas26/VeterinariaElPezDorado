@@ -22,27 +22,21 @@
     Protected Sub btnMantenimientoCliente_Click(sender As Object, e As EventArgs) Handles btnMantenimientoCliente.Click
         Try
             Me.lblMensajeError.Visible = False
-
+            shtValor = Me.mnSeleccion.SelectedValue
             'comprueba primero que lo del html es correcto, trabaja con los validadores e la pg
             If Page.IsValid Then
                 iClientes.mantenimiento(shtValor)
                 Select Case shtValor
                     Case 1
-                'mostrar mensaje
+                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se registro correctamente');", True)
                     Case 2
-                'mostrar mensaje
+                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se eliminó correctamente');", True)
                     Case 3
-                        'mostrar mensaje
+                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se modificó correctamente');", True)
                 End Select
             End If
 
-            txtNombre.Text = ""
-            txtPrimerApellido.Text = ""
-            txtIdentificacion.Text = ""
-            txtCorreo.Text = ""
-            txtTeléfono.Text = ""
-            txtDireccion.Text = ""
-            txtDistrito.Text = ""
+            Me.Limpiar()
 
         Catch ex As Exception
             'estas no van a otra apgina xq son cosas que se arreglan en la misma
@@ -94,6 +88,7 @@
     ''' <param name="e"></param>
     Protected Sub mnSeleccion_MenuItemClick(sender As Object, e As MenuEventArgs) Handles mnSeleccion.MenuItemClick
         Try
+            Me.Limpiar()
             Me.btnMantenimientoCliente.Visible = True
             Me.Cliente.Visible = False
             Me.txtIdentificacionConsulta.Visible = False
@@ -123,6 +118,16 @@
             Me.lblMensajeError.Text = ex.Message
         End Try
 
+    End Sub
+
+    Protected Sub Limpiar()
+        Me.txtNombre.Text = ""
+        Me.txtPrimerApellido.Text = ""
+        Me.txtIdentificacion.Text = ""
+        Me.txtCorreo.Text = ""
+        Me.txtTeléfono.Text = ""
+        Me.txtDireccion.Text = ""
+        Me.txtDistrito.Text = ""
     End Sub
 
 

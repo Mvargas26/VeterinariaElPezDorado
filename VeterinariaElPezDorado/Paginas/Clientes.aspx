@@ -8,7 +8,7 @@
                 <asp:MenuItem Text="Menú Clientes " Value="0">
                     <asp:MenuItem Text="Registrar" Value="1"></asp:MenuItem>
                     <asp:MenuItem Text="Eliminar" Value="2"></asp:MenuItem>
-                    <asp:MenuItem Text="Actualizar" Value="3"></asp:MenuItem>
+                    <asp:MenuItem Text="Modificar" Value="3"></asp:MenuItem>
                     <asp:MenuItem Text="Consultar" Value="4"></asp:MenuItem>
                 </asp:MenuItem>
             </Items>

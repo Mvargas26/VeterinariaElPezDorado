@@ -50,6 +50,15 @@ Partial Public Class Mascotas
     Protected WithEvents Mascotas As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
+    '''lblIdentificacionDueno control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblIdentificacionDueno As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''txtidentificacionDueno control.
     '''</summary>
     '''<remarks>
@@ -57,6 +66,15 @@ Partial Public Class Mascotas
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtidentificacionDueno As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''lblNombreMascota control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblNombreMascota As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''txtNombreMascota control.
@@ -68,6 +86,15 @@ Partial Public Class Mascotas
     Protected WithEvents txtNombreMascota As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''lblTipoMascota control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblTipoMascota As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''cboTipoMascota control.
     '''</summary>
     '''<remarks>
@@ -75,6 +102,15 @@ Partial Public Class Mascotas
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cboTipoMascota As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''lblRaza control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblRaza As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''txtRaza control.
@@ -86,6 +122,15 @@ Partial Public Class Mascotas
     Protected WithEvents txtRaza As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''lblPeso control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblPeso As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''txtPeso control.
     '''</summary>
     '''<remarks>
@@ -95,6 +140,15 @@ Partial Public Class Mascotas
     Protected WithEvents txtPeso As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''lblEstadoSalud control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblEstadoSalud As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''txtEstadoSalud control.
     '''</summary>
     '''<remarks>
@@ -102,6 +156,15 @@ Partial Public Class Mascotas
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtEstadoSalud As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''lblFechaNacimiento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblFechaNacimiento As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''txtFechaNacimiento control.
