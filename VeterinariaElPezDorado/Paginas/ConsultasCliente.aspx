@@ -14,23 +14,15 @@
       <th scope="col">Identificación</th>
       <th scope="col">Nombre</th>
       <th scope="col">Apellidos</th>
-      <th scope="col">teléfono</th>
-        <th scope="col">Dirección</th>
         <th scope="col">Correo electrónico</th>
+      <th scope="col">teléfono</th>
+        <th scope="col">Codigo Servicio utilizado</th>
+        
     </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>88888888</td>
-        <td>San jose Costa Rica</td>
-        <td>correo@example.com</td>
-        <td><a class="btn btn-info" href="Clientes.aspx"  role="button">Modificar</a></td>
-        <td><a class="btn btn-danger" href="Clientes.aspx"  role="button">Eliminar</a></td>
-    </tr>
-  
+  </thead> <!--la info de esta tabla viene de la DB, ver el CodeBehind-->
+  <tbody id="lstClientes" runat="server">
+
+ 
   </tbody>
 </table>
 
