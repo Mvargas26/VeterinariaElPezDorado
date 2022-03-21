@@ -23,6 +23,7 @@
             shtValor = Me.mnSeleccion.SelectedValue
             Select Case Me.mnSeleccion.SelectedValue
                 Case 1
+                    Me.lblAccionMenu.Visible = False
                     Me.divUsuarios.Visible = True
                     Me.btnMantenimientoUsuarios.Text = "Registrar"
 

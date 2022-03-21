@@ -23,14 +23,14 @@
         <div class="form-row">
             <div class="col-md-4 mb-3">
                 <label for="txtNombreServicio">Nombre del servicio</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtNombreServicio" placeholder="Nombre del Servicio" required="required" pattern="[A-Za-z]{1,40}+"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtNombreServicio" placeholder="Nombre del Servicio" required="required" pattern="[A-Za-z]{1,40}"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique un nombre valido. 
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <label for="txtCosto">Costo del Servicio</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtCosto" placeholder="Costo del servicio" pattern="[.]{0,1}+[0-9]+" required="required"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtCosto" placeholder="Costo del servicio" pattern="[0-9]{2,8}" required="required"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique el costo del servicio.
                 </div>
@@ -38,7 +38,7 @@
 
             <div class="col-md-4 mb-3">
                 <label for="txtPorcentajeImpuesto">Impuesto del servicio</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtPorcentajeImpuesto" placeholder="Porcentaje de impuesto." required="required" pattern="[1-9]{1,2}+"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtPorcentajeImpuesto" placeholder="Porcentaje de impuesto." required="required" pattern="[0-9]{1,2}"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique el porcentaje tendrá el servicio (Solo utilice números del 1 al 99).
                 </div>

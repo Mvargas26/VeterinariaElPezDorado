@@ -85,7 +85,7 @@
     ''' Consultar los datos de cliente, y los asigna al objeto para mostrarlos en pantalla
     ''' </summary>
     ''' <param name="id">Identificación del cliente</param>
-    Public Sub consultarCliente(ByVal id As Integer)
+    Public Sub consultarCliente(ByVal id As String)
         'Se llama consultar y se trae el datos necesario y se envia el id para traer la informacion
         NombreCliente = "Carlos"
         ApellidosCliente = "Ugalde"

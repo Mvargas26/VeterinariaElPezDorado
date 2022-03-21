@@ -25,6 +25,7 @@
             shtValor = Me.mnSeleccion.SelectedValue
             Select Case Me.mnSeleccion.SelectedValue
                 Case 1
+                    Me.lblAccionMenu.Visible = False
                     Me.divServicios.Visible = True
                     Me.btnMantenimientoServicios.Text = "Registrar"
 
@@ -69,7 +70,7 @@
                 Me.cboServicios.Visible = False
                 Me.txtNombreServicio.Text = Me.cboServicios.Text
                 Me.txtCosto.Text = 2500
-                Me.txtPorcentajeImpuesto.Text = "10%"
+                Me.txtPorcentajeImpuesto.Text = 10
                 Me.divServicios.Visible = True
             End If
 
