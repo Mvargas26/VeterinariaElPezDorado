@@ -20,6 +20,7 @@
 
     Protected Sub mnSeleccion_MenuItemClick(sender As Object, e As MenuEventArgs) Handles mnSeleccion.MenuItemClick
         Try
+            Me.limpiar()
             Me.btnMantenimientoTipoMascotas.Visible = True
             Me.divTipoMascotas.Visible = False
             Me.cboTipoMascotas.Visible = False
@@ -57,10 +58,46 @@
     End Sub
 
     Protected Sub btnMantenimientoTipoMascotas_Click(sender As Object, e As EventArgs) Handles btnMantenimientoTipoMascotas.Click
+        Try
+            Me.lblMensajeError.Visible = False
+            shtValor = Me.mnSeleccion.SelectedValue
+            If Page.IsValid Then
+                Select Case shtValor
+                    Case 1
+                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se registro correctamente');", True)
+                    Case 2
+                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se eliminó correctamente');", True)
+                    Case 3
+                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se modificó correctamente');", True)
+                End Select
+            End If
+
+            Me.limpiar()
+
+        Catch ex As Exception
+            Me.lblError.Visible = True
+            Me.lblMensajeError.Text = ex.Message
+        End Try
 
     End Sub
 
     Protected Sub btnConsultar_Click(sender As Object, e As EventArgs) Handles btnConsultar.Click
+        Try
+            If Page.IsValid Then
+                Me.btnConsultar.Visible = False
+                Me.cboTipoMascotas.Visible = False
+                Me.txtTipoMascosta.Text = cboTipoMascotas.Text
+                Me.divTipoMascotas.Visible = True
+            End If
 
+        Catch ex As Exception
+            Me.lblError.Visible = True
+            Me.lblMensajeError.Text = ex.Message
+        End Try
     End Sub
+
+    Protected Sub limpiar()
+        txtTipoMascosta.Text = ""
+    End Sub
+
 End Class

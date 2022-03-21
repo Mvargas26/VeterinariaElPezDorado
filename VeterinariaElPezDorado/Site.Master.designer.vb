@@ -14,6 +14,24 @@ Option Explicit On
 Partial Public Class SiteMaster
 
     '''<summary>
+    '''btnInicioSeccion control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnInicioSeccion As Global.System.Web.UI.HtmlControls.HtmlButton
+
+    '''<summary>
+    '''LoginVeterinaria control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents LoginVeterinaria As Global.System.Web.UI.WebControls.Login
+
+    '''<summary>
     '''MainContent control.
     '''</summary>
     '''<remarks>

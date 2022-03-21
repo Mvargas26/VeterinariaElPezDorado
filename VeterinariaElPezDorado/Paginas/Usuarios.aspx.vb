@@ -51,4 +51,53 @@
             Me.lblMensajeError.Text = ex.Message
         End Try
     End Sub
+
+    Protected Sub btnConsultar_Click(sender As Object, e As EventArgs) Handles btnConsultar.Click
+        Try
+
+            If Page.IsValid Then
+                Me.btnConsultar.Visible = False
+                Me.cboUsuarios.Visible = False
+                Me.txtNombreUsuario.Text = Me.cboUsuarios.Text
+                Me.txtClaveUsuario.Text = "admin"
+                Me.divUsuarios.Visible = True
+            End If
+
+        Catch ex As Exception
+            Me.lblError.Visible = True
+            Me.lblMensajeError.Text = ex.Message
+        End Try
+
+    End Sub
+
+    Protected Sub btnMantenimientoUsuarios_Click(sender As Object, e As EventArgs) Handles btnMantenimientoUsuarios.Click
+
+        Try
+            Me.lblMensajeError.Visible = False
+            shtValor = Me.mnSeleccion.SelectedValue
+            If Page.IsValid Then
+                Select Case shtValor
+                    Case 1
+                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se registro correctamente');", True)
+                    Case 2
+                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se eliminó correctamente');", True)
+                    Case 3
+                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se modificó correctamente');", True)
+                End Select
+            End If
+
+            Me.limpiar()
+
+        Catch ex As Exception
+            Me.lblError.Visible = True
+            Me.lblMensajeError.Text = ex.Message
+        End Try
+
+    End Sub
+
+    Protected Sub limpiar()
+        Me.txtClaveUsuario.Text = ""
+        Me.txtNombreUsuario.Text = ""
+    End Sub
+
 End Class

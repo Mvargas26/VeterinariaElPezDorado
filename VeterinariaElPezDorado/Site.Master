@@ -13,10 +13,10 @@
     </asp:PlaceHolder>
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 </head>
 <body>
+   
     <form runat="server" class="needs-validation" novalidate>
         <asp:ScriptManager runat="server" >
             <Scripts>
@@ -75,16 +75,50 @@
                                 <li><a runat="server" href="~/Paginas/Servicios">Servicios</a></li>
                             </ul>
                         </li></li>
-
+                                     
                         
                         <li style="margin: 20px">
                             <a runat="server" href="~/Paginas/AcercaDe">Acerca De</a>
+                        </li>
+
+                        <li>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" runat="server" id="btnInicioSeccion" style="margin: 10px">
+                                Iniciar de sección
+                            </button>
                         </li>
                     </ul>
                 </div>
             <%--</div>--%>
         </nav>
         <div class="container body-content">
+
+
+
+            <!-- The Modal -->
+            <div class=" modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Inicio de sección</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <asp:Login ID="LoginVeterinaria" runat="server" DisplayRememberMe="False" PasswordLabelText="Contraseña :" UserNameLabelText="Usuario :" LoginButtonText="Iniciar" TitleText=""></asp:Login>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
