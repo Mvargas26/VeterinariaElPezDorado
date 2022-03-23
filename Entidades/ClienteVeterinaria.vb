@@ -2,7 +2,7 @@
 #Region "Variables"
     Private strNombreCliente As String
     Private strApellidosCliente As String
-    Private intIdentificacionCliente As Integer
+    Private strIdentificacionCliente As String
     Private strDireccion As New Direccion
     Private intTelefono As Integer
     Private strCorreoElectronico As String
@@ -32,12 +32,12 @@
         End Set
     End Property
 
-    Public Property IdentificacionCliente As Integer
+    Public Property IdentificacionCliente As String
         Get
-            Return intIdentificacionCliente
+            Return strIdentificacionCliente
         End Get
-        Set(value As Integer)
-            intIdentificacionCliente = value
+        Set(value As String)
+            strIdentificacionCliente = value
         End Set
     End Property
 
@@ -104,7 +104,6 @@
         Correoelectronico = "carlos@gmail.com"
         strDireccion.Provincia = 1
         strDireccion.Canton = 1
-        strDireccion.Distrito = "Guadalupe"
         strDireccion.DireccionExacta = "400 sur de la plaza"
     End Sub
     ''' <summary>

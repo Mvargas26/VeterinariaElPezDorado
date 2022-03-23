@@ -34,7 +34,7 @@ Public Class ClientesNegocios
 
 
                     iInfoCliente = New ClienteVeterinaria With {
-                       .IdentificacionCliente = CInt(drClientes("Identificacion")),
+                       .IdentificacionCliente = CStr(drClientes("Identificacion")),
                     .NombreCliente = CStr(drClientes("Nombre")),
                     .ApellidosCliente = CStr(drClientes("Apellidos")),
                     .Correoelectronico = CStr(drClientes("Correo")),

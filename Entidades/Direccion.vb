@@ -1,9 +1,10 @@
 ﻿Public Class Direccion
 #Region "Variables"
-    Private intCodigoProvincia As Integer
+    Private shtCodDireccion As Short
+    Private shtCodigoProvincia As Short
     Private strProvincia As String
+    Private shtCodigoCanton As Short
     Private strCanton As String
-    Private strDistrito As String
     Private strDireccionExacta As String
 
 #End Region
@@ -13,10 +14,10 @@
 
     Public Property CodigoProvincia As Integer
         Get
-            Return intCodigoProvincia
+            Return shtCodigoProvincia
         End Get
         Set(value As Integer)
-            intCodigoProvincia = value
+            shtCodigoProvincia = value
         End Set
     End Property
 
@@ -38,21 +39,30 @@
         End Set
     End Property
 
-    Public Property Distrito As String
-        Get
-            Return strDistrito
-        End Get
-        Set(value As String)
-            strDistrito = value
-        End Set
-    End Property
-
     Public Property DireccionExacta As String
         Get
             Return strDireccionExacta
         End Get
         Set(value As String)
             strDireccionExacta = value
+        End Set
+    End Property
+
+    Public Property CodDireccion As Short
+        Get
+            Return shtCodDireccion
+        End Get
+        Set(value As Short)
+            shtCodDireccion = value
+        End Set
+    End Property
+
+    Public Property CodigoCanton As Short
+        Get
+            Return shtCodigoCanton
+        End Get
+        Set(value As Short)
+            shtCodigoCanton = value
         End Set
     End Property
 

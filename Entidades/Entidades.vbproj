@@ -82,6 +82,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Servicios.vb" />
+    <Compile Include="ServicosBrindados.vb" />
     <Compile Include="TipoMascota.vb" />
   </ItemGroup>
   <ItemGroup>

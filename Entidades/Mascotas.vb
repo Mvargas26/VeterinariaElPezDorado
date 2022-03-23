@@ -2,9 +2,9 @@
 #Region "Variables"
 
     Private intIdentificacionDueno As ClienteVeterinaria
-    Private intCodigoMascota As Integer
+    Private shtCodigoMascota As Short
     Private strNombreMascota As String
-    Private strTipoMascota As TipoMascota
+    Private shtTipoMascota As Short
     Private strRaza As String = ""
     Private intPeso As Integer
     Private strEstadoSalud As String
@@ -26,10 +26,10 @@
 
     Public Property CodigoMascota As Integer
         Get
-            Return intCodigoMascota
+            Return shtCodigoMascota
         End Get
         Set(value As Integer)
-            intCodigoMascota = value
+            shtCodigoMascota = value
         End Set
     End Property
 
@@ -42,12 +42,12 @@
         End Set
     End Property
 
-    Public Property TipoMascota As TipoMascota
+    Public Property TipoMascota As Short
         Get
-            Return strTipoMascota
+            Return shtTipoMascota
         End Get
-        Set(value As TipoMascota)
-            strTipoMascota = value
+        Set(value As Short)
+            shtTipoMascota = value
         End Set
     End Property
 

@@ -68,7 +68,7 @@
                 cboProvincia.SelectedIndex = 1
                 cboCanton.SelectedIndex = 1
                 txtDireccion.Text = iClientes.Direccion.DireccionExacta
-                txtDistrito.Text = iClientes.Direccion.Distrito
+
 
                 Me.Cliente.Visible = True
 

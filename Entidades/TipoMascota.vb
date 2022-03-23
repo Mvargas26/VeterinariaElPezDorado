@@ -1,19 +1,18 @@
 ﻿Public Class TipoMascota
 #Region "variables"
-    Private intCodigotipoMascota As Integer
+    Private shtCodigoTipoMascota As Short
     Private strDescripcionTipoMascota As String
 
 #End Region
 
 #Region "Properties"
 
-
-    Public Property CodigotipoMascota As Integer
+    Public Property CodigotipoMascota As Short
         Get
-            Return intCodigotipoMascota
+            Return shtCodigoTipoMascota
         End Get
-        Set(value As Integer)
-            intCodigotipoMascota = value
+        Set(value As Short)
+            shtCodigoTipoMascota = value
         End Set
     End Property
 
