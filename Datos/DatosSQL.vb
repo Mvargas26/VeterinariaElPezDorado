@@ -13,11 +13,11 @@ Public Class DatosSQL
                 .Append(ConfigurationManager.AppSettings("ServerName"))
                 .Append(";Initial Catalog=")
                 .Append(ConfigurationManager.AppSettings("DBName"))
-                .Append(";Integrated Security=True;Trusted_Connection=true") ' con esta linea ingresa usando autentificacion de windows
-                '.Append(";User=")
-                '.Append(ConfigurationManager.AppSettings("UserDB"))
-                '.Append(";Password=")
-                '.Append(ConfigurationManager.AppSettings("PassDB"))
+                '.Append(";Integrated Security=True;Trusted_Connection=true") ' con esta linea ingresa usando autentificacion de windows
+                .Append(";User=")
+                .Append(ConfigurationManager.AppSettings("UserDB"))
+                .Append(";Password=")
+                .Append(ConfigurationManager.AppSettings("PassDB"))
             End With
 
             Me.conectar_A_SQL_Datos = New SqlConnection(strConector.ToString) 'convertimos la variable en un objeto

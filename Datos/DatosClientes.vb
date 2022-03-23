@@ -11,7 +11,7 @@ Public Class DatosClientes
             Dim consultaSQL As New StringBuilder
 
             With consultaSQL
-                .Append("Select Identificacion, Nombre, Apellidos, Telefono, Correo, CodigoProvincia, Canton, Distrito, DireccionExacta, codServicioUtilizado  FROM Clientes")
+                .Append("Select Identificacion, Nombre, Apellidos, Telefono, Correo, cod_direccion FROM Clientes")
 
                 If paramIdentificacion <> -1 Then ' si es diferente a -1 , utiliza el filtro, osea agregueme el where min 20 parte 2
                     .Append(" where Identificacion = ")

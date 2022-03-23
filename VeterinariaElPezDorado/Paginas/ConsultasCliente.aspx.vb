@@ -21,7 +21,7 @@ Public Class ConsultasCliente
                     .Append("<td>" & CStr(drClientes("Apellidos")) & "</td>")
                     .Append("<td>" & CStr(drClientes("Correo")) & "</td>")
                     .Append(" <td>" & If(drClientes("Telefono") Is DBNull.Value, 0, CInt(drClientes("Telefono"))) & "</td>") ' si drclientes("telefono") viene vacio, ponga un 0, si no ponga lo que tiene Cint(drClientes("Telefono")
-                    .Append("<td>" & CShort(drClientes("codServicioUtilizado")) & "</td>")
+                    .Append("<td>" & CShort(drClientes("cod_direccion")) & "</td>")
                     .Append("<td><a class=""btn btn-info"" href=""Clientes.aspx""  role=""button"">Modificar</a></td>")
                     .Append("<td><a class=""btn btn-danger"" href=""Clientes.aspx""  role=""button"">Eliminar</a></td>")
                     .Append("</tr>")

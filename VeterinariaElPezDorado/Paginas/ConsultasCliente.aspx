@@ -16,7 +16,7 @@
       <th scope="col">Apellidos</th>
         <th scope="col">Correo electrónico</th>
       <th scope="col">teléfono</th>
-        <th scope="col">Codigo Servicio utilizado</th>
+        <th scope="col">Codigo Direccion</th>
         
     </tr>
   </thead> <!--la info de esta tabla viene de la DB, ver el CodeBehind-->

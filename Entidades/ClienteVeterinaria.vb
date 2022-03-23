@@ -7,6 +7,7 @@
     Private intTelefono As Integer
     Private strCorreoElectronico As String
     Private shtCodServicioSolicitado As Short
+    Private shtCodDireccion As Short
     'Prueba para github
 #End Region
 
@@ -73,6 +74,15 @@
         End Get
         Set(value As Short)
             shtCodServicioSolicitado = value
+        End Set
+    End Property
+
+    Public Property CodDireccion As Short
+        Get
+            Return shtCodDireccion
+        End Get
+        Set(value As Short)
+            shtCodDireccion = value
         End Set
     End Property
 

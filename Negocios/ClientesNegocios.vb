@@ -39,10 +39,8 @@ Public Class ClientesNegocios
                     .ApellidosCliente = CStr(drClientes("Apellidos")),
                     .Correoelectronico = CStr(drClientes("Correo")),
                     .Telefono = CInt(drClientes("Telefono")),
-                    .Direccion = New Direccion With {.CodigoProvincia = CInt("CodigoProvincia"),
-                    .Canton = ("Canton"), .Distrito = CStr("Distrito"), .DireccionExacta = CStr("DireccionExacta")},
-                    .CodServicioSolicitado = CShort(("codServicioUtilizado"))
-                                        }
+                    .CodDireccion = CShort(drClientes("cod_direccion"))
+                    }
                 End If
             End If
 
