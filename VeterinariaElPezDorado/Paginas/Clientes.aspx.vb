@@ -42,6 +42,9 @@
 
             Me.Limpiar()
 
+
+
+
         Catch ex As Exception
             'estas no van a otra apgina xq son cosas que se arreglan en la misma
             Me.lblError.Visible = True
