@@ -10,6 +10,7 @@
                 Me.mnMantenimientos.Visible = True
                 Me.mnVeterinaria.Visible = True
                 Me.mnAcercaDe.Visible = True
+                Me.btnInicioSesion.Visible = False
             Else
                 Me.mnConsulta.Visible = False
                 Me.mnMantenimientos.Visible = False

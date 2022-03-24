@@ -82,7 +82,7 @@
                         </li>
 
                         <li>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" runat="server" id="btnInicioSeccion" style="margin: 10px">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" runat="server" id="btnInicioSesion" style="margin: 10px">
                                 Iniciar de sesión
                             </button>
                         </li>
@@ -101,7 +101,7 @@
 
                         <!-- Modal Header -->
                         <div class="modal-header">
-                            <h4 class="modal-title">Inicio de sección</h4>
+                            <h4 class="modal-title">Inicio de sesión</h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
 

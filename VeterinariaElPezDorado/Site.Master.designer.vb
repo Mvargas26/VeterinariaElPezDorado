@@ -50,13 +50,13 @@ Partial Public Class SiteMaster
     Protected WithEvents mnAcercaDe As Global.System.Web.UI.HtmlControls.HtmlAnchor
 
     '''<summary>
-    '''btnInicioSeccion control.
+    '''btnInicioSesion control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnInicioSeccion As Global.System.Web.UI.HtmlControls.HtmlButton
+    Protected WithEvents btnInicioSesion As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
     '''LoginVeterinaria control.
