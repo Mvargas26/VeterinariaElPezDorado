@@ -47,8 +47,8 @@
             <div class="navbar-collapse collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">                 
                         <li class="nav-item" >
-                            <li class="nav-item dropdown" style="margin: 20px">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="nav-label">Veterinaria</span><span class="caret"></span></a>
+                            <li class="nav-item dropdown" style="margin: 20px" id="mnVeterinaria" runat="server">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><span class="nav-label">Veterinaria</span><span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a runat="server" href="~/Paginas/Clientes">Clientes</a></li>
                                     <li><a runat="server" href="~/Paginas/Mascotas">Mascotas</a></li>
@@ -57,8 +57,8 @@
                             </li>
                         </li>
                         <li class="nav-item">
-                            <li class="nav-item dropdown" style="margin: 20px">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="nav-label">Consultas</span><span class="caret"></span></a>
+                            <li class="nav-item dropdown" style="margin: 20px" id="mnConsulta" runat="server">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="nav-label" >Consultas</span><span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a runat="server" href="~/Paginas/ConsultasCliente">Consultas por cliente</a></li>
                                     <li><a runat="server" href="~/Paginas/ConsultasServicios">Consultas por servicios brindados</a></li>
@@ -67,7 +67,7 @@
                         </li>
                        
 
-                        <li class="nav-item"><li class="nav-item dropdown" style="margin: 20px">
+                        <li class="nav-item"><li class="nav-item dropdown" style="margin: 20px" id="mnMantenimientos" runat="server">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Mantenimientos</span><span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a runat="server" href="~/Paginas/Usuarios">Usuarios</a></li>
@@ -78,12 +78,12 @@
                                      
                         
                         <li style="margin: 20px">
-                            <a runat="server" href="~/Paginas/AcercaDe">Acerca De</a>
+                            <a runat="server" href="~/Paginas/AcercaDe" id="mnAcercaDe" runat="server">Acerca De</a>
                         </li>
 
                         <li>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" runat="server" id="btnInicioSeccion" style="margin: 10px">
-                                Iniciar de sección
+                                Iniciar de sesión
                             </button>
                         </li>
                     </ul>

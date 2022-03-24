@@ -14,6 +14,42 @@ Option Explicit On
 Partial Public Class SiteMaster
 
     '''<summary>
+    '''mnVeterinaria control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents mnVeterinaria As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''mnConsulta control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents mnConsulta As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''mnMantenimientos control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents mnMantenimientos As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''mnAcercaDe control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents mnAcercaDe As Global.System.Web.UI.HtmlControls.HtmlAnchor
+
+    '''<summary>
     '''btnInicioSeccion control.
     '''</summary>
     '''<remarks>

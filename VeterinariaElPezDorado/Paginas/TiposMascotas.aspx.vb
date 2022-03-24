@@ -12,6 +12,12 @@
             Me.cboTipoMascotas.Items.Add("Perro")
             Me.cboTipoMascotas.Items.Add("Gato")
             Me.cboTipoMascotas.Items.Add("Ratón")
+
+            Dim iUsuario As Entidades.Usuarios = CType(Session("UsuarioLogueado"), Entidades.Usuarios)
+
+            If iUsuario Is Nothing Then
+                FormsAuthentication.RedirectToLoginPage()
+            End If
         Catch ex As Exception
             Session("Error") = ex 'las variables de sesion permiten pasar info de una pagina a otra
             Response.Redirect("~/Paginas/frmPaginaError", False)

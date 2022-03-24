@@ -5,6 +5,11 @@
         Try
             Me.lblError.Visible = False
 
+            Dim iUsuario As Entidades.Usuarios = CType(Session("UsuarioLogueado"), Entidades.Usuarios)
+
+            If iUsuario Is Nothing Then
+                FormsAuthentication.RedirectToLoginPage()
+            End If
 
         Catch ex As Exception
             'envio a la pag de error porque hubo problemas cuando apenas se estaba construyendo
