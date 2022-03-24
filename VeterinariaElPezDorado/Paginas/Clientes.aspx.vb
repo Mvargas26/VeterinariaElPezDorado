@@ -29,6 +29,28 @@
             shtValor = Me.mnSeleccion.SelectedValue
             'comprueba primero que lo del html es correcto, trabaja con los validadores e la pg
             If Page.IsValid Then
+
+                '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                'objeto para almacenar la info del cliente
+                Dim iInfoCliente As New Entidades.ClienteVeterinaria With {
+                    .IdentificacionCliente = Me.txtIdentificacion.Text,
+                    .NombreCliente = Me.txtNombre.Text,
+                    .ApellidosCliente = Me.txtPrimerApellido.Text,
+                    .Correoelectronico = Me.txtCorreo.Text,
+                    .Telefono = CInt(IIf(String.IsNullOrEmpty(Me.txtTeléfono.Text.Trim), "0", Me.txtTeléfono.Text))
+                 }
+
+
+                Dim objNegocios As New Negocios.ClientesNegocios
+                objNegocios.RegistrarCliente(iInfoCliente)
+                Me.ModalRegistroSatisfactorio.Visible = True
+
+
+                '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+
+
                 iClientes.mantenimiento(shtValor)
                 Select Case shtValor
                     Case 1
@@ -41,7 +63,6 @@
             End If
 
             Me.Limpiar()
-
 
 
 

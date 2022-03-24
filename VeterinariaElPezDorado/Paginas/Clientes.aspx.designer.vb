@@ -203,6 +203,24 @@ Partial Public Class Clientes
     Protected WithEvents btnMantenimientoCliente As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''ModalRegistroSatisfactorio control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ModalRegistroSatisfactorio As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''lblModalRegistroSatisfactorio control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblModalRegistroSatisfactorio As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''lblError control.
     '''</summary>
     '''<remarks>

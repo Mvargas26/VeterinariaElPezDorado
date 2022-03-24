@@ -118,6 +118,11 @@
             <asp:Button ID="btnMantenimientoCliente" runat="server" CssClass="btn btn-info" Text="Registrar" />
         </div>
 
+        <div id="ModalRegistroSatisfactorio" runat ="server" visible="false"  class="modal-dialog modal-sm" role="alert"> 
+             <asp:Label ID="lblModalRegistroSatisfactorio" runat="server" Text="Cliente registrado Correctamente"></asp:Label>
+        </div>
+        
+
         <!-- Manejo de errores  -->
         <div id="lblError" runat="server" visible="false" class="alert alert-danger" role="alert">
             <asp:Label ID="lblMensajeError" runat="server" Text=""></asp:Label>
