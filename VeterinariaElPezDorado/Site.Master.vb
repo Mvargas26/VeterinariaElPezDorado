@@ -10,7 +10,8 @@
                 Me.mnMantenimientos.Visible = True
                 Me.mnVeterinaria.Visible = True
                 Me.mnAcercaDe.Visible = True
-                Me.btnInicioSesion.Visible = False
+                Me.LnkInicioSesion.Visible = False
+                Me.lnkCerrarSesion.Visible = True
             Else
                 Me.mnConsulta.Visible = False
                 Me.mnMantenimientos.Visible = False
@@ -37,7 +38,7 @@
 
             If iUsuario.CredencialValida Then
                 Session("UsuarioLogueado") = iUsuario
-                Response.Redirect(FormsAuthentication.DefaultUrl, False)
+                FormsAuthentication.RedirectFromLoginPage(strUsuario, False)
             Else
                 Response.Redirect(FormsAuthentication.LoginUrl, False)
             End If
@@ -46,5 +47,14 @@
             Session("Error") = ex
             Response.Redirect("~/Paginas/frmPaginaError")
         End Try
+
+    End Sub
+
+    Protected Sub lnkCerrarSesion_Click(sender As Object, e As EventArgs) Handles lnkCerrarSesion.Click
+        FormsAuthentication.SignOut()
+        Session("UsuarioLogueado") = Nothing
+        LnkInicioSesion.Visible = True
+        lnkCerrarSesion.Visible = False
+        Response.Redirect(FormsAuthentication.LoginUrl, False)
     End Sub
 End Class

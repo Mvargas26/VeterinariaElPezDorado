@@ -81,10 +81,9 @@
                             <a runat="server" href="~/Paginas/AcercaDe" id="mnAcercaDe" runat="server">Acerca De</a>
                         </li>
 
-                        <li>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" runat="server" id="btnInicioSesion" style="margin: 10px">
-                                Iniciar de sesión
-                            </button>
+                        <li style="margin: 20px">                            
+                            <asp:LinkButton ID="LnkInicioSesion" runat="server" data-toggle="modal" data-target="#myModal">Iniciar sesión</asp:LinkButton>
+                            <asp:LinkButton ID="lnkCerrarSesion" runat="server" visible="false" >Cerrar Sesión</asp:LinkButton>
                         </li>
                     </ul>
                 </div>
