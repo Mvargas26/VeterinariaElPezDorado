@@ -5,12 +5,21 @@
     Private strProvincia As String
     Private shtCodigoCanton As Short
     Private strCanton As String
+    Private strDistrito As String
     Private strDireccionExacta As String
 
 #End Region
 
 #Region "Properties"
 
+    Public Property CodDireccion As Short
+        Get
+            Return shtCodDireccion
+        End Get
+        Set(value As Short)
+            shtCodDireccion = value
+        End Set
+    End Property
 
     Public Property CodigoProvincia As Integer
         Get
@@ -48,14 +57,6 @@
         End Set
     End Property
 
-    Public Property CodDireccion As Short
-        Get
-            Return shtCodDireccion
-        End Get
-        Set(value As Short)
-            shtCodDireccion = value
-        End Set
-    End Property
 
     Public Property CodigoCanton As Short
         Get
@@ -65,6 +66,17 @@
             shtCodigoCanton = value
         End Set
     End Property
+
+    Public Property Distrito As String
+        Get
+            Return strDistrito
+        End Get
+        Set(value As String)
+            strDistrito = value
+        End Set
+    End Property
+
+
 
 
 #End Region

@@ -30,32 +30,30 @@
             'comprueba primero que lo del html es correcto, trabaja con los validadores e la pg
             If Page.IsValid Then
 
-                '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-                'objeto para almacenar la info del cliente
-                Dim iInfoCliente As New Entidades.ClienteVeterinaria With {
+                iClientes.mantenimiento(shtValor)
+                Select Case shtValor
+                    Case 1
+
+
+
+                        Dim iInfoCliente As New Entidades.ClienteVeterinaria With {
                     .IdentificacionCliente = Me.txtIdentificacion.Text,
                     .NombreCliente = Me.txtNombre.Text,
                     .ApellidosCliente = Me.txtPrimerApellido.Text,
                     .Correoelectronico = Me.txtCorreo.Text,
                     .Telefono = CInt(IIf(String.IsNullOrEmpty(Me.txtTeléfono.Text.Trim), "0", Me.txtTeléfono.Text))
-                 }
+                         }
+
+                        Dim objNegocios As New Negocios.ClientesNegocios
+                        objNegocios.RegistrarCliente(iInfoCliente)
 
 
-                Dim objNegocios As New Negocios.ClientesNegocios
-                objNegocios.RegistrarCliente(iInfoCliente)
-                Me.ModalRegistroSatisfactorio.Visible = True
-
-
-                '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-
-
-
-                iClientes.mantenimiento(shtValor)
-                Select Case shtValor
-                    Case 1
+                        Me.ModalRegistroSatisfactorio.Visible = True
                         ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se registro correctamente');", True)
+
+
                     Case 2
+
                         ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se eliminó correctamente');", True)
                     Case 3
                         ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se modificó correctamente');", True)
@@ -96,7 +94,6 @@
                 cboProvincia.SelectedIndex = 1
                 cboCanton.SelectedIndex = 1
                 txtDireccion.Text = iClientes.Direccion.DireccionExacta
-
 
                 Me.Cliente.Visible = True
 

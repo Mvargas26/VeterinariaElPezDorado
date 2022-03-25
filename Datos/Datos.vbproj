@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatosClientes.vb" />
+    <Compile Include="DatosDireccion.vb" />
     <Compile Include="DatosSQL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

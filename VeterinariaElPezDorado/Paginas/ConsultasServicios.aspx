@@ -17,14 +17,7 @@
      </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-        <td>Rayos X</td>
-      <td>50000</td>
-        <td>6500</td>
-       <td><a class="btn btn-info" href="RegistroServicios.aspx"  role="button">Modificar</a></td>
-        <td><a class="btn btn-danger" href="RegistroServicios.aspx"  role="button">Eliminar</a></td>
-    </tr>
+    <tbody id="lstServicios" runat="server">
   
   </tbody>
 </table>
