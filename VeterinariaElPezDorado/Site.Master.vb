@@ -40,7 +40,8 @@
                 Session("UsuarioLogueado") = iUsuario
                 FormsAuthentication.RedirectFromLoginPage(strUsuario, False)
             Else
-                Response.Redirect(FormsAuthentication.LoginUrl, False)
+                ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Hubo un fallo al iniciar sesión');", True)
+                'Response.Redirect(FormsAuthentication.LoginUrl, False)
             End If
 
         Catch ex As Exception

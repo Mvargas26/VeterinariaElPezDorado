@@ -1,13 +1,16 @@
 ﻿Public Class seguridad
-    Public Function validarCredencial(ByVal Usuarios As String, ByVal Password As String) As Entidades.Usuarios
+    Public Function validarCredencial(ByVal strUsuario As String, ByVal strPassword As String) As Entidades.Usuarios
         Try
-            Dim iusuario As New Entidades.Usuarios
-
-            If Usuarios.Equals("Admin") And Password.Equals("Admin") Then
-                iusuario.CredencialValida = True
+            Dim iUsuario As New Entidades.Usuarios
+            iUsuario.Usuario = strUsuario
+            iUsuario.Password = strPassword
+            Dim iDatos As New Datos.DatosUsuarios
+            Dim dtUsuario As DataTable = iDatos.buscarUsuario(iUsuario)
+            If dtUsuario.Rows.Count <> 0 Then
+                iUsuario.CredencialValida = True
             End If
 
-            Return iusuario
+            Return iUsuario
         Catch ex As Exception
             Throw ex
         End Try

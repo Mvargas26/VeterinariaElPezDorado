@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="DatosClientes.vb" />
     <Compile Include="DatosSQL.vb" />
+    <Compile Include="DatosUsuarios.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
