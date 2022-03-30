@@ -31,6 +31,41 @@ Public Class DatosClientes
         End Try
     End Function
 
+#Region "Manejo de Procedimientos almacenados en DatosClientes"
+    ''' <summary>
+    ''' Mantenimineto a Cliente
+    ''' </summary>
+    ''' <param name="Accion"></param>
+    ''' <para>1-- REgistro</para>
+    ''' <para>2-- Modifica</para>
+    ''' <para>3-- Elimina</para>
+    ''' <param name="Cliente"></param>
+    Public Sub GrabarCliente(Accion As Entidades.Enumeradores.Accion, Cliente As Entidades.ClienteVeterinaria)
+        Try
+            Dim strNombreSP As String = "SP_Clientes"
 
+            'lista parametros q se va mandar a datos
+            Dim lstParametros As New List(Of SqlParameter) From {
+            New SqlParameter("@accion", CShort(Accion)),
+            New SqlParameter("@identificacion", Cliente.IdentificacionCliente),
+            New SqlParameter("@nombre", Cliente.NombreCliente),
+            New SqlParameter("@apellidos", Cliente.ApellidosCliente),
+            New SqlParameter("@telefono", IIf(Cliente.Telefono.Equals(""), 0, Cliente.Telefono)),
+            New SqlParameter("@correo", Cliente.Correoelectronico),
+            New SqlParameter("@codDireccion", Cliente.CodDireccion)
+            }
+
+            'objeto q ejecuta el procedimineto SP
+            Dim objDatosSQL As New DatosSQL
+
+            objDatosSQL.ExecuteSP(strNombreSP, lstParametros)
+
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+#End Region
 
 End Class
