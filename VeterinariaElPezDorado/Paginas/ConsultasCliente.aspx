@@ -16,7 +16,10 @@
       <th scope="col">Apellidos</th>
         <th scope="col">Correo electrónico</th>
       <th scope="col">teléfono</th>
-        <th scope="col">Codigo Direccion</th>
+         <th scope="col">Provincia</th>
+         <th scope="col">Canton</th>
+         <th scope="col">Distrito</th>
+        <th scope="col">Direccion Exacta</th>
         
     </tr>
   </thead> <!--la info de esta tabla viene de la DB, ver el CodeBehind-->

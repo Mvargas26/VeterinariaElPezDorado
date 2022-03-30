@@ -8,7 +8,7 @@
     Private strCorreoElectronico As String
     Private shtCodServicioSolicitado As Short
     Private shtCodDireccion As Short
-    'Prueba para github
+
 #End Region
 
 #Region "Properties"

@@ -11,10 +11,10 @@ Public Class DatosClientes
             Dim consultaSQL As New StringBuilder
 
             With consultaSQL
-                .Append("Select Identificacion, Nombre, Apellidos, Telefono, Correo, cod_direccion FROM Clientes")
+                .Append("SELECT identificacion, nombre, apellidos,telefono,correo, provincia,canton,distrito,direccion_Exacta  FROM Clientes")
 
                 If paramIdentificacion <> "-1" Then ' si es diferente a -1 , utiliza el filtro, osea agregueme el where 
-                    .Append(" where Identificacion = ")
+                    .Append(" where identificacion = ")
                     .Append(paramIdentificacion)
                 End If
 

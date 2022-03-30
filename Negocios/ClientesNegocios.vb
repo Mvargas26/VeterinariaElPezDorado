@@ -34,13 +34,15 @@ Public Class ClientesNegocios
 
 
                     iInfoCliente = New ClienteVeterinaria With {
-                       .IdentificacionCliente = CStr(drClientes("Identificacion")),
-                    .NombreCliente = CStr(drClientes("Nombre")),
-                    .ApellidosCliente = CStr(drClientes("Apellidos")),
-                    .Correoelectronico = CStr(drClientes("Correo")),
-                    .Telefono = CInt(drClientes("Telefono")),
-                    .CodDireccion = CShort(drClientes("cod_direccion"))
-                    }
+                       .IdentificacionCliente = CStr(drClientes("identificacion")),
+                    .NombreCliente = CStr(drClientes("nombre")),
+                    .ApellidosCliente = CStr(drClientes("apellidos")),
+                    .Correoelectronico = CStr(drClientes("correo")),
+                    .Telefono = CInt(drClientes("telefono")),
+                    .Direccion = New Direccion With {.Provincia = CStr(drClientes("provincia")),
+                    .Canton = CStr(drClientes("canton")),
+                    .Distrito = CStr(drClientes("distrito")),
+                    .DireccionExacta = CStr(drClientes("direccion_Exacta"))}}
                 End If
             End If
 
