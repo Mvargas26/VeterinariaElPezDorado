@@ -1,5 +1,5 @@
 ﻿Imports System.Text
-
+Imports System.Data.SqlClient
 Public Class DatosClientes
     ''' <summary>
     ''' Devuelve la info de los clientes que esta en la base de datos en un data table
@@ -42,7 +42,7 @@ Public Class DatosClientes
     ''' <param name="Cliente"></param>
     Public Sub GrabarCliente(Accion As Entidades.Enumeradores.Accion, Cliente As Entidades.ClienteVeterinaria)
         Try
-            Dim strNombreSP As String = "SP_Clientes"
+            Dim strNombreSP As String = "SP_Clientes2"
 
             'lista parametros q se va mandar a datos
             Dim lstParametros As New List(Of SqlParameter) From {
@@ -52,7 +52,10 @@ Public Class DatosClientes
             New SqlParameter("@apellidos", Cliente.ApellidosCliente),
             New SqlParameter("@telefono", IIf(Cliente.Telefono.Equals(""), 0, Cliente.Telefono)),
             New SqlParameter("@correo", Cliente.Correoelectronico),
-            New SqlParameter("@codDireccion", Cliente.CodDireccion)
+            New SqlParameter("@provincia", Cliente.Direccion.Provincia),
+            New SqlParameter("@canton", Cliente.Direccion.Canton),
+            New SqlParameter("@distrito", Cliente.Direccion.Distrito),
+            New SqlParameter("@direccionExacta", Cliente.Direccion.DireccionExacta)
             }
 
             'objeto q ejecuta el procedimineto SP
