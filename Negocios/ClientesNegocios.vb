@@ -55,9 +55,27 @@ Public Class ClientesNegocios
             Throw ex
         End Try
 
-
-
     End Function
 
+#Region "Manejo Procedimientos almacenados Agregar,Modificar,Eliminar en Negocios"
+
+    Private Sub MantenimientoCliente(Accion As Entidades.Enumeradores.Accion, Cliente As Entidades.ClienteVeterinaria)
+        Dim objClienteDatos As New Datos.DatosClientes
+        objClienteDatos.GrabarCliente(Accion, Cliente)
+    End Sub
+
+
+    Public Sub RegistrarCliente(Cliente As Entidades.ClienteVeterinaria)
+        Me.MantenimientoCliente(Entidades.Enumeradores.Accion.Registrar, Cliente)
+    End Sub
+
+    Public Sub MOdificarCliente(Cliente As Entidades.ClienteVeterinaria)
+        Me.MantenimientoCliente(Entidades.Enumeradores.Accion.Modificar, Cliente)
+    End Sub
+
+    Public Sub EliminarCliente(Cliente As Entidades.ClienteVeterinaria)
+        Me.MantenimientoCliente(Entidades.Enumeradores.Accion.Eliminar, Cliente)
+    End Sub
+#End Region
 
 End Class
