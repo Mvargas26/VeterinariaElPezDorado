@@ -56,74 +56,70 @@ Public Class DatosSQL
 
     End Function
 
-#Region "Manejo de Procedimientos Almacenados"
-
-    Public Sub ExecuteSP(ByVal SPName As String, ByVal ListaParametros As List(Of SqlParameter))
+#Region "Manejo de Procedimientos Alacenados"
+    Public Sub ExecuteSP(ByVal SP_Nombre As String, ByVal listaParametros As List(Of SqlParameter))
         Try
-            'indica la consulta de base de datos que se desea ejecutar
+
             Dim cmd As New SqlCommand() With {
-                .CommandType = CommandType.StoredProcedure,
-                .CommandText = SPName,'NOmbre del procedimiento almacenado
-                .Connection = Me.sqlConn
+            .CommandType = CommandType.StoredProcedure,
+            .CommandText = SP_Nombre,
+            .Connection = Me.sqlConn
             }
 
-            'agrega los parametros a la ejecución del SP
-            For Each sqlParam As SqlParameter In ListaParametros
-                cmd.Parameters.Add(sqlParam)
+
+            For Each sqlParam As SqlParameter In listaParametros 'aqui comprobamos si la lista trae parametros y no venga vacia ni nula
+                cmd.Parameters.Add(sqlParam) 'al obj comando le agregamos la lista de parametros que se llenaran en la clase q lo llame
             Next
 
-            'abrimos la conexion con la BD
-            sqlConn.Open()
+            sqlConn.Open() ' abrimos conexion a la base de datos 
 
-            'ejecuta la consulta de base de datos
-            cmd.ExecuteNonQuery()
+            cmd.ExecuteNonQuery() ' ejecuta la consulta
 
-            'cierra la conexión con la base de datos
-            'Siempre es importante cerar la conexion ya que las coneciones a las bases de datos son finitas.
-            sqlConn.Close()
+            sqlConn.Close() ' cierra la conexion 
 
         Catch sql As SqlException
-            If sqlConn.State = ConnectionState.Open Then sqlConn.Close()
+            If sqlConn.State = ConnectionState.Open Then ' si la conexion esta abierta, cierrela 
+                sqlConn.Close()
+            End If
             Throw sql
         Catch ex As Exception
             Throw ex
         End Try
     End Sub
 
-    Public Function ExecuteSPWithDT(ByVal SPName As String, ByVal ListaParametros As List(Of SqlParameter)) As DataTable
+
+    Public Function ExecuteSP_withDT(ByVal SP_Nombre As String, ByVal listaParametros As List(Of SqlParameter)) As DataTable
         Try
-            'indica la consulta de base de datos que se desea ejecutar
+
             Dim cmd As New SqlCommand() With {
-                .CommandType = CommandType.StoredProcedure,
-                .CommandText = SPName,
-                .Connection = Me.sqlConn
+            .CommandType = CommandType.StoredProcedure,
+            .CommandText = SP_Nombre,
+            .Connection = Me.sqlConn
             }
 
-            'agrega los parametros a la ejecución del SP
-            For Each sqlParam As SqlParameter In ListaParametros
-                cmd.Parameters.Add(sqlParam)
+
+            For Each sqlParam As SqlParameter In listaParametros 'aqui comprobamos si la lista trae parametros y no venga vacia ni nula
+                cmd.Parameters.Add(sqlParam) 'al obj comando le agregamos la lista de parametros que se llenaran en la clase q lo llame
             Next
 
-            'objeto para ejecutar la consulta de la base de datos que retorna información
-            Dim adapter As New SqlDataAdapter(cmd)
+            Dim adapter As New SqlDataAdapter(cmd) ' objeto adaptador q ejecuta la consulta
 
-            'objeto para almacenar la información que se obtiene de la base de datos
-            Dim dtDatos As New DataTable
+            Dim Tabla_Datos As New DataTable ' almacena info obtenida de la B.D
 
-            'ejecuta la consulta
-            adapter.Fill(dtDatos)
+            adapter.Fill(Tabla_Datos)  'con fill abre conexion a B.D, ejecuta consulta, toma la info,agrega info al dataset, cierra consulta
 
-            'retorna el resultado obtenido
-            Return dtDatos
+            Return Tabla_Datos ' retornamos el data set ya con la info 
 
         Catch sql As SqlException
-            If sqlConn.State = ConnectionState.Open Then sqlConn.Close()
+            If sqlConn.State = ConnectionState.Open Then
+                sqlConn.Close()
+            End If
             Throw sql
         Catch ex As Exception
             Throw ex
         End Try
-    End Function
 
+    End Function
 #End Region
 
 End Class
