@@ -72,6 +72,7 @@
                     Indique un correo valido.
                 </div>
             </div>
+
         </div>
         <div class="form-row">
 
@@ -89,6 +90,7 @@
                 <div class="invalid-feedback">Seleccione una provincia</div>
             </div>
             <div class="invalid-feedback">Seleccione una provincia</div>
+
             <div class="form-group col-md-4">
                 <select id="cboCanton" runat="server" class="custom-select" required>
                     <option value="">Cantón</option>
@@ -109,7 +111,7 @@
 
         <div class="form-row">
             <div class="col-md-4 mb-3">
-                <asp:TextBox runat="server" class="form-control" ID="txtDireccion" placeholder="Direccion" required="requiered" pattern="[A-Za-z0-9 ]{5,150}"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtDireccion" placeholder="Direccion Exacta" required="requiered" pattern="[A-Za-z0-9 ]{5,150}"></asp:TextBox>
                 <div class="invalid-feedback">Indique su dirección</div>
             </div>
         </div>

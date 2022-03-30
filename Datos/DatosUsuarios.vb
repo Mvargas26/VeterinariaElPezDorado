@@ -30,9 +30,9 @@ Public Class DatosUsuarios
                 }
 
                 Dim iConexion As New DatosSQL
-                Dim dt As DataTable = iConexion.ExecuteSPWithDT(strNombreSP, lstParametros)
+            Dim dt As DataTable = iConexion.ExecuteSP_withDT(strNombreSP, lstParametros)
 
-                Return dt
+            Return dt
 
             Catch ex As Exception
                 Throw ex
