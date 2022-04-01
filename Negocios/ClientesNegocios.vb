@@ -25,7 +25,7 @@ Public Class ClientesNegocios
     Public Function ConsultarCliente(ByVal Identificacion) As ClienteVeterinaria
         Try
             Dim iClientes As New DatosClientes
-            Dim dtClientes As DataTable = iClientes.CoonsultarClientes
+            Dim dtClientes As DataTable = iClientes.CoonsultarClientes(Identificacion.ToString)
 
             Dim iInfoCliente As ClienteVeterinaria = Nothing
 
@@ -33,7 +33,6 @@ Public Class ClientesNegocios
                 Dim drClientes As DataRow = dtClientes.Rows(0) ' objeto de tipo fila 
 
                 If dtClientes.Rows.Count > 0 Then
-
 
                     iInfoCliente = New ClienteVeterinaria With {
                        .IdentificacionCliente = CStr(drClientes("identificacion")),
@@ -45,13 +44,14 @@ Public Class ClientesNegocios
                     .Canton = CStr(drClientes("canton")),
                     .Distrito = CStr(drClientes("distrito")),
                     .DireccionExacta = CStr(drClientes("direccion_Exacta"))}}
+
                 End If
+
             End If
 
             If iInfoCliente Is Nothing Then
-                Throw New NullReferenceException(String.Format("No se obtuvo info para el cliente {0}", Identificacion))
+                Throw New NullReferenceException(String.Format("No se obtuvo info para el cliente :", Identificacion))
             End If
-
             Return iInfoCliente
         Catch ex As Exception
             Throw ex

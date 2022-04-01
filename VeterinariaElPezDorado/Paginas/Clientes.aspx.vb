@@ -50,14 +50,29 @@ Public Class Clientes
                         Dim objNegocios As New Negocios.ClientesNegocios
                         objNegocios.RegistrarCliente(iInfoCliente)
 
-
-                        'Me.ModalRegistroSatisfactorio.Visible = True
-
                         ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se registro correctamente');", True)
                     Case 2
-                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se eliminó correctamente');", True)
+                        Dim iInfoCliente As New Entidades.ClienteVeterinaria With {
+                    .IdentificacionCliente = Me.txtIdentificacion.Text,
+                    .NombreCliente = Me.txtNombre.Text,
+                    .ApellidosCliente = Me.txtPrimerApellido.Text + " " + Me.txtSegundoApellido.Text,
+                    .Correoelectronico = Me.txtCorreo.Text,
+                    .Telefono = CInt(IIf(String.IsNullOrEmpty(Me.txtTeléfono.Text.Trim), "0", Me.txtTeléfono.Text)),
+                    .Direccion = New Entidades.Direccion With {
+                    .Provincia = CStr(Me.cboProvincias.SelectedItem.Text),
+                    .Canton = CStr(Me.cboCantones.SelectedItem.Text),
+                    .Distrito = Me.txtDistrito.Text,
+                    .DireccionExacta = Me.txtDireccion.Text}}
+
+                        Dim objNegocios As New Negocios.ClientesNegocios
+                        objNegocios.MOdificarCliente(iInfoCliente)
+
+                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se modificó  correctamente');", True)
                     Case 3
-                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se modificó correctamente');", True)
+
+
+
+                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se eliminó correctamente');", True)
                 End Select
             End If
 
@@ -81,21 +96,46 @@ Public Class Clientes
 
             If Page.IsValid Then
 
-                Me.btnConsultar.Visible = False
+                Dim strIdentificacionConsultar As String = Me.txtIdentificacionConsulta.Text
+                Dim iInfoCliente As New Entidades.ClienteVeterinaria
+                iInfoCliente.IdentificacionCliente = strIdentificacionConsultar
+
+                Dim objNegocios As New ClientesNegocios
+                iInfoCliente = objNegocios.ConsultarCliente(iInfoCliente.IdentificacionCliente)
+
+
+                If Not iInfoCliente.IdentificacionCliente = "" Then 'Si el cliente existe
+                    Cliente.Visible = True
+
+                    Me.txtIdentificacion.Text = iInfoCliente.IdentificacionCliente
+                    Me.txtIdentificacion.ReadOnly = True
+                    Me.txtNombre.Text = iInfoCliente.NombreCliente
+                    Me.txtPrimerApellido.Text = iInfoCliente.ApellidosCliente
+                    Me.txtCorreo.Text = iInfoCliente.Correoelectronico
+                    Me.txtTeléfono.Text = iInfoCliente.Telefono
+                    Me.txtDistrito.Text = iInfoCliente.Direccion.Distrito
+                    Me.txtDireccion.Text = iInfoCliente.Direccion.DireccionExacta
+
+                End If
+                Me.btnMantenimientoCliente.Visible = True
                 Me.txtIdentificacionConsulta.Visible = False
-                Dim strId As String = Me.txtIdentificacionConsulta.Text
-                iClientes.consultarCliente(CStr(strId))
-                txtNombre.Text = iClientes.NombreCliente
-                txtPrimerApellido.Text = iClientes.ApellidosCliente
-                txtIdentificacion.Text = iClientes.IdentificacionCliente
-                txtCorreo.Text = iClientes.Correoelectronico
-                txtTeléfono.Text = iClientes.Telefono
-                'cboProvincia.SelectedIndex = 1
-                'cboCanton.SelectedIndex = 1
-                txtDireccion.Text = iClientes.Direccion.DireccionExacta
+                Me.btnConsultar.Visible = False
+
+                'Me.btnConsultar.Visible = False
+                'Me.txtIdentificacionConsulta.Visible = False
+                'Dim strId As String = Me.txtIdentificacionConsulta.Text
+                'iClientes.consultarCliente(CStr(strId))
+                'txtNombre.Text = iClientes.NombreCliente
+                'txtPrimerApellido.Text = iClientes.ApellidosCliente
+                'txtIdentificacion.Text = iClientes.IdentificacionCliente
+                'txtCorreo.Text = iClientes.Correoelectronico
+                'txtTeléfono.Text = iClientes.Telefono
+                ''cboProvincia.SelectedIndex = 1
+                ''cboCanton.SelectedIndex = 1
+                'txtDireccion.Text = iClientes.Direccion.DireccionExacta
 
 
-                Me.Cliente.Visible = True
+                'Me.Cliente.Visible = True
 
             End If
 
@@ -127,11 +167,12 @@ Public Class Clientes
                 Case 2
                     Me.txtIdentificacionConsulta.Visible = True
                     Me.btnConsultar.Visible = True
-                    Me.btnMantenimientoCliente.Text = "Eliminar"
+                    Me.btnMantenimientoCliente.Text = " Modificar"
+                    Me.btnMantenimientoCliente.Visible = False
                 Case 3
                     Me.txtIdentificacionConsulta.Visible = True
                     Me.btnConsultar.Visible = True
-                    Me.btnMantenimientoCliente.Text = "Modificar"
+                    Me.btnMantenimientoCliente.Text = "Eliminar"
                 Case 4
                     Me.txtIdentificacionConsulta.Visible = True
                     Me.btnConsultar.Visible = True
