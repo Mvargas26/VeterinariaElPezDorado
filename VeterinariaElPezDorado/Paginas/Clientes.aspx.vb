@@ -35,12 +35,12 @@
                         Dim iInfoCliente As New Entidades.ClienteVeterinaria With {
                     .IdentificacionCliente = Me.txtIdentificacion.Text,
                     .NombreCliente = Me.txtNombre.Text,
-                    .ApellidosCliente = Me.txtPrimerApellido.Text + " " + Me.txtPrimerApellido.Text,
+                    .ApellidosCliente = Me.txtPrimerApellido.Text + " " + Me.txtSegundoApellido.Text,
                     .Correoelectronico = Me.txtCorreo.Text,
                     .Telefono = CInt(IIf(String.IsNullOrEmpty(Me.txtTeléfono.Text.Trim), "0", Me.txtTeléfono.Text)),
                     .Direccion = New Entidades.Direccion With {
-                    .Provincia = CStr(Me.cboProvincia.Value),
-                    .Canton = CStr(Me.cboCanton.Value),
+                    .Provincia = CStr(Me.cboProvincias.SelectedItem.Text),
+                    .Canton = CStr(Me.cboCantones.SelectedItem.Text),
                     .Distrito = Me.txtDistrito.Text,
                     .DireccionExacta = Me.txtDireccion.Text}}
 
@@ -87,8 +87,8 @@
                 txtIdentificacion.Text = iClientes.IdentificacionCliente
                 txtCorreo.Text = iClientes.Correoelectronico
                 txtTeléfono.Text = iClientes.Telefono
-                cboProvincia.SelectedIndex = 1
-                cboCanton.SelectedIndex = 1
+                'cboProvincia.SelectedIndex = 1
+                'cboCanton.SelectedIndex = 1
                 txtDireccion.Text = iClientes.Direccion.DireccionExacta
 
 

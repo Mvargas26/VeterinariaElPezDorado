@@ -41,7 +41,7 @@
             <div class="col-md-4 mb-3">
                 <label runat="server" id="lblSegundoApellido" for="SegundoApellido">Segundo Apellido</label>
                 <div class="input-group">
-                    <asp:TextBox runat="server" class="form-control" ID="txtSegundoNombre" placeholder="Segundo Apellido" pattern="[A-Za-z]+"></asp:TextBox>
+                    <asp:TextBox runat="server" class="form-control" ID="txtSegundoApellido" placeholder="Segundo Apellido" pattern="[A-Za-z]+"></asp:TextBox>
                     <div class="invalid-feedback">
                         Indique solo letras en su apellido
                     </div>
@@ -74,48 +74,50 @@
             </div>
 
         </div>
-        <div class="form-row">
 
-            <div class="form-group col-md-4">
-                <select id="cboProvincia" runat="server" class="custom-select" required>
-                    <option value="">Provincia</option>
-                    <option value="1">San Jose</option>
-                    <option value="2">Alajuela</option>
-                    <option value="3">Cartago</option>
-                    <option value="4">Heredia</option>
-                    <option value="5">Guanacaste</option>
-                    <option value="6">Puntarenas</option>
-                    <option value="7">Limón</option>
-                </select>
-                <div class="invalid-feedback">Seleccione una provincia</div>
-            </div>
-            <div class="invalid-feedback">Seleccione una provincia</div>
-
-            <div class="form-group col-md-4">
-                <select id="cboCanton" runat="server" class="custom-select" required>
-                    <option value="">Cantón</option>
-                    <option value="1">CENTRAL</option>
-                    <option value="2">CONCEPCION</option>
-                    <option value="3">CANTON </option>
-                </select>
-                <div class="invalid-feedback">Seleccione un cantón</div>
+          <div class="form-row">
+         <!-- cboProvincias -->
+         <div class="col-md-4 mb-3">
+                <label runat="server" id="lblProvincias" for="cboProvincias">Provincias</label>                
+                    <asp:DropDownList ID="cboProvincias" runat="server" Width=200px CssClass=" form-control">
+                        <asp:ListItem Text="San Jose" Value=1>sanJose</asp:ListItem>
+                        <asp:ListItem Text="Alajuela" Value=2>Alajuela</asp:ListItem>
+                        <asp:ListItem Text="Cartago" Value=3>Cartago</asp:ListItem>
+                        <asp:ListItem Text="Heredia" Value=4>Heredia</asp:ListItem>
+                        <asp:ListItem Text="Guanacaste" Value=5>Guanacaste</asp:ListItem>
+                        <asp:ListItem Text="Puntarenas" Value=6>Puntarenas</asp:ListItem>
+                        <asp:ListItem Text="Limon" Value=7>Limon</asp:ListItem>
+                </asp:DropDownList>
             </div>
 
-            <div class="col-md-4 mb-3">
+         <!-- cboCantones -->
+         <div class="col-md-4 mb-3">
+                <label runat="server" id="lblCantones" for="cboCantones">Cantones</label>                
+                    <asp:DropDownList ID="cboCantones" runat="server" Width=200px CssClass=" form-control">
+                        <asp:ListItem Text="Central" Value=1>Central</asp:ListItem>
+                </asp:DropDownList>
+            </div>
+               
+
+         <div class="col-md-4 mb-3">
+                <label runat="server" id="lblDistrito" for="txtDistrito">Distrito</label> 
                 <asp:TextBox runat="server" class="form-control" ID="txtDistrito" placeholder="Distrito" required="requiered" pattern="[A-Za-z]{5,25}"></asp:TextBox>
                  <div class="invalid-feedback">Indique un distrito</div>
             </div>
-
         </div>
 
-
-        <div class="form-row">
+          <div class="form-row">
             <div class="col-md-4 mb-3">
-                <asp:TextBox runat="server" class="form-control" ID="txtDireccion" placeholder="Direccion Exacta" required="requiered" pattern="[A-Za-z0-9 ]{5,150}"></asp:TextBox>
+                 <label runat="server" id="lblDireccion" for="txtDireccion">Direccion Exacta</label>
+                <asp:TextBox runat="server" class="form-control" ID="txtDireccion" placeholder="Direccion Exacta" required="requiered"></asp:TextBox>
                 <div class="invalid-feedback">Indique su dirección</div>
             </div>
-        </div>
+               </div>
+           
+        </div> <!--// Fin form clientes // -->
 
+       
+        
         <div>
             <asp:Button ID="btnMantenimientoCliente" runat="server" CssClass="btn btn-info" Text="Registrar" />
         </div>
@@ -124,5 +126,5 @@
         <div id="lblError" runat="server" visible="false" class="alert alert-danger" role="alert">
             <asp:Label ID="lblMensajeError" runat="server" Text=""></asp:Label>
         </div>
-    </div>
+    
 </asp:Content>

@@ -95,13 +95,13 @@ Partial Public Class Clientes
     Protected WithEvents lblSegundoApellido As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''txtSegundoNombre control.
+    '''txtSegundoApellido control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtSegundoNombre As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtSegundoApellido As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''lblIdentificacion control.
@@ -158,22 +158,49 @@ Partial Public Class Clientes
     Protected WithEvents txtCorreo As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''cboProvincia control.
+    '''lblProvincias control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents cboProvincia As Global.System.Web.UI.HtmlControls.HtmlSelect
+    Protected WithEvents lblProvincias As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''cboCanton control.
+    '''cboProvincias control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents cboCanton As Global.System.Web.UI.HtmlControls.HtmlSelect
+    Protected WithEvents cboProvincias As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''lblCantones control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblCantones As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''cboCantones control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cboCantones As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''lblDistrito control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblDistrito As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''txtDistrito control.
@@ -183,6 +210,15 @@ Partial Public Class Clientes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtDistrito As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''lblDireccion control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblDireccion As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''txtDireccion control.
