@@ -1,4 +1,7 @@
-﻿Public Class Clientes
+﻿Imports System.IO
+Imports Negocios
+
+Public Class Clientes
     Inherits System.Web.UI.Page
     Dim shtValor As Short
     Dim iClientes As New Entidades.ClienteVeterinaria
@@ -152,6 +155,63 @@
         Me.txtDistrito.Text = ""
     End Sub
 
+    Protected Sub cboCantones_Load(sender As Object, e As EventArgs) Handles cboCantones.Load
+        Try
+            cboCantones.Items.Clear()
+
+            Dim URL As String = "C:\inetpub\wwwroot\VeterinariaElPezDorado\VeterinariaElPezDorado\ArchivosNecesarios\Cantones.xml"
+
+
+            If File.Exists(URL) Then
+                Dim ob_negocios As New ClientesNegocios
+                Dim arr_infoEnInterfaz As ArrayList = ob_negocios.LeerXMLCanton(URL)
+
+
+                For Each dato As String() In arr_infoEnInterfaz
+                    If (cboProvincias.SelectedIndex) + 1 = dato(2) Then
+                        Me.cboCantones.Items.Add(dato(0).ToString)
+                    End If
+
+
+                Next
+            Else
+                Throw New Exception
+            End If
+
+        Catch ex As Exception
+            Me.lblError.Visible = True
+            Me.lblMensajeError.Text = ex.Message
+        End Try
+    End Sub
+
+    Protected Sub cboCantones_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboCantones.SelectedIndexChanged
+        Try
+            cboCantones.Items.Clear()
+
+            Dim URL As String = "C:\inetpub\wwwroot\VeterinariaElPezDorado\VeterinariaElPezDorado\ArchivosNecesarios\Cantones.xml"
+
+
+            If File.Exists(URL) Then
+                Dim ob_negocios As New ClientesNegocios
+                Dim arr_infoEnInterfaz As ArrayList = ob_negocios.LeerXMLCanton(URL)
+
+
+                For Each dato As String() In arr_infoEnInterfaz
+                    If (cboProvincias.SelectedIndex) + 1 = dato(2) Then
+                        Me.cboCantones.Items.Add(dato(0).ToString)
+                    End If
+
+
+                Next
+            Else
+                Throw New Exception
+            End If
+
+        Catch ex As Exception
+            Me.lblError.Visible = True
+            Me.lblMensajeError.Text = ex.Message
+        End Try
+    End Sub
 
 
 End Class
