@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports Negocios
+Imports Entidades
 
 Public Class Clientes
     Inherits System.Web.UI.Page
@@ -30,15 +31,13 @@ Public Class Clientes
         Try
             Me.lblMensajeError.Visible = False
             shtValor = Me.mnSeleccion.SelectedValue
-            'comprueba primero que lo del html es correcto, trabaja con los validadores e la pg
+            'comprueba primero que lo del html es correcto, trabaja con los validadores en la pg
             If Page.IsValid Then
-                iClientes.mantenimiento(shtValor)
-                Select Case shtValor
-                    Case 1
-                        Dim iInfoCliente As New Entidades.ClienteVeterinaria With {
+
+                Dim iInfoCliente As New Entidades.ClienteVeterinaria With {
                     .IdentificacionCliente = Me.txtIdentificacion.Text,
                     .NombreCliente = Me.txtNombre.Text,
-                    .ApellidosCliente = Me.txtPrimerApellido.Text + " " + Me.txtSegundoApellido.Text,
+                    .ApellidosCliente = Me.txtApellidos.Text,
                     .Correoelectronico = Me.txtCorreo.Text,
                     .Telefono = CInt(IIf(String.IsNullOrEmpty(Me.txtTeléfono.Text.Trim), "0", Me.txtTeléfono.Text)),
                     .Direccion = New Entidades.Direccion With {
@@ -47,30 +46,21 @@ Public Class Clientes
                     .Distrito = Me.txtDistrito.Text,
                     .DireccionExacta = Me.txtDireccion.Text}}
 
-                        Dim objNegocios As New Negocios.ClientesNegocios
+
+                Dim objNegocios As New Negocios.ClientesNegocios
+
+                iClientes.mantenimiento(shtValor)
+                Select Case shtValor
+                    Case 1
                         objNegocios.RegistrarCliente(iInfoCliente)
 
                         ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se registro correctamente');", True)
                     Case 2
-                        Dim iInfoCliente As New Entidades.ClienteVeterinaria With {
-                    .IdentificacionCliente = Me.txtIdentificacion.Text,
-                    .NombreCliente = Me.txtNombre.Text,
-                    .ApellidosCliente = Me.txtPrimerApellido.Text + " " + Me.txtSegundoApellido.Text,
-                    .Correoelectronico = Me.txtCorreo.Text,
-                    .Telefono = CInt(IIf(String.IsNullOrEmpty(Me.txtTeléfono.Text.Trim), "0", Me.txtTeléfono.Text)),
-                    .Direccion = New Entidades.Direccion With {
-                    .Provincia = CStr(Me.cboProvincias.SelectedItem.Text),
-                    .Canton = CStr(Me.cboCantones.SelectedItem.Text),
-                    .Distrito = Me.txtDistrito.Text,
-                    .DireccionExacta = Me.txtDireccion.Text}}
-
-                        Dim objNegocios As New Negocios.ClientesNegocios
                         objNegocios.MOdificarCliente(iInfoCliente)
 
                         ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se modificó  correctamente');", True)
                     Case 3
-
-
+                        objNegocios.EliminarCliente(iInfoCliente)
 
                         ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se eliminó correctamente');", True)
                 End Select
@@ -110,7 +100,7 @@ Public Class Clientes
                     Me.txtIdentificacion.Text = iInfoCliente.IdentificacionCliente
                     Me.txtIdentificacion.ReadOnly = True
                     Me.txtNombre.Text = iInfoCliente.NombreCliente
-                    Me.txtPrimerApellido.Text = iInfoCliente.ApellidosCliente
+                    Me.txtApellidos.Text = iInfoCliente.ApellidosCliente
                     Me.txtCorreo.Text = iInfoCliente.Correoelectronico
                     Me.txtTeléfono.Text = iInfoCliente.Telefono
                     Me.txtDistrito.Text = iInfoCliente.Direccion.Distrito
@@ -173,10 +163,16 @@ Public Class Clientes
                     Me.txtIdentificacionConsulta.Visible = True
                     Me.btnConsultar.Visible = True
                     Me.btnMantenimientoCliente.Text = "Eliminar"
-                Case 4
-                    Me.txtIdentificacionConsulta.Visible = True
-                    Me.btnConsultar.Visible = True
                     Me.btnMantenimientoCliente.Visible = False
+
+                    Me.txtIdentificacion.ReadOnly = True
+                    Me.txtNombre.ReadOnly = True
+                    Me.txtApellidos.ReadOnly = True
+                    Me.txtCorreo.ReadOnly = True
+                    Me.txtTeléfono.ReadOnly = True
+                    Me.txtDistrito.ReadOnly = True
+                    Me.txtDireccion.ReadOnly = True
+
             End Select
 
         Catch ex As Exception
@@ -188,7 +184,7 @@ Public Class Clientes
 
     Protected Sub Limpiar()
         Me.txtNombre.Text = ""
-        Me.txtPrimerApellido.Text = ""
+        Me.txtApellidos.Text = ""
         Me.txtIdentificacion.Text = ""
         Me.txtCorreo.Text = ""
         Me.txtTeléfono.Text = ""

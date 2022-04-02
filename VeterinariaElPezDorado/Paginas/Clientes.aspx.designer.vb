@@ -68,40 +68,22 @@ Partial Public Class Clientes
     Protected WithEvents txtNombre As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''lblPrimerApellido control.
+    '''lblApellidos control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblPrimerApellido As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents lblApellidos As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''txtPrimerApellido control.
+    '''txtApellidos control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtPrimerApellido As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''lblSegundoApellido control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblSegundoApellido As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
-    '''<summary>
-    '''txtSegundoApellido control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtSegundoApellido As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtApellidos As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''lblIdentificacion control.
