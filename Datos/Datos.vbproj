@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="DatosClientes.vb" />
     <Compile Include="DatosSQL.vb" />
+    <Compile Include="DatosTipoMascotas.vb" />
     <Compile Include="DatosUsuarios.vb" />
     <Compile Include="DatosXML.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

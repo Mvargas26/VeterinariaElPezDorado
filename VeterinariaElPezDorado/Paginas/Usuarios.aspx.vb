@@ -20,15 +20,17 @@
 
     Protected Sub mnSeleccion_MenuItemClick(sender As Object, e As MenuEventArgs) Handles mnSeleccion.MenuItemClick
         Try
+            Me.limpiar()
             Me.btnMantenimientoUsuarios.Visible = True
             Me.divUsuarios.Visible = False
             Me.cboUsuarios.Visible = False
             Me.btnConsultar.Visible = False
+            Me.lblAccionMenu.Visible = False
+            Me.txtNombreUsuario.ReadOnly = False
+            Me.txtClaveUsuario.ReadOnly = False
             shtValor = Me.mnSeleccion.SelectedValue
             Select Case Me.mnSeleccion.SelectedValue
                 Case 1
-                    Me.txtNombreUsuario.Text = ""
-                    Me.txtClaveUsuario.Text = ""
                     Me.lblAccionMenu.Visible = False
                     Me.divUsuarios.Visible = True
                     Me.btnMantenimientoUsuarios.Text = "Registrar"
@@ -51,6 +53,8 @@
                     Me.btnMantenimientoUsuarios.Text = "Eliminar"
                     Me.lblAccionMenu.Visible = True
                     Me.lblAccionMenu.Text = "Eliminar"
+                    Me.txtNombreUsuario.ReadOnly = True
+                    Me.txtClaveUsuario.ReadOnly = True
 
                     Me.cboUsuarios.Items.Clear()
                     Me.cboUsuarios.DataSource = iConsultaUsuario.consultarUsuarios
@@ -63,6 +67,8 @@
                     Me.btnMantenimientoUsuarios.Visible = False
                     Me.lblAccionMenu.Visible = True
                     Me.lblAccionMenu.Text = "Consultar"
+                    Me.txtNombreUsuario.ReadOnly = True
+                    Me.txtClaveUsuario.ReadOnly = True
 
                     Me.cboUsuarios.Items.Clear()
                     Me.cboUsuarios.DataSource = iConsultaUsuario.consultarUsuarios
@@ -87,6 +93,7 @@
                 Me.txtNombreUsuario.Text = dtUsuario.Rows(0)(1)
                 Me.txtClaveUsuario.Text = dtUsuario.Rows(0)(2)
                 Me.divUsuarios.Visible = True
+
             End If
 
         Catch ex As Exception
@@ -101,8 +108,6 @@
         Try
             Me.lblMensajeError.Visible = False
             shtValor = Me.mnSeleccion.SelectedValue
-            Me.txtNombreUsuario.ReadOnly = True
-            Me.txtClaveUsuario.ReadOnly = True
             If Page.IsValid Then
                 Select Case shtValor
                     Case 1
@@ -120,6 +125,8 @@
                         iUsuarioNegocio.grabarUsuarios(shtValor, iUsuario)
                         ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se modificó correctamente');", True)
                     Case 3
+                        Me.txtNombreUsuario.ReadOnly = True
+                        Me.txtClaveUsuario.ReadOnly = True
                         Dim iUsuario As New Entidades.Usuarios
                         iUsuario.Usuarios(txtNombreUsuario.Text, txtClaveUsuario.Text)
                         iUsuario.CodUsuario = cboUsuarios.SelectedValue
