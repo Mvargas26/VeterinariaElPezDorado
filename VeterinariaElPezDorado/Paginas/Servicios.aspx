@@ -5,9 +5,9 @@
         <asp:Menu ID="mnSeleccion" runat="server" Font-Size="20pt" BorderWidth="60px" BorderColor="#FFFFFF">
             <Items>
                 <asp:MenuItem Text="Menú Servicios" Value=0>
-                    <asp:MenuItem Text="Registrar" Value=1></asp:MenuItem>
-                    <asp:MenuItem Text="Eliminar" Value=2></asp:MenuItem>
-                    <asp:MenuItem Text="Modificar" Value=3></asp:MenuItem>
+                    <asp:MenuItem Text="Registrar" Value=1></asp:MenuItem>                    
+                    <asp:MenuItem Text="Modificar" Value=2></asp:MenuItem>
+                    <asp:MenuItem Text="Eliminar" Value=3></asp:MenuItem>
                     <asp:MenuItem Text="Consultar" Value=4></asp:MenuItem>
                 </asp:MenuItem>
             </Items>
@@ -23,7 +23,7 @@
         <div class="form-row">
             <div class="col-md-4 mb-3">
                 <label for="txtNombreServicio">Nombre del servicio</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtNombreServicio" placeholder="Nombre del Servicio" required="required" pattern="[A-Za-z]{1,40}"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtNombreServicio" placeholder="Nombre del Servicio" required="required" pattern="[A-Za-záéíóúÁÉÍÓÚ]{1,40}"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique un nombre valido. 
                 </div>

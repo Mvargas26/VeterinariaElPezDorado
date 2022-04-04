@@ -6,8 +6,18 @@
     Private flImpuesto As Decimal
 
 #End Region
+
+#Region "Constructor"
+    Public Sub Servicios(codServicios As Short, nombreServicio As String, costo As Integer, impuesto As Decimal)
+        Me.codServicios = codServicios
+        Me.nombreServicio = nombreServicio
+        Me.Costo = costo
+        Me.Impuesto = impuesto
+    End Sub
+
+#End Region
 #Region "Properties"
-    Public Property ShtcodServicios1 As Short
+    Public Property codServicios As Short
         Get
             Return shtcodServicios
         End Get
@@ -16,7 +26,7 @@
         End Set
     End Property
 
-    Public Property StrnombreServicio1 As String
+    Public Property nombreServicio As String
         Get
             Return strnombreServicio
         End Get
@@ -25,7 +35,7 @@
         End Set
     End Property
 
-    Public Property IntCosto1 As Integer
+    Public Property Costo As Integer
         Get
             Return intCosto
         End Get
@@ -34,7 +44,7 @@
         End Set
     End Property
 
-    Public Property FlImpuesto1 As Decimal
+    Public Property Impuesto As Decimal
         Get
             Return flImpuesto
         End Get

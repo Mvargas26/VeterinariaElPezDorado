@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatosClientes.vb" />
+    <Compile Include="DatosServicios.vb" />
     <Compile Include="DatosSQL.vb" />
     <Compile Include="DatosTipoMascotas.vb" />
     <Compile Include="DatosUsuarios.vb" />

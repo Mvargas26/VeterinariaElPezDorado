@@ -1,12 +1,13 @@
 ﻿Public Class Servicios
     Inherits System.Web.UI.Page
     Dim shtValor As Short
+    Dim iServicio As New Negocios.ServiciosNegocios
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
             Me.lblError.Visible = False
-            Me.cboServicios.Items.Clear()
-            Me.cboServicios.Items.Add("Peluqueria")
-            Me.cboServicios.Items.Add("Revisión médica")
+            'Me.cboServicios.Items.Clear()
+            'Me.cboServicios.Items.Add("Peluqueria")
+            'Me.cboServicios.Items.Add("Revisión médica")
 
             Dim iUsuario As Entidades.Usuarios = CType(Session("UsuarioLogueado"), Entidades.Usuarios)
 
@@ -37,21 +38,28 @@
                 Case 2
                     Me.cboServicios.Visible = True
                     Me.btnConsultar.Visible = True
-                    Me.btnMantenimientoServicios.Text = "Eliminar"
-                    Me.lblAccionMenu.Visible = True
-                    Me.lblAccionMenu.Text = "Eliminar"
-                Case 3
-                    Me.cboServicios.Visible = True
-                    Me.btnConsultar.Visible = True
                     Me.btnMantenimientoServicios.Text = "Modificar"
                     Me.lblAccionMenu.Visible = True
                     Me.lblAccionMenu.Text = "Modificar"
+
+                    Me.cargarDatos()
+                Case 3
+                    Me.cboServicios.Visible = True
+                    Me.btnConsultar.Visible = True
+                    Me.btnMantenimientoServicios.Text = "Eliminar"
+                    Me.lblAccionMenu.Visible = True
+                    Me.lblAccionMenu.Text = "Eliminar"
+
+
+                    Me.cargarDatos()
                 Case 4
                     Me.cboServicios.Visible = True
                     Me.btnConsultar.Visible = True
                     Me.btnMantenimientoServicios.Visible = False
                     Me.lblAccionMenu.Visible = True
                     Me.lblAccionMenu.Text = "Consultar"
+
+                    Me.cargarDatos()
             End Select
 
         Catch ex As Exception
@@ -70,12 +78,12 @@
         Try
 
             If Page.IsValid Then
-
+                Dim dtServicio As DataTable = iServicio.consultarServicios(cboServicios.SelectedValue)
                 Me.btnConsultar.Visible = False
                 Me.cboServicios.Visible = False
-                Me.txtNombreServicio.Text = Me.cboServicios.Text
-                Me.txtCosto.Text = 2500
-                Me.txtPorcentajeImpuesto.Text = 10
+                Me.txtNombreServicio.Text = dtServicio.Rows(0)(1)
+                Me.txtCosto.Text = dtServicio.Rows(0)(2)
+                Me.txtPorcentajeImpuesto.Text = dtServicio.Rows(0)(3)
                 Me.divServicios.Visible = True
             End If
 
@@ -92,11 +100,23 @@
             If Page.IsValid Then
                 Select Case shtValor
                     Case 1
+                        Dim eServicios As New Entidades.Servicios
+                        eServicios.Servicios(0, txtNombreServicio.Text, txtCosto.Text, txtPorcentajeImpuesto.Text)
+                        iServicio.grabarServicios(shtValor, eServicios)
+
                         ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se registro correctamente');", True)
                     Case 2
-                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se eliminó correctamente');", True)
-                    Case 3
+                        Dim eServicios As New Entidades.Servicios
+                        eServicios.Servicios(cboServicios.SelectedValue, txtNombreServicio.Text, txtCosto.Text, txtPorcentajeImpuesto.Text)
+                        iServicio.grabarServicios(shtValor, eServicios)
+
                         ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se modificó correctamente');", True)
+                    Case 3
+                        Dim eServicios As New Entidades.Servicios
+                        eServicios.Servicios(cboServicios.SelectedValue, txtNombreServicio.Text, txtCosto.Text, txtPorcentajeImpuesto.Text)
+                        iServicio.grabarServicios(shtValor, eServicios)
+
+                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se eliminó correctamente');", True)
                 End Select
             End If
 
@@ -106,5 +126,13 @@
             Me.lblError.Visible = True
             Me.lblMensajeError.Text = ex.Message
         End Try
+    End Sub
+
+    Protected Sub cargarDatos()
+        Me.cboServicios.Items.Clear()
+        Me.cboServicios.DataSource = iServicio.consultarServicios
+        Me.cboServicios.DataTextField = "nombre_servicio"
+        Me.cboServicios.DataValueField = "cod_servicios"
+        Me.DataBind()
     End Sub
 End Class

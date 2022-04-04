@@ -30,7 +30,7 @@
             </div>
             <div class="col-md-8 mb-3">
                 <label for="txtClaveUsuario">Clave del usuario</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtClaveUsuario" placeholder="Calve del usuario" pattern="[.]{0,1}+[0-9]+" required="required"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtClaveUsuario" placeholder="Clave del usuario" pattern="[0-9A-Za-z]+" required="required"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique el costo del servicio.
                 </div>

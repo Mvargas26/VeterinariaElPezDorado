@@ -81,6 +81,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="seguridad.vb" />
+    <Compile Include="ServiciosNegocios.vb" />
     <Compile Include="TipoMascotaNegocios.vb" />
     <Compile Include="UsuariosNegocios.vb" />
   </ItemGroup>
