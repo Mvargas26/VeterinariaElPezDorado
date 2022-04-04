@@ -3,7 +3,16 @@
 #Region "variables"
     Private strUsuario As String
     Private strPassword As String
+    Private shtCodUsuario As Short
     Private blnCredencialValida As Boolean = False
+#End Region
+
+#Region "Constructor"
+    Public Sub Usuarios(strUsuario As String, strPassword As String)
+        Me.strUsuario = strUsuario
+        Me.strPassword = strPassword
+    End Sub
+
 #End Region
 
 #Region "Properties"
@@ -31,6 +40,15 @@
         End Get
         Set(value As Boolean)
             blnCredencialValida = value
+        End Set
+    End Property
+
+    Public Property CodUsuario As Short
+        Get
+            Return shtCodUsuario
+        End Get
+        Set(value As Short)
+            shtCodUsuario = value
         End Set
     End Property
 

@@ -1,12 +1,10 @@
 ﻿Public Class Usuarios
     Inherits System.Web.UI.Page
     Dim shtValor As Short
+    Dim iConsultaUsuario As New Negocios.UsuariosNegocios
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
             Me.lblError.Visible = False
-            Me.cboUsuarios.Items.Clear()
-            Me.cboUsuarios.Items.Add("admin")
-
             Dim iUsuario As Entidades.Usuarios = CType(Session("UsuarioLogueado"), Entidades.Usuarios)
 
             If iUsuario Is Nothing Then
@@ -29,6 +27,8 @@
             shtValor = Me.mnSeleccion.SelectedValue
             Select Case Me.mnSeleccion.SelectedValue
                 Case 1
+                    Me.txtNombreUsuario.Text = ""
+                    Me.txtClaveUsuario.Text = ""
                     Me.lblAccionMenu.Visible = False
                     Me.divUsuarios.Visible = True
                     Me.btnMantenimientoUsuarios.Text = "Registrar"
@@ -36,21 +36,39 @@
                 Case 2
                     Me.cboUsuarios.Visible = True
                     Me.btnConsultar.Visible = True
-                    Me.btnMantenimientoUsuarios.Text = "Eliminar"
-                    Me.lblAccionMenu.Visible = True
-                    Me.lblAccionMenu.Text = "Eliminar"
-                Case 3
-                    Me.cboUsuarios.Visible = True
-                    Me.btnConsultar.Visible = True
                     Me.btnMantenimientoUsuarios.Text = "Modificar"
                     Me.lblAccionMenu.Visible = True
                     Me.lblAccionMenu.Text = "Modificar"
+
+                    Me.cboUsuarios.Items.Clear()
+                    Me.cboUsuarios.DataSource = iConsultaUsuario.consultarUsuarios
+                    Me.cboUsuarios.DataTextField = "nombre_usuario"
+                    Me.cboUsuarios.DataValueField = "cod_usuario"
+                    Me.DataBind()
+                Case 3
+                    Me.cboUsuarios.Visible = True
+                    Me.btnConsultar.Visible = True
+                    Me.btnMantenimientoUsuarios.Text = "Eliminar"
+                    Me.lblAccionMenu.Visible = True
+                    Me.lblAccionMenu.Text = "Eliminar"
+
+                    Me.cboUsuarios.Items.Clear()
+                    Me.cboUsuarios.DataSource = iConsultaUsuario.consultarUsuarios
+                    Me.cboUsuarios.DataTextField = "nombre_usuario"
+                    Me.cboUsuarios.DataValueField = "cod_usuario"
+                    Me.DataBind()
                 Case 4
                     Me.cboUsuarios.Visible = True
                     Me.btnConsultar.Visible = True
                     Me.btnMantenimientoUsuarios.Visible = False
                     Me.lblAccionMenu.Visible = True
                     Me.lblAccionMenu.Text = "Consultar"
+
+                    Me.cboUsuarios.Items.Clear()
+                    Me.cboUsuarios.DataSource = iConsultaUsuario.consultarUsuarios
+                    Me.cboUsuarios.DataTextField = "nombre_usuario"
+                    Me.cboUsuarios.DataValueField = "cod_usuario"
+                    Me.DataBind()
             End Select
 
         Catch ex As Exception
@@ -63,10 +81,11 @@
         Try
 
             If Page.IsValid Then
+                Dim dtUsuario As DataTable = iConsultaUsuario.consultarUsuarios(cboUsuarios.SelectedValue)
                 Me.btnConsultar.Visible = False
                 Me.cboUsuarios.Visible = False
-                Me.txtNombreUsuario.Text = Me.cboUsuarios.Text
-                Me.txtClaveUsuario.Text = "admin"
+                Me.txtNombreUsuario.Text = dtUsuario.Rows(0)(1)
+                Me.txtClaveUsuario.Text = dtUsuario.Rows(0)(2)
                 Me.divUsuarios.Visible = True
             End If
 
@@ -82,14 +101,31 @@
         Try
             Me.lblMensajeError.Visible = False
             shtValor = Me.mnSeleccion.SelectedValue
+            Me.txtNombreUsuario.ReadOnly = True
+            Me.txtClaveUsuario.ReadOnly = True
             If Page.IsValid Then
                 Select Case shtValor
                     Case 1
+                        Dim iUsuario As New Entidades.Usuarios
+                        iUsuario.Usuarios(txtNombreUsuario.Text, txtClaveUsuario.Text)
+                        iUsuario.CodUsuario = 0
+                        Dim iUsuarioNegocio As New Negocios.UsuariosNegocios
+                        iUsuarioNegocio.grabarUsuarios(shtValor, iUsuario)
                         ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se registro correctamente');", True)
                     Case 2
-                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se eliminó correctamente');", True)
-                    Case 3
+                        Dim iUsuario As New Entidades.Usuarios
+                        iUsuario.Usuarios(txtNombreUsuario.Text, txtClaveUsuario.Text)
+                        iUsuario.CodUsuario = cboUsuarios.SelectedValue
+                        Dim iUsuarioNegocio As New Negocios.UsuariosNegocios
+                        iUsuarioNegocio.grabarUsuarios(shtValor, iUsuario)
                         ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se modificó correctamente');", True)
+                    Case 3
+                        Dim iUsuario As New Entidades.Usuarios
+                        iUsuario.Usuarios(txtNombreUsuario.Text, txtClaveUsuario.Text)
+                        iUsuario.CodUsuario = cboUsuarios.SelectedValue
+                        Dim iUsuarioNegocio As New Negocios.UsuariosNegocios
+                        iUsuarioNegocio.grabarUsuarios(shtValor, iUsuario)
+                        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se eliminó correctamente');", True)
                 End Select
             End If
 
@@ -105,6 +141,8 @@
     Protected Sub limpiar()
         Me.txtClaveUsuario.Text = ""
         Me.txtNombreUsuario.Text = ""
+        Me.txtNombreUsuario.ReadOnly = False
+        Me.txtClaveUsuario.ReadOnly = False
     End Sub
 
 End Class

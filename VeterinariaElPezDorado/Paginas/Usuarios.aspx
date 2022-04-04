@@ -5,9 +5,9 @@
         <asp:Menu ID="mnSeleccion" runat="server" Font-Size="20pt" BorderWidth="60px" BorderColor="#FFFFFF">
             <Items>
                 <asp:MenuItem Text="Menú Usuarios" Value=0>
-                    <asp:MenuItem Text="Registrar" Value=1></asp:MenuItem>
-                    <asp:MenuItem Text="Eliminar" Value=2></asp:MenuItem>
-                    <asp:MenuItem Text="Modificar" Value=3></asp:MenuItem>
+                    <asp:MenuItem Text="Registrar" Value=1></asp:MenuItem>                    
+                    <asp:MenuItem Text="Modificar" Value=2></asp:MenuItem>
+                    <asp:MenuItem Text="Eliminar" Value=3></asp:MenuItem>
                     <asp:MenuItem Text="Consultar" Value=4></asp:MenuItem>
                 </asp:MenuItem>
             </Items>

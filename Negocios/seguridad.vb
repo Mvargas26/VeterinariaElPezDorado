@@ -5,7 +5,7 @@
             iUsuario.Usuario = strUsuario
             iUsuario.Password = strPassword
             Dim iDatos As New Datos.DatosUsuarios
-            Dim dtUsuario As DataTable = iDatos.buscarUsuario(iUsuario)
+            Dim dtUsuario As DataTable = iDatos.buscarUsuarioSesion(iUsuario)
             If dtUsuario.Rows.Count <> 0 Then
                 iUsuario.CredencialValida = True
             End If
