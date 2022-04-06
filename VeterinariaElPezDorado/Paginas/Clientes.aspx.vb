@@ -192,7 +192,7 @@ Public Class Clientes
         Me.txtDistrito.Text = ""
     End Sub
 
-    Protected Sub cboCantones_Load(sender As Object, e As EventArgs) Handles cboCantones.Load
+    Protected Sub cboProvincias_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboProvincias.SelectedIndexChanged
         Try
             cboCantones.Items.Clear()
 
@@ -220,37 +220,6 @@ Public Class Clientes
             Me.lblMensajeError.Text = ex.Message
         End Try
     End Sub
-
-    Protected Sub cboCantones_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboCantones.SelectedIndexChanged
-        Try
-            cboCantones.Items.Clear()
-
-            Dim URL As String = "C:\inetpub\wwwroot\VeterinariaElPezDorado\VeterinariaElPezDorado\ArchivosNecesarios\Cantones.xml"
-
-
-            If File.Exists(URL) Then
-                Dim ob_negocios As New ClientesNegocios
-                Dim arr_infoEnInterfaz As ArrayList = ob_negocios.LeerXMLCanton(URL)
-
-
-                For Each dato As String() In arr_infoEnInterfaz
-                    If (cboProvincias.SelectedIndex) + 1 = dato(2) Then
-                        Me.cboCantones.Items.Add(dato(0).ToString)
-                    End If
-
-
-                Next
-            Else
-                Throw New Exception
-            End If
-
-        Catch ex As Exception
-            Me.lblError.Visible = True
-            Me.lblMensajeError.Text = ex.Message
-        End Try
-    End Sub
-
-
 End Class
 'viewSate(" ") es el tipo de variables que nos permite guardar info en memoria para pasarlo a otro metodo o clase (vd 3 min 1:24)
 'nota:esta info viaja en la pag
