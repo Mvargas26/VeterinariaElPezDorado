@@ -10,6 +10,8 @@ Public Class Clientes
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
             Me.lblError.Visible = False
+            Me.btnMantenimientoCliente.Visible = False
+
             Dim iUsuario As Entidades.Usuarios = CType(Session("UsuarioLogueado"), Entidades.Usuarios)
 
             If iUsuario Is Nothing Then
@@ -111,22 +113,6 @@ Public Class Clientes
                 Me.txtIdentificacionConsulta.Visible = False
                 Me.btnConsultar.Visible = False
 
-                'Me.btnConsultar.Visible = False
-                'Me.txtIdentificacionConsulta.Visible = False
-                'Dim strId As String = Me.txtIdentificacionConsulta.Text
-                'iClientes.consultarCliente(CStr(strId))
-                'txtNombre.Text = iClientes.NombreCliente
-                'txtPrimerApellido.Text = iClientes.ApellidosCliente
-                'txtIdentificacion.Text = iClientes.IdentificacionCliente
-                'txtCorreo.Text = iClientes.Correoelectronico
-                'txtTeléfono.Text = iClientes.Telefono
-                ''cboProvincia.SelectedIndex = 1
-                ''cboCanton.SelectedIndex = 1
-                'txtDireccion.Text = iClientes.Direccion.DireccionExacta
-
-
-                'Me.Cliente.Visible = True
-
             End If
 
         Catch ex As Exception
@@ -144,7 +130,7 @@ Public Class Clientes
     Protected Sub mnSeleccion_MenuItemClick(sender As Object, e As MenuEventArgs) Handles mnSeleccion.MenuItemClick
         Try
             Me.Limpiar()
-            Me.btnMantenimientoCliente.Visible = True
+            Me.btnMantenimientoCliente.Visible = False
             Me.Cliente.Visible = False
             Me.txtIdentificacionConsulta.Visible = False
             Me.btnConsultar.Visible = False
@@ -153,6 +139,7 @@ Public Class Clientes
                 Case 1
                     Me.Cliente.Visible = True
                     Me.btnMantenimientoCliente.Text = "Registrar"
+                    Me.btnMantenimientoCliente.Visible = True
 
                 Case 2
                     Me.txtIdentificacionConsulta.Visible = True
