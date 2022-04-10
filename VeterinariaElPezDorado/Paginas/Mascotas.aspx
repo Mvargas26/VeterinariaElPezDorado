@@ -9,7 +9,6 @@
                     <asp:MenuItem Text="Registrar" Value=1></asp:MenuItem>
                     <asp:MenuItem Text="Eliminar" Value=3></asp:MenuItem>
                     <asp:MenuItem Text="Modificar" Value=2></asp:MenuItem>
-                    <asp:MenuItem Text="Consultar" Value=4></asp:MenuItem>
                 </asp:MenuItem>
             </Items>
         </asp:Menu>
@@ -52,19 +51,15 @@
                     Indique el nombre de la mascota (Indique solamente letras)
                 </div>
             </div>
-
-            <div class="col-md-4 mb-3">
-                <label runat="server" id="lblTipoMascota" for="cboTipoMascota">Tipo de mascota</label>                
-                    <asp:DropDownList ID="cboTipoMascota" runat="server" Width=200px CssClass=" form-control">
-                        <asp:ListItem Text="Tortuga" Value=1>Tortuga</asp:ListItem>
-                        <asp:ListItem Text="Pez" Value=2>Pez</asp:ListItem>
-                        <asp:ListItem Text="Conejo" Value=3>Conejo</asp:ListItem>
-                        <asp:ListItem Text="Ave" Value=4>Ave</asp:ListItem>
-                        <asp:ListItem Text="Perro" Value=5>Perro</asp:ListItem>
-                        <asp:ListItem Text="Gato" Value=6>Gato</asp:ListItem>
-                        <asp:ListItem Text="Ratón" Value=7>Ratón</asp:ListItem>
+            
+             <!-- cboTipomascotas -->
+         <div class="col-md-4 mb-3">
+                <label runat="server" id="lblTipoMascota" for="cboTipoMascotas">Tipo de mascota</label>                
+                    <asp:DropDownList ID="cboTipoMascotas" runat="server" Width=200px CssClass=" form-control" AutoPostBack="True">
+                        <asp:ListItem Text="Seleccione" Value=1>Selecione</asp:ListItem>
                 </asp:DropDownList>
             </div>
+
         </div>
 
         <div class="form-row">

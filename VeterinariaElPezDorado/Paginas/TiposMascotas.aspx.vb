@@ -5,14 +5,6 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
             Me.lblError.Visible = False
-            'Me.cboTipoMascotas.Items.Clear()
-            'Me.cboTipoMascotas.Items.Add("Tortuga")
-            'Me.cboTipoMascotas.Items.Add("Pez")
-            'Me.cboTipoMascotas.Items.Add("Conejo")
-            'Me.cboTipoMascotas.Items.Add("Ave")
-            'Me.cboTipoMascotas.Items.Add("Perro")
-            'Me.cboTipoMascotas.Items.Add("Gato")
-            'Me.cboTipoMascotas.Items.Add("Ratón")
 
             Dim iUsuario As Entidades.Usuarios = CType(Session("UsuarioLogueado"), Entidades.Usuarios)
 

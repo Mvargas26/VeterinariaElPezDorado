@@ -13,6 +13,10 @@ Public Class Mascotas
                 FormsAuthentication.RedirectToLoginPage()
             End If
 
+            'cargamos los tipos de mascotas en el combo
+            cargarDatos()
+
+
         Catch ex As Exception
             'envio a la pag de error porque hubo problemas cuando apenas se estaba construyendo
             Session("Error") = ex
@@ -61,11 +65,7 @@ Public Class Mascotas
                     Me.txtRaza.ReadOnly = True
                     Me.txtEstadoSalud.ReadOnly = True
                     Me.txtFechaNacimiento.ReadOnly = True
-                Case 4
-                    Me.txtIdentificacionConsultaCliente.Visible = True
-                    Me.txtIndentificacionMascotaAConsultar.Visible = True
-                    Me.btnConsultar.Visible = True
-                    Me.btnMantenimientoMascotas.Visible = False
+
             End Select
 
         Catch ex As Exception
@@ -77,7 +77,6 @@ Public Class Mascotas
     Protected Sub btnConsultar_Click(sender As Object, e As EventArgs) Handles btnConsultar.Click
         Try
             If Page.IsValid Then
-
 
                 Me.btnConsultar.Visible = False
                 Me.txtIdentificacionConsultaCliente.Visible = False
@@ -99,7 +98,7 @@ Public Class Mascotas
                         Me.txtidentificacionDueno.Text = iInfoMascotas.IdentificacionDueno.IdentificacionCliente
                         Me.txtidentificacionMascota.Text = iInfoMascotas.CodigoMascota
                         Me.txtNombreMascota.Text = iInfoMascotas.NombreMascota
-
+                        Me.cboTipoMascotas.DataValueField = iInfoMascotas.TipoMascota
                         Me.txtPeso.Text = iInfoMascotas.Peso
                         Me.txtRaza.Text = iInfoMascotas.Raza
                         Me.txtEstadoSalud.Text = iInfoMascotas.EstadoSalud
@@ -144,7 +143,7 @@ Public Class Mascotas
                 .IdentificacionDueno = New Entidades.ClienteVeterinaria With {.IdentificacionCliente = CStr(Me.txtidentificacionDueno.Text)},
                 .CodigoMascota = CInt(Me.txtidentificacionMascota.Text),
                 .NombreMascota = CStr(Me.txtNombreMascota.Text),
-                .TipoMascota = CShort(Me.cboTipoMascota.SelectedValue),
+                .TipoMascota = CShort(Me.cboTipoMascotas.SelectedValue),
                 .Peso = CInt(Me.txtPeso.Text),
                 .Raza = CStr(Me.txtRaza.Text),
                 .EstadoSalud = CStr(Me.txtEstadoSalud.Text),
@@ -203,7 +202,6 @@ Public Class Mascotas
             strCedulaAConsultar = Me.txtidentificacionDueno.Text
         End If
 
-        'objeto de negocios con la info de los clientes
         Dim objNegocios As New ClientesNegocios
         Dim dtClientes As DataTable = objNegocios.ConsultarClientes
 
@@ -216,6 +214,14 @@ Public Class Mascotas
         Return False
     End Function
 
+    Protected Sub cargarDatos()
+        Dim iTipoMascota As New Negocios.TipoMascotaNegocios
+        Me.cboTipoMascotas.Items.Clear()
+        Me.cboTipoMascotas.DataSource = iTipoMascota.consultarTipoMascota
+        Me.cboTipoMascotas.DataTextField = "nombre_tipo_mascota"
+        Me.cboTipoMascotas.DataValueField = "cod_tipo"
+        Me.DataBind()
+    End Sub
 #End Region
 
 
