@@ -11,7 +11,7 @@ Public Class DatosMascotas
                 If paramIdentificacionDueno <> "-1" And paramIdentificacionMascota <> "-1" Then ' si es diferente a -1 , utiliza el filtro, osea agregueme el where 
                     .Append(" WHERE identificacion_dueno = ")
                     .Append(paramIdentificacionDueno)
-                    .Append("and")
+                    .Append(" and ")
                     .Append("identificacion_mascotas= ")
                     .Append(paramIdentificacionMascota)
                 End If

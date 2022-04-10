@@ -13,20 +13,35 @@
                 </asp:MenuItem>
             </Items>
         </asp:Menu>
-        <asp:TextBox ID="txtIdentificacionConsulta" class="form-control" runat="server" Visible="false" placeholder="Identificación" required="required" minlength="8" MaxLength="12"></asp:TextBox>
+
+        <asp:TextBox ID="txtIdentificacionConsultaCliente" class="form-control" runat="server" Visible="false" placeholder="Identificación Dueño a Consultar" required="required" minlength="8" MaxLength="12"></asp:TextBox>
+        <asp:TextBox ID="txtIndentificacionMascotaAConsultar" class="form-control" runat ="server" Visible="false" placeholder="Identificación Mascota a Consultar" required="required"  minlength="1" ></asp:TextBox>
         <asp:Button ID="btnConsultar" runat="server" Visible="false" Text="Continuar" BorderWidth="20px" BorderColor="#FFFFFF" CssClass="btn btn-info"/>
         <div class="invalid-feedback">
-            Indique la cédula del dueño de la mascota (mínimo 8 digitos)
+            Indique la cédula del dueño de la mascota (mínimo 8 digitos) /
+            Indique el numero de Mascota para este Dueño
         </div>
+
+
     </div>
     <%-- Pantalla de los datos --%>
     <div id="Mascotas" runat="server" visible="false">
-        <div class="form-row">
-            <div class="col-md-4 mb-3">
-                <label runat="server" id="lblIdentificacionDueno" for="txtidentificacionDueno">Identificación dueño</label>
+           <div class="form-row">
+                <div class="col-md-4 mb-3">
+                <label runat="server" id="Label1" for="txtidentificacionDueno">Identificación dueño</label>
                 <asp:TextBox ID="txtidentificacionDueno" runat="server" class="form-control" placeholder="Identificación Dueño" required="required" pattern="[A-Za-z0-9]{5,40}+"></asp:TextBox>
                 <div class="invalid-feedback">
                     Por favor indique la identificación del cliente
+                </div>
+              </div>
+            </div>   <%--Cierra row de identificacion cliente --%>
+
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label runat="server" id="lblIdentificacionMascota" for="txtidentificacionMascota">Identificación Mascota</label>
+                <asp:TextBox ID="txtidentificacionMascota" runat="server" class="form-control" placeholder="Identificación Mascota" required="required" pattern="[A-Za-z0-9]{5,40}+"></asp:TextBox>
+                <div class="invalid-feedback">
+                    Por favor indique la identificación de la Mascota
                 </div>
             </div>
 
@@ -51,6 +66,7 @@
                 </asp:DropDownList>
             </div>
         </div>
+
         <div class="form-row">
             <div class="col-md-4 mb-3">
                 <label runat="server" id="lblRaza" for="txtRaza">Raza</label>

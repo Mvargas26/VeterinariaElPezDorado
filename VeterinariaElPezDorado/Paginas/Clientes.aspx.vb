@@ -135,6 +135,7 @@ Public Class Clientes
             Me.txtIdentificacionConsulta.Visible = False
             Me.btnConsultar.Visible = False
             shtValor = Me.mnSeleccion.SelectedValue
+
             Select Case Me.mnSeleccion.SelectedValue
                 Case 1
                     Me.Cliente.Visible = True

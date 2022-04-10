@@ -23,13 +23,22 @@ Partial Public Class Mascotas
     Protected WithEvents mnSeleccion As Global.System.Web.UI.WebControls.Menu
 
     '''<summary>
-    '''txtIdentificacionConsulta control.
+    '''txtIdentificacionConsultaCliente control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtIdentificacionConsulta As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtIdentificacionConsultaCliente As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtIndentificacionMascotaAConsultar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtIndentificacionMascotaAConsultar As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''btnConsultar control.
@@ -50,13 +59,13 @@ Partial Public Class Mascotas
     Protected WithEvents Mascotas As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''lblIdentificacionDueno control.
+    '''Label1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblIdentificacionDueno As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents Label1 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''txtidentificacionDueno control.
@@ -66,6 +75,24 @@ Partial Public Class Mascotas
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtidentificacionDueno As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''lblIdentificacionMascota control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblIdentificacionMascota As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''txtidentificacionMascota control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtidentificacionMascota As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''lblNombreMascota control.

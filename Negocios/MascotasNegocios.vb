@@ -28,7 +28,7 @@ Public Class MascotasNegocios
                 If dtMascotas.Rows.Count > 0 Then
 
                     iInfoMascota = New Mascotas With {
-                       .IdentificacionDueno = New ClienteVeterinaria With {.IdentificacionCliente = CStr(drMascotas(" identificacion_dueno"))},
+                       .IdentificacionDueno = New ClienteVeterinaria With {.IdentificacionCliente = CStr(drMascotas("identificacion_dueno"))},
                     .CodigoMascota = CInt(drMascotas("identificacion_mascotas")),
                     .NombreMascota = CStr(drMascotas("nombre_mascota")),
                     .TipoMascota = CShort(drMascotas("cod_tipo")),
