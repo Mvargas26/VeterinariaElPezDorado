@@ -85,7 +85,7 @@
 
             <div class="col-md-4 mb-3">
                 <label runat="server" id="lblEstadoSalud" for="txtEstadoSalud">Estado de salud</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtEstadoSalud" placeholder="Descripción del estado de salud." required="required" pattern="[A-Za-z0-9]{5,40}"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtEstadoSalud" placeholder="Descripción del estado de salud." required="required" pattern="[A-Za-z0-9]"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique el estado de salud de la mascota (Máximo 40 caracteres).
                 </div>

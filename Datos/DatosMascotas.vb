@@ -30,5 +30,35 @@ Public Class DatosMascotas
     End Function
 
 
+#Region "Manejo de Procedimientos almacenados en DatosMascotas"
+    Public Sub GrabarMascotaEnDatos(Accion As Entidades.Enumeradores.Accion, Mascota As Entidades.Mascotas)
+        Try
+            Dim strNombreSP As String = "SP_Mascotas"
+
+            'lista parametros q se va mandar a datos
+            Dim lstParametros As New List(Of SqlParameter) From {
+            New SqlParameter("@accion", CShort(Accion)),
+            New SqlParameter("@identificacionDueno", Mascota.IdentificacionDueno.IdentificacionCliente),
+            New SqlParameter("@identificacionMascota", Mascota.CodigoMascota),
+            New SqlParameter("@nombreMAscota", Mascota.NombreMascota),
+            New SqlParameter("@codTipo", Mascota.TipoMascota),
+            New SqlParameter("@raza", Mascota.Raza),
+            New SqlParameter("@peso", Mascota.Peso),
+            New SqlParameter("@estadoSalud", Mascota.EstadoSalud),
+            New SqlParameter("@fechaNacimineto", Mascota.FechaNacimiento)
+            }
+
+            'objeto q ejecuta el procedimineto SP
+            Dim objDatosSQL As New DatosSQL
+
+            objDatosSQL.ExecuteSP(strNombreSP, lstParametros)
+
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+#End Region
 
 End Class

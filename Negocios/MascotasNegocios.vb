@@ -51,4 +51,26 @@ Public Class MascotasNegocios
 
     End Function
 
+
+
+#Region "Manejo Procedimientos almacenados Registrar,Modificar,Eliminar en MAscotasNegocios"
+
+    Private Sub MantenimientoMascotas(Accion As Entidades.Enumeradores.Accion, Mascota As Entidades.Mascotas)
+        Dim objMascotasDatos As New Datos.DatosMascotas
+        objMascotasDatos.GrabarMascotaEnDatos(Accion, Mascota)
+    End Sub
+
+
+    Public Sub RegistrarMascota(Mascota As Entidades.Mascotas)
+        Me.MantenimientoMascotas(Entidades.Enumeradores.Accion.Registrar, Mascota)
+    End Sub
+
+    Public Sub MOdificarMascota(Mascota As Entidades.Mascotas)
+        Me.MantenimientoMascotas(Entidades.Enumeradores.Accion.Modificar, Mascota)
+    End Sub
+
+    Public Sub EliminarMascota(Mascota As Entidades.Mascotas)
+        Me.MantenimientoMascotas(Entidades.Enumeradores.Accion.Eliminar, Mascota)
+    End Sub
+#End Region
 End Class

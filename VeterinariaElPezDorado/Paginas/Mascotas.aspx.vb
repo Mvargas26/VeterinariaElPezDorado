@@ -121,16 +121,24 @@ Public Class Mascotas
     End Sub
 
     Protected Sub btnMantenimientoMascotas_Click(sender As Object, e As EventArgs) Handles btnMantenimientoMascotas.Click
-        Me.Limpiar()
         Try
             If Page.IsValid Then
                 shtValor = Me.mnSeleccion.SelectedValue
                 Me.lblMensajeError.Visible = False
 
                 If ClienteValidado() Then
-                    Me.txtidentificacionDueno.Text = Me.txtidentificacionDueno.Text
-                    Me.txtidentificacionMascota.Text = Me.txtIndentificacionMascotaAConsultar.Text
+                    If Not shtValor = 1 Then 'Si es registrar no iguala los valores xq estan vacios
+                        Me.txtidentificacionDueno.Text = Me.txtidentificacionDueno.Text
+                        Me.txtidentificacionMascota.Text = Me.txtIndentificacionMascotaAConsultar.Text
+                    End If
                 End If
+
+                'Si el cliente no existe, no permite registrar una mascota
+                If ClienteValidado() = False And shtValor = 1 Then
+                    ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Por favor registre el Dueño como Cliente Primero');", True)
+                    Exit Sub
+                End If
+
 
                 Dim InfoMascota As New Entidades.Mascotas With {
                 .IdentificacionDueno = New Entidades.ClienteVeterinaria With {.IdentificacionCliente = CStr(Me.txtidentificacionDueno.Text)},
@@ -143,17 +151,24 @@ Public Class Mascotas
                 .FechaNacimiento = CDate(Me.txtFechaNacimiento.Text)
                 }
 
-                Dim objNegocios As New MascotasNegocios
+                Dim objNegocios As New Negocios.MascotasNegocios
 
 
                 Select Case shtValor
                     Case 1
+                        'llama al metodo que registra mascotas
+                        objNegocios.RegistrarMascota(InfoMascota)
+
                         ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se registro correctamente');", True)
                     Case 2
-                        objNegocios.ConsultarMascota(InfoMascota.IdentificacionDueno, InfoMascota.CodigoMascota)
+                        'llama al metodo que modifica registro mascotas
+                        objNegocios.MOdificarMascota(InfoMascota)
 
                         ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se modificó correctamente');", True)
                     Case 3
+                        'llama al metodo queelimina registro mascotas
+                        objNegocios.EliminarMascota(InfoMascota)
+
                         ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se eliminó  correctamente');", True)
                 End Select
             End If
@@ -182,6 +197,11 @@ Public Class Mascotas
     'funcion que comprueba que el numero de cedula ingresado ya este como un cliente de la veterinaria
     Protected Function ClienteValidado() As Boolean
         Dim strCedulaAConsultar As String = Me.txtIdentificacionConsultaCliente.Text
+
+        'en el caso de registro no se uso el texbox de consulta, usamos directamnete el texbox donde se ingresa cedula del cliente
+        If Me.txtIdentificacionConsultaCliente.Text = "" Then
+            strCedulaAConsultar = Me.txtidentificacionDueno.Text
+        End If
 
         'objeto de negocios con la info de los clientes
         Dim objNegocios As New ClientesNegocios
