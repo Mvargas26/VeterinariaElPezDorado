@@ -60,8 +60,10 @@
                             <li class="nav-item dropdown" style="margin: 20px" id="mnConsulta" runat="server">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="nav-label" >Consultas</span><span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a runat="server" href="~/Paginas/ConsultasCliente">Consultas por cliente</a></li>
-                                    <li><a runat="server" href="~/Paginas/ConsultasServicios">Consultas por servicios brindados</a></li>
+                                    <li><a runat="server" href="~/Paginas/ConsultasCliente">Consultas por Cliente</a></li>
+                                    <li><a runat="server" href="~/Paginas/ConsultasServicios">Consulta Servicios Brindados</a></li>
+                                    <li><a runat="server" href="~/Paginas/ConsultasMascotas.aspx" >Consultas por Cliente</a></li>
+
                                 </ul>
                             </li>
                         </li>

@@ -145,6 +145,7 @@
     <Content Include="Global.asax" />
     <Content Include="Imagenes\AcercaDe.jpg" />
     <Content Include="Imagenes\esloganVeterinaria.jpg" />
+    <Content Include="Paginas\ConsultasMascotas.aspx" />
     <Content Include="Paginas\frmPaginaError.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -330,6 +331,13 @@
     </Compile>
     <Compile Include="Paginas\Clientes.aspx.vb">
       <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\ConsultasMascotas.aspx.designer.vb">
+      <DependentUpon>ConsultasMascotas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\ConsultasMascotas.aspx.vb">
+      <DependentUpon>ConsultasMascotas.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Paginas\ConsultasServicios.aspx.designer.vb">

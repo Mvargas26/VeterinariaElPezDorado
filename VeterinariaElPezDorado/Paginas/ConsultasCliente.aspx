@@ -4,8 +4,7 @@
     <div>
      <font color="RoyalBlue" face="Comic Sans MS,arial">
   <h1 align="center"><i>Lista de Clientes en la Base de datos</i></h1>
- 
-  </font>
+   </font>
     </div>
 
     <table class="table">
