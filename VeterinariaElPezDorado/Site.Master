@@ -62,7 +62,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a runat="server" href="~/Paginas/ConsultasCliente">Consultas por Cliente</a></li>
                                     <li><a runat="server" href="~/Paginas/ConsultasServicios">Consulta Servicios Brindados</a></li>
-                                    <li><a runat="server" href="~/Paginas/ConsultasMascotas.aspx" >Consultas por Cliente</a></li>
+                                    <li><a runat="server" href="~/Paginas/ConsultasMascotas.aspx" >Consultas Mascotas por Cliente</a></li>
 
                                 </ul>
                             </li>

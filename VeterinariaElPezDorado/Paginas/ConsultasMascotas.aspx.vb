@@ -14,32 +14,6 @@ Public Class ConsultasMascotas
                 FormsAuthentication.RedirectToLoginPage()
             End If
 
-            Dim objNegocios As New MascotasNegocios
-
-            Dim dtMascotas As DataTable = objNegocios.ConsultarMascotas
-
-            Dim strMascotas As New System.Text.StringBuilder
-
-            For Each drMascotas As DataRow In dtMascotas.Rows
-                With strMascotas
-                    .AppendLine("<tr>")
-                    .Append("<th scope=""row"">" & CInt(drMascotas("identificacion_mascotas")) & "</th>")
-                    .Append("<td>" & CStr(drMascotas("nombre_mascota")) & "</td>")
-                    .Append("<td>" & CStr(drMascotas("cod_tipo")) & "</td>")
-                    .Append("<td>" & CStr(drMascotas("raza")) & "</td>")
-                    .Append("<td>" & CStr(drMascotas("raza")) & "</td>")
-                    .Append("<td>" & CStr(drMascotas("peso")) & "</td>")
-                    .Append("<td>" & CStr(drMascotas("estado_salud")) & "</td>")
-                    .Append("<td>" & CStr(drMascotas("fecha_nacimiento")) & "</td>")
-                    .Append("<td><a class=""btn btn-info"" href=""Mascotas.aspx""  role=""button"">Modificar</a></td>")
-                    .Append("<td><a class=""btn btn-danger"" href=""Mascotas.aspx""  role=""button"">Eliminar</a></td>")
-                    .Append("</tr>")
-                End With
-            Next
-
-            lstMascotas.InnerHtml = strMascotas.ToString
-            Me.divtablaMascotas.Visible = True
-
 
         Catch ex As Exception
             'envio a la pag de error porque hubo problemas cuando apenas se estaba construyendo
@@ -49,4 +23,35 @@ Public Class ConsultasMascotas
 
     End Sub
 
+    Protected Sub btnConsultar_Click(sender As Object, e As EventArgs) Handles btnConsultar.Click
+        Try
+            Dim objNegocios As New MascotasNegocios
+
+            Dim dtMascotas As DataTable = objNegocios.ConsultarMascotaparaUnDueno(Me.txtIdentificacionConsulta.Text)
+
+            Dim strMascotas As New System.Text.StringBuilder
+
+            For Each drMascotas As DataRow In dtMascotas.Rows
+                With strMascotas
+                    .AppendLine("<tr>")
+                    .Append("<th scope=""row"">" & CInt(drMascotas("ID_Mascota")) & "</th>")
+                    .Append("<td>" & CStr(drMascotas("Nombre_Mascota")) & "</td>")
+                    .Append("<td>" & CStr(drMascotas("Tipo_Mascota")) & "</td>")
+                    .Append("<td>" & CStr(drMascotas("Raza")) & "</td>")
+                    .Append("<td>" & CStr(drMascotas("Peso")) & "</td>")
+                    .Append("<td>" & CStr(drMascotas("Estado_Salud")) & "</td>")
+                    .Append("<td>" & CStr(drMascotas("Fecha_Nacimiento")) & "</td>")
+                    .Append("<td><a class=""btn btn-info"" href=""Mascotas.aspx""  role=""button"">Modificar</a></td>")
+                    .Append("<td><a class=""btn btn-danger"" href=""Mascotas.aspx""  role=""button"">Eliminar</a></td>")
+                    .Append("</tr>")
+                End With
+            Next
+
+            lstMascotas.InnerHtml = strMascotas.ToString
+            Me.divtablaMascotas.Visible = True
+        Catch ex As Exception
+            Me.lblError.Visible = True
+            Me.lblMensajeError.Text = ex.Message
+        End Try
+    End Sub
 End Class

@@ -52,6 +52,110 @@ Public Class MascotasNegocios
     End Function
 
 
+    Private Function CrearTablamascotasFiltradas()
+        Dim dt_MascotasFiltradas As New DataTable("MascotasFiltradas")
+
+        Dim dc As New DataColumn With {
+        .ColumnName = "ID_Mascota",
+        .Caption = "ID Mascota"
+        }
+        dt_MascotasFiltradas.Columns.Add(dc)
+
+        dc = New DataColumn With {
+        .ColumnName = "Nombre_Mascota",
+        .Caption = "Nombre de la Mascota"
+        }
+        dt_MascotasFiltradas.Columns.Add(dc)
+
+        dc = New DataColumn With {
+        .ColumnName = "Tipo_Mascota",
+        .Caption = "Tipo Mascota"
+        }
+        dt_MascotasFiltradas.Columns.Add(dc)
+
+        dc = New DataColumn With {
+        .ColumnName = "Raza",
+        .Caption = "Raza"
+        }
+        dt_MascotasFiltradas.Columns.Add(dc)
+
+        dc = New DataColumn With {
+        .ColumnName = "Peso",
+        .Caption = "Peso"
+        }
+        dt_MascotasFiltradas.Columns.Add(dc)
+
+        dc = New DataColumn With {
+        .ColumnName = "Estado_Salud",
+        .Caption = "Estado de Salud"
+        }
+        dt_MascotasFiltradas.Columns.Add(dc)
+
+        dc = New DataColumn With {
+        .ColumnName = "Fecha_Nacimiento",
+        .Caption = "Fecha de Nacimineto"
+        }
+        dt_MascotasFiltradas.Columns.Add(dc)
+
+        Return dt_MascotasFiltradas
+    End Function
+    Public Function ConsultarMascotaparaUnDueno(ByVal IdentificacionDueno As String) As DataTable
+        Try
+            Dim iMascota As New DatosMascotas
+            Dim dtMascotasCompletas As DataTable = iMascota.CoonsultarMascotas
+            Dim dtMascotasFiltradas As DataTable = Me.CrearTablamascotasFiltradas.copy
+
+            If dtMascotasCompletas IsNot Nothing Then
+                'Dim drMascotas As DataRow = dtMascotasCompletas.Rows(0)
+                Dim drMascotasFiltradas As DataRow
+                If dtMascotasCompletas.Rows.Count > 0 Then
+
+                    For Each drMascotas As DataRow In dtMascotasCompletas.Rows
+                        If IdentificacionDueno.ToString = drMascotas("identificacion_dueno") Then
+                            drMascotasFiltradas = dtMascotasFiltradas.NewRow
+                            drMascotasFiltradas("ID_Mascota") = drMascotas("identificacion_mascotas")
+                            drMascotasFiltradas("Nombre_Mascota") = drMascotas("nombre_mascota")
+                            drMascotasFiltradas("Tipo_Mascota") = drMascotas("cod_tipo")
+                            drMascotasFiltradas("Raza") = drMascotas("raza")
+                            drMascotasFiltradas("Peso") = drMascotas("peso")
+                            drMascotasFiltradas("Estado_Salud") = drMascotas("estado_salud")
+                            drMascotasFiltradas("Fecha_Nacimiento") = drMascotas("fecha_nacimiento")
+
+                            dtMascotasFiltradas.Rows.Add(drMascotasFiltradas)
+
+                        End If
+                    Next
+                End If
+            End If
+
+            'If dtMascotasCompletas IsNot Nothing Then
+            '    Dim drMascotas As DataRow = dtMascotasCompletas.Rows(0)
+            '    Dim drMascotasFiltradas As DataRow
+            '    If dtMascotasCompletas.Rows.Count > 0 Then
+            '        If IdentificacionDueno.ToString = drMascotas("identificacion_dueno") Then
+            '            drMascotasFiltradas = dtMascotasFiltradas.NewRow
+            '            drMascotasFiltradas("ID_Mascota") = drMascotas("identificacion_mascotas")
+            '            drMascotasFiltradas("Nombre_Mascota") = drMascotas("nombre_mascota")
+            '            drMascotasFiltradas("Tipo_Mascota") = drMascotas("cod_tipo")
+            '            drMascotasFiltradas("Raza") = drMascotas("raza")
+            '            drMascotasFiltradas("Peso") = drMascotas("peso")
+            '            drMascotasFiltradas("Estado_Salud") = drMascotas("estado_salud")
+            '            drMascotasFiltradas("Fecha_Nacimiento") = drMascotas("fecha_nacimiento")
+
+            '            dtMascotasFiltradas.Rows.Add(drMascotasFiltradas)
+
+            '        End If
+            '    End If
+
+            'End If
+
+            Return dtMascotasFiltradas
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Function
+
 
 #Region "Manejo Procedimientos almacenados Registrar,Modificar,Eliminar en MAscotasNegocios"
 
