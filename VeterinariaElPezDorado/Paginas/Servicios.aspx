@@ -40,8 +40,9 @@
                 <label for="txtPorcentajeImpuesto">Impuesto del servicio</label>
                 <asp:TextBox runat="server" class="form-control" ID="txtPorcentajeImpuesto" placeholder="Porcentaje de impuesto." required="required" pattern="[0-9]{1,2}"></asp:TextBox>
                 <div class="invalid-feedback">
-                    Indique el porcentaje tendrá el servicio (Solo utilice números del 1 al 99).
+                    Indique el porcentaje tendrá el servicio (Solo utilice números del 1 al 99).                    
                 </div>
+                
             </div>
         </div>
 

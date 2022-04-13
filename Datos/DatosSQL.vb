@@ -120,6 +120,41 @@ Public Class DatosSQL
         End Try
 
     End Function
+
+    Public Function ExecutSPWithDS(ByVal SPName As String, ByVal ListaParametros As List(Of SqlParameter)) As DataSet
+        Try
+            'indica la consulta de base de datos que se desea ejecutar
+            Dim cmd As New SqlCommand() With {
+                .CommandType = CommandType.StoredProcedure,
+                .CommandText = SPName,
+                .Connection = Me.sqlConn
+            }
+
+            'agrega los parametros a la ejecución del SP
+            For Each sqlParam As SqlParameter In ListaParametros
+                cmd.Parameters.Add(sqlParam)
+            Next
+
+            'objeto para ejecutar la consulta de la base de datos que retorna información
+            Dim adapter As New SqlDataAdapter(cmd)
+
+            'objeto para almacenar la información que se obtiene de la base de datos
+            Dim dsDatos As New DataSet
+
+            'ejecuta la consulta
+            adapter.Fill(dsDatos)
+
+            'retorna el resultado obtenido
+            Return dsDatos
+
+        Catch sql As SqlException
+            If sqlConn.State = ConnectionState.Open Then sqlConn.Close()
+            Throw sql
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
 #End Region
 
 End Class

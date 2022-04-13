@@ -7,9 +7,12 @@
             <asp:TextBox ID="txtIdentificacionDueno" runat="server" class="form-control" placeholder="Identificación dueño" required="required" pattern="[A-Za-z0-9]{5,40}"></asp:TextBox>
             <div class="invalid-feedback">
                 Indique una identificación valida
-            </div>
+            </div>            
         </div>
-        
+        <div class="col-md-4 mb-3">
+            <label runat="server" id="lblCodigoCobro" for="txtCodigoCobro" visible="False">Código de Cobro</label>
+            <asp:TextBox runat="server" class="form-control" ID="txtCodigoCobro" required="required" ReadOnly="True" Visible="False"></asp:TextBox>
+        </div>
 
     </div>
     <asp:Button ID="btnVerificar" runat="server" Text="Verificar" />
@@ -25,7 +28,7 @@
 
             <div class="col-md-4 mb-3">
                 <label runat="server" id="lblServicios" for="cboServicios">Servicio</label>
-                <asp:DropDownList ID="cboServicios" runat="server" class="form-control"></asp:DropDownList>
+                <asp:DropDownList ID="cboServicios" runat="server" class="form-control" AutoPostBack="True"></asp:DropDownList>
                 <div class="invalid-feedback">
                    Seleccione una opción
                 </div>
@@ -45,13 +48,17 @@
                 <asp:TextBox runat="server" class="form-control" ID="txtCostoServicio" placeholder="Costo" required="required" ReadOnly="True"></asp:TextBox>
             </div>
             <div class="col-md-4 mb-3">
-                <label runat="server" id="lblImpuesto" for="Telefono">Impuesto</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtImpuesto" placeholder="10%" required="required" ReadOnly="True"></asp:TextBox>
-            </div>            
+                <label runat="server" id="lblImpuesto" for="txtImpuesto">Costo del impuesto</label>
+                <asp:TextBox runat="server" class="form-control" ID="txtImpuesto" placeholder="Impuesto" required="required" ReadOnly="True"></asp:TextBox>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label runat="server" id="lblCostoTotal" for="txtCostoTotal">Costo total</label>
+                <asp:TextBox runat="server" class="form-control" ID="txtCostoTotal" placeholder="Costo Total" required="required" ReadOnly="True"></asp:TextBox>
+            </div>
         </div>       
 
         <div>
-            <asp:Button ID="btnMantenimientoRegistrar" runat="server" CssClass="btn btn-info" Text="Registrar" />
+            <asp:Button ID="btnMantenimientoRegistrar" runat="server" CssClass="btn btn-info" Text="Registrar"/>
         </div>
 
 

@@ -32,6 +32,24 @@ Partial Public Class RegistroServicios
     Protected WithEvents txtIdentificacionDueno As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''lblCodigoCobro control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblCodigoCobro As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''txtCodigoCobro control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtCodigoCobro As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''btnVerificar control.
     '''</summary>
     '''<remarks>
@@ -138,6 +156,24 @@ Partial Public Class RegistroServicios
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtImpuesto As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''lblCostoTotal control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblCostoTotal As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''txtCostoTotal control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtCostoTotal As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''btnMantenimientoRegistrar control.

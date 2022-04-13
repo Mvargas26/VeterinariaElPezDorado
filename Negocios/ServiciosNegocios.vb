@@ -13,4 +13,26 @@
         Dim dtServicio = iDatos.buscarServicio(shtCodServicio)
         Return dtServicio
     End Function
+
+    Public Function RegistroServiciosBrindados(ByVal strIdentificacion As String)
+        Try
+            Dim iServicio As New Datos.DatosServicios
+            Return iServicio.buscarDatosRegistroServicio(strIdentificacion)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function calculoCosto(ByVal intCosto As Integer, ByVal intImpuesto As Integer)
+        Dim lstCosto As New ArrayList
+        Dim intCostoImpuesto As Integer
+        Dim intCostoTotal As Double
+
+        intCostoImpuesto = (intImpuesto * intCosto) / 100
+        intCostoTotal = intCostoImpuesto + intCosto
+        lstCosto.Add(intCostoImpuesto)
+        lstCosto.Add(intCostoTotal)
+
+        Return lstCosto
+    End Function
 End Class

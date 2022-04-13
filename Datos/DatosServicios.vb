@@ -37,4 +37,21 @@ Public Class DatosServicios
             Throw ex
         End Try
     End Function
+
+    Public Function buscarDatosRegistroServicio(ByVal strIdentificacion As String) As DataSet
+        Try
+            Dim strNombreSP As String = "SP_ConsultaRegistroServicios" ' Recomendacion copiarlo desde base de datos
+            'lista para almacenar los parametros del procedimiento almacenado.
+            Dim lstParametros As New List(Of SqlParameter) From {
+                    New SqlParameter("@dueno", strIdentificacion)
+                }
+            Dim iConexion As New DatosSQL
+            Dim ds As DataSet = iConexion.ExecutSPWithDS(strNombreSP, lstParametros)
+
+            Return ds
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 End Class
