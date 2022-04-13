@@ -6,10 +6,21 @@
     Private shtCodServicio As Short
     Private dtFechaServicio As Date
 
+
+
+#End Region
+
+#Region "Constructor"
+    Public Sub ServiciosBrindados(strIdentificacionCliente As String, strIdentificacionMascota As String, shtCodServicio As Short, dtFechaServicio As Date)
+        Me.strIdentificacionCliente = strIdentificacionCliente
+        Me.strIdentificacionMascota = strIdentificacionMascota
+        Me.shtCodServicio = shtCodServicio
+        Me.dtFechaServicio = dtFechaServicio
+    End Sub
 #End Region
 
 #Region "Properties"
-    Public Property ShtCodCobro1 As Short
+    Public Property CodCobro As Short
         Get
             Return shtCodCobro
         End Get
@@ -18,7 +29,7 @@
         End Set
     End Property
 
-    Public Property StrIdentificacionCliente1 As String
+    Public Property IdentificacionCliente As String
         Get
             Return strIdentificacionCliente
         End Get
@@ -27,7 +38,7 @@
         End Set
     End Property
 
-    Public Property StrIdentificacionMascota1 As String
+    Public Property IdentificacionMascota As String
         Get
             Return strIdentificacionMascota
         End Get
@@ -36,7 +47,7 @@
         End Set
     End Property
 
-    Public Property ShtCodServicio1 As Short
+    Public Property CodServicio As Short
         Get
             Return shtCodServicio
         End Get
@@ -45,7 +56,7 @@
         End Set
     End Property
 
-    Public Property DtFechaServicio1 As Date
+    Public Property FechaServicio As Date
         Get
             Return dtFechaServicio
         End Get

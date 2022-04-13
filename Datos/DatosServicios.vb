@@ -10,7 +10,7 @@ Public Class DatosServicios
                     New SqlParameter("@codServicio", CShort(eServicios.codServicios)),
                     New SqlParameter("@nomServicio", eServicios.nombreServicio),
                     New SqlParameter("@intCosto", eServicios.Costo),
-                    New SqlParameter("fltImpuesto", eServicios.Impuesto)
+                    New SqlParameter("@fltImpuesto", eServicios.Impuesto)
                 }
 
             Dim iConexion As New DatosSQL
@@ -54,4 +54,23 @@ Public Class DatosServicios
             Throw ex
         End Try
     End Function
+
+    Public Sub RegistroServiciosBrindados(ByVal eRegistrarServicios As Entidades.ServicosBrindados)
+        Try
+            Dim strNombreSP As String = "SP_GrabarServiciosBrindados" ' Recomendacion copiarlo desde base de datos
+            'lista para almacenar los parametros del procedimiento almacenado.
+            Dim lstParametros As New List(Of SqlParameter) From {
+                    New SqlParameter("@idCliente", eRegistrarServicios.IdentificacionCliente),
+                    New SqlParameter("@idMascota", eRegistrarServicios.IdentificacionMascota),
+                    New SqlParameter("@codServicio", eRegistrarServicios.CodServicio),
+                    New SqlParameter("@datFechaServicio", eRegistrarServicios.FechaServicio)
+                }
+
+            Dim iConexion As New DatosSQL
+            iConexion.ExecuteSP(strNombreSP, lstParametros)
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 End Class

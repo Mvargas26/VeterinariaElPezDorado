@@ -14,7 +14,7 @@
         Return dtServicio
     End Function
 
-    Public Function RegistroServiciosBrindados(ByVal strIdentificacion As String)
+    Public Function consultaRegistroServiciosBrindados(ByVal strIdentificacion As String)
         Try
             Dim iServicio As New Datos.DatosServicios
             Return iServicio.buscarDatosRegistroServicio(strIdentificacion)
@@ -35,4 +35,13 @@
 
         Return lstCosto
     End Function
+
+    Public Sub grabarRegistroServicios(ByVal eServiciosBrindados As Entidades.ServicosBrindados)
+        Try
+            Dim iServicio As New Datos.DatosServicios
+            iServicio.RegistroServiciosBrindados(eServiciosBrindados)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 End Class

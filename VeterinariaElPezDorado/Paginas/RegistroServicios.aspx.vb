@@ -21,7 +21,7 @@
         Try
             Me.lblError.Visible = False
 
-            Dim dsServicios As DataSet = iServicios.RegistroServiciosBrindados(txtIdentificacionDueno.Text)
+            Dim dsServicios As DataSet = iServicios.consultaRegistroServiciosBrindados(txtIdentificacionDueno.Text)
             Dim lstArrayCosto As ArrayList = iServicios.calculoCosto(dsServicios.Tables(2).Rows(0)(2), dsServicios.Tables(2).Rows(0)(3))
             Me.txtCodigoCobro.Visible = True
             Me.lblCodigoCobro.Visible = True
@@ -52,6 +52,10 @@
     End Sub
 
     Protected Sub btnMantenimientoRegistrar_Click(sender As Object, e As EventArgs) Handles btnMantenimientoRegistrar.Click
+        Dim eServicioBrindado As New Entidades.ServicosBrindados
+        eServicioBrindado.ServiciosBrindados(txtIdentificacionDueno.Text, cboMascota.SelectedValue, cboServicios.SelectedValue, txtFechaServicio.Text)
+        iServicios.grabarRegistroServicios(eServicioBrindado)
+
         ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se registro correctamente');", True)
         Me.Limpiar()
     End Sub
