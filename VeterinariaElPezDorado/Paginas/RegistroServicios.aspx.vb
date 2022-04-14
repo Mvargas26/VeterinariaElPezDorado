@@ -16,7 +16,11 @@
             Response.Redirect("~/Paginas/frmPaginaError", False)
         End Try
     End Sub
-
+    ''' <summary>
+    ''' Al dar click toma la identificacion del usuario y busca los datos para mostrarlos.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Protected Sub btnVerificar_Click(sender As Object, e As EventArgs) Handles btnVerificar.Click
         Try
             Me.lblError.Visible = False
@@ -50,7 +54,12 @@
 
 
     End Sub
-
+    ''' <summary>
+    ''' Funcionalidad del boton mantenimiento. 
+    ''' Al dar click se realiza el registro del servicios.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Protected Sub btnMantenimientoRegistrar_Click(sender As Object, e As EventArgs) Handles btnMantenimientoRegistrar.Click
         Dim eServicioBrindado As New Entidades.ServicosBrindados
         eServicioBrindado.ServiciosBrindados(txtIdentificacionDueno.Text, cboMascota.SelectedValue, cboServicios.SelectedValue, txtFechaServicio.Text)
@@ -59,13 +68,19 @@
         ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se registro correctamente');", True)
         Me.Limpiar()
     End Sub
-
+    ''' <summary>
+    ''' Se limpian los datos de los textbox
+    ''' </summary>
     Protected Sub Limpiar()
         Me.txtCostoServicio.Text = 0
         Me.txtImpuesto.Text = "0"
         Me.txtIdentificacionDueno.Text = ""
     End Sub
-
+    ''' <summary>
+    ''' Se cargan los datos en las listas, para mostrarlas al usuario.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Protected Sub cboServicios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboServicios.SelectedIndexChanged
         Dim dtServicios As DataTable = iServicios.consultarServicios(cboServicios.SelectedValue)
         Dim lstArrayCosto As ArrayList = iServicios.calculoCosto(dtServicios.Rows(0)(2), dtServicios.Rows(0)(3))

@@ -1,4 +1,10 @@
 ﻿Public Class seguridad
+    ''' <summary>
+    ''' Se valida la credencial para iniciar la seccion.
+    ''' </summary>
+    ''' <param name="strUsuario">Usuario para ingresar</param>
+    ''' <param name="strPassword">Contraseña del usuario</param>
+    ''' <returns></returns>
     Public Function validarCredencial(ByVal strUsuario As String, ByVal strPassword As String) As Entidades.Usuarios
         Try
             Dim iUsuario As New Entidades.Usuarios

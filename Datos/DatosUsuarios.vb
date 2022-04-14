@@ -1,7 +1,11 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class DatosUsuarios
-
+    ''' <summary>
+    ''' Mantenimiento del usuario
+    ''' </summary>
+    ''' <param name="accion">Numero para indicar la accion a realizar</param>
+    ''' <param name="usuarios">Usuario con los datos para realizar el mantenimiento</param>
     Public Sub mantenimientoUsuario(ByVal accion As Short, ByVal usuarios As Entidades.Usuarios)
         Try
             Dim strNombreSP As String = "SP_GrabarUsuarios" ' Recomendacion copiarlo desde base de datos
@@ -20,7 +24,11 @@ Public Class DatosUsuarios
             Throw ex
         End Try
     End Sub
-
+    ''' <summary>
+    ''' Realiza la consulta del usuario para iniciar sesion.
+    ''' </summary>
+    ''' <param name="usuarios">Recibe un usuario con los datos para confirmar el inicio de seccion.</param>
+    ''' <returns></returns>
     Public Function buscarUsuarioSesion(ByVal usuarios As Entidades.Usuarios) As DataTable
         Try
             Dim strNombreSP As String = "SP_consultaUsuario" ' Recomendacion copiarlo desde base de datos
@@ -39,7 +47,11 @@ Public Class DatosUsuarios
             Throw ex
         End Try
     End Function
-
+    ''' <summary>
+    ''' Realiza la consulta para informacion del usuario.
+    ''' </summary>
+    ''' <param name="shtCodigo"></param>
+    ''' <returns></returns>
     Public Function buscarUsuario(ByVal shtCodigo As Short) As DataTable
         Try
             Dim strNombreSP As String = "SP_ConsultaUsuarioMantenimiento" ' Recomendacion copiarlo desde base de datos

@@ -17,7 +17,12 @@
             Response.Redirect("~/Paginas/frmPaginaError", False)
         End Try
     End Sub
-
+    ''' <summary>
+    ''' Evento para selecionar la funcionalidad que se va a aplicar en el mantenimiento.
+    ''' Al seleccionar la opcion en el menu se toma el valor dado en dicha opcion. Y se filtra por cada select.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Protected Sub mnSeleccion_MenuItemClick(sender As Object, e As MenuEventArgs) Handles mnSeleccion.MenuItemClick
         Try
             Me.limpiar()
@@ -82,7 +87,13 @@
             Me.lblMensajeError.Text = ex.Message
         End Try
     End Sub
-
+    ''' <summary>
+    ''' Funcionalidad de boton consultar.
+    ''' Para realizar los mantenimientos (Eliminar, modificar, consultar), se debe seleccionar a quien se le va a realizar los mantenimientos.
+    ''' Se realiza una consulta a la base de datos, con la opcion que se haya realizado para mostrar los datos de dicha opcion.
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Protected Sub btnConsultar_Click(sender As Object, e As EventArgs) Handles btnConsultar.Click
         Try
 
@@ -102,7 +113,12 @@
         End Try
 
     End Sub
-
+    ''' <summary>
+    ''' Funcionalidad del boton mantenimiento (Registrar, Eliminar y modificar.)
+    ''' La opcion que se haya utilizado se filtra por el select y se envia el parametro accion, segun haya seleccionado. 
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Protected Sub btnMantenimientoUsuarios_Click(sender As Object, e As EventArgs) Handles btnMantenimientoUsuarios.Click
 
         Try
@@ -144,7 +160,9 @@
         End Try
 
     End Sub
-
+    ''' <summary>
+    ''' Limpia los datos de los txt.
+    ''' </summary>
     Protected Sub limpiar()
         Me.txtClaveUsuario.Text = ""
         Me.txtNombreUsuario.Text = ""
