@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Mascotas" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Mascotas.aspx.vb" Inherits="VeterinariaElPezDorado.Mascotas" %>
+﻿<%@ Page Title="Mascotas" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="frmMascotas.aspx.vb" Inherits="VeterinariaElPezDorado.Mascotas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <%-- Menu para seleccionar el tipo de mantenimiento --%>

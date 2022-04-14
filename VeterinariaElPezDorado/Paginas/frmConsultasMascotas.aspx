@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="ConsultasMascotas.aspx.vb" Inherits="VeterinariaElPezDorado.ConsultasMascotas" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="frmConsultasMascotas.aspx.vb" Inherits="VeterinariaElPezDorado.ConsultasMascotas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div>
      <font color="RoyalBlue" face="Comic Sans MS,arial">

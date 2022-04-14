@@ -50,9 +50,9 @@
                             <li class="nav-item dropdown" style="margin: 20px" id="mnVeterinaria" runat="server">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><span class="nav-label">Veterinaria</span><span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a runat="server" href="~/Paginas/Clientes">Clientes</a></li>
-                                    <li><a runat="server" href="~/Paginas/Mascotas">Mascotas</a></li>
-                                    <li><a runat="server" href="~/Paginas/RegistroServicios">Registro Servicios</a></li>
+                                    <li><a runat="server" href="~/Paginas/frmClientes">Clientes</a></li>
+                                    <li><a runat="server" href="~/Paginas/frmMascotas">Mascotas</a></li>
+                                    <li><a runat="server" href="~/Paginas/frmRegistroServicios">Registro Servicios</a></li>
                                 </ul>
                             </li>
                         </li>
@@ -60,9 +60,9 @@
                             <li class="nav-item dropdown" style="margin: 20px" id="mnConsulta" runat="server">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="nav-label" >Consultas</span><span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a runat="server" href="~/Paginas/ConsultasCliente">Consultas por Cliente</a></li>
-                                    <li><a runat="server" href="~/Paginas/ConsultasServicios">Consulta Servicios Brindados</a></li>
-                                    <li><a runat="server" href="~/Paginas/ConsultasMascotas.aspx" >Consultas Mascotas por Cliente</a></li>
+                                    <li><a runat="server" href="~/Paginas/frmConsultasCliente">Consultas por Cliente</a></li>
+                                    <li><a runat="server" href="~/Paginas/frmConsultasServicios">Consulta Servicios Brindados</a></li>
+                                    <li><a runat="server" href="~/Paginas/frmConsultasMascotas.aspx" >Consultas Mascotas por Cliente</a></li>
 
                                 </ul>
                             </li>
@@ -72,9 +72,9 @@
                         <li class="nav-item"><li class="nav-item dropdown" style="margin: 20px" id="mnMantenimientos" runat="server">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="nav-label">Mantenimientos</span><span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a runat="server" href="~/Paginas/Usuarios">Usuarios</a></li>
-                                <li><a runat="server" href="~/Paginas/TiposMascotas">Tipos mascotas</a></li>
-                                <li><a runat="server" href="~/Paginas/Servicios">Servicios</a></li>
+                                <li><a runat="server" href="~/Paginas/frmUsuarios">Usuarios</a></li>
+                                <li><a runat="server" href="~/Paginas/frmTiposMascotas">Tipos mascotas</a></li>
+                                <li><a runat="server" href="~/Paginas/frmServicios">Servicios</a></li>
                             </ul>
                         </li></li>
                                      

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Clientes" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Clientes.aspx.vb" Inherits="VeterinariaElPezDorado.Clientes" %>
+﻿<%@ Page Title="Clientes" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="frmClientes.aspx.vb" Inherits="VeterinariaElPezDorado.Clientes" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Clientes</h1>
     <%-- Menu para seleccionar el tipo de mantenimiento --%>
