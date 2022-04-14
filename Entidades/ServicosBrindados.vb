@@ -5,17 +5,19 @@
     Private strIdentificacionMascota As String
     Private shtCodServicio As Short
     Private dtFechaServicio As Date
+    Private dblCostoTotal As Double
 
 
 
 #End Region
 
 #Region "Constructor"
-    Public Sub ServiciosBrindados(strIdentificacionCliente As String, strIdentificacionMascota As String, shtCodServicio As Short, dtFechaServicio As Date)
+    Public Sub ServiciosBrindados(strIdentificacionCliente As String, strIdentificacionMascota As String, shtCodServicio As Short, dtFechaServicio As Date, dblCostoTotal As Double)
         Me.strIdentificacionCliente = strIdentificacionCliente
         Me.strIdentificacionMascota = strIdentificacionMascota
         Me.shtCodServicio = shtCodServicio
         Me.dtFechaServicio = dtFechaServicio
+        Me.dblCostoTotal = dblCostoTotal
     End Sub
 #End Region
 
@@ -62,6 +64,15 @@
         End Get
         Set(value As Date)
             dtFechaServicio = value
+        End Set
+    End Property
+
+    Public Property CostoTotal As Double
+        Get
+            Return dblCostoTotal
+        End Get
+        Set(value As Double)
+            dblCostoTotal = value
         End Set
     End Property
 

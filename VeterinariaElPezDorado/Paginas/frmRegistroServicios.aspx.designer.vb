@@ -158,6 +158,42 @@ Partial Public Class RegistroServicios
     Protected WithEvents txtImpuesto As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''lblCostoNeto control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblCostoNeto As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''txtCostoNeto control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtCostoNeto As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''btnMantenimientoRegistrar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnMantenimientoRegistrar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''gdvServicios control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents gdvServicios As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
     '''lblCostoTotal control.
     '''</summary>
     '''<remarks>
@@ -174,15 +210,6 @@ Partial Public Class RegistroServicios
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtCostoTotal As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''btnMantenimientoRegistrar control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnMantenimientoRegistrar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''lblError control.

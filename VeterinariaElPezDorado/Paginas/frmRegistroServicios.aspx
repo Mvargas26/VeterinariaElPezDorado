@@ -52,17 +52,33 @@
                 <asp:TextBox runat="server" class="form-control" ID="txtImpuesto" placeholder="Impuesto" required="required" ReadOnly="True"></asp:TextBox>
             </div>
             <div class="col-md-4 mb-3">
-                <label runat="server" id="lblCostoTotal" for="txtCostoTotal">Costo total</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtCostoTotal" placeholder="Costo Total" required="required" ReadOnly="True"></asp:TextBox>
+                <label runat="server" id="lblCostoNeto" for="txtCostoNeto">Costo Neto del Servicio</label>
+                <asp:TextBox runat="server" class="form-control" ID="txtCostoNeto" placeholder="Costo neto" required="required" ReadOnly="True"></asp:TextBox>
             </div>
-        </div>       
+            
+        </div>          
 
-        <div>
-            <asp:Button ID="btnMantenimientoRegistrar" runat="server" CssClass="btn btn-info" Text="Registrar"/>
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <asp:Button ID="btnMantenimientoRegistrar" runat="server" CssClass="btn btn-info" Text="Registrar" />
+            </div>            
         </div>
-
-
-
+        <div>
+            <div class="form-row">
+                <asp:GridView ID="gdvServicios" runat="server" AutoGenerateColumns="False" CssClass="mGrid" BorderWidth="30px" BorderColor="White">
+                    <Columns>
+                        <asp:BoundField DataField="nombre_servicio" HeaderText="Nombre Servicio" />
+                        <asp:BoundField DataField="costo" HeaderText="Costo Bruto" />
+                        <asp:BoundField DataField="impuesto" HeaderText="Impuesto" />
+                        <asp:BoundField DataField="costoTotal" HeaderText="Costo Neto" />
+                    </Columns>
+                </asp:GridView>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label runat="server" id="lblCostoTotal" for="txtCostoTotal">Costo Total de los servicios.</label>
+                <asp:TextBox runat="server" class="form-control" ID="txtCostoTotal" placeholder="0" required="required" ReadOnly="True"></asp:TextBox>
+            </div>
+        </div>
     <!-- Manejo de errores  -->
         <div id="lblError" runat="server" visible="false" class="alert alert-danger" role="alert">
             <asp:Label ID="lblMensajeError" runat="server" Text=""></asp:Label>

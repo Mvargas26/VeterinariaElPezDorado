@@ -8,30 +8,20 @@
     </div>
 
     <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Codigo del Servicio</th>
-      <th scope="col">Nombre del Servicio</th>
-      <th scope="col">Costo del Servicio</th>
-      <th scope="col">Impuesto</th>
-     </tr>
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Código Cobro</th>
+                <th scope="col">Identificación Dueño</th>
+                <th scope="col">Nombre Mascota</th>
+                <th scope="col">Nombre del Servicio</th>
+                <th scope="col">Costo del Servicio</th>
+                <th scope="col">Impuesto</th>
+                <th scope="col">Costo Total</th>
+            </tr>
   </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-        <td>Rayos X</td>
-      <td>50000</td>
-        <td>6500</td>
-       <td><a class="btn btn-info" href="RegistroServicios.aspx"  role="button">Modificar</a></td>
-        <td><a class="btn btn-danger" href="RegistroServicios.aspx"  role="button">Eliminar</a></td>
-    </tr>
-  
+  <tbody runat="server" id="lstConsultaServicios">
   </tbody>
 </table>
-
-
-
-
 
     <!-- Manejo de errores  -->
         <div id="lblError" runat="server" visible="false" class="alert alert-danger" role="alert">

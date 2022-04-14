@@ -26,10 +26,10 @@
             Me.lblError.Visible = False
 
             Dim dsServicios As DataSet = iServicios.consultaRegistroServiciosBrindados(txtIdentificacionDueno.Text)
-            Dim lstArrayCosto As ArrayList = iServicios.calculoCosto(dsServicios.Tables(2).Rows(0)(2), dsServicios.Tables(2).Rows(0)(3))
+            Dim lstArrayCosto As ArrayList = iServicios.calculoCosto(dsServicios.Tables(2).Rows(0)(2), dsServicios.Tables(2).Rows(0)(3), 0)
             Me.txtCodigoCobro.Visible = True
             Me.lblCodigoCobro.Visible = True
-            Me.txtCodigoCobro.Text = ((dsServicios.Tables(1).Rows.Count) + 1)
+            Me.txtCodigoCobro.Text = ((dsServicios.Tables(1).Rows(0)(0)) + 1)
             Me.divRegistroServicios.Visible = True
             Me.txtIdentificacionDueno.ReadOnly = True
             Me.btnVerificar.Visible = False
@@ -43,7 +43,7 @@
             Me.cboServicios.DataBind()
             Me.txtCostoServicio.Text = dsServicios.Tables(2).Rows(0)(2)
             Me.txtImpuesto.Text = lstArrayCosto.Item(0)
-            Me.txtCostoTotal.Text = lstArrayCosto.Item(1)
+            Me.txtCostoNeto.Text = lstArrayCosto.Item(1)
 
         Catch ex As Exception
             'envio a la pag de error porque hubo problemas cuando apenas se estaba construyendo
@@ -61,12 +61,27 @@
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Protected Sub btnMantenimientoRegistrar_Click(sender As Object, e As EventArgs) Handles btnMantenimientoRegistrar.Click
-        Dim eServicioBrindado As New Entidades.ServicosBrindados
-        eServicioBrindado.ServiciosBrindados(txtIdentificacionDueno.Text, cboMascota.SelectedValue, cboServicios.SelectedValue, txtFechaServicio.Text)
-        iServicios.grabarRegistroServicios(eServicioBrindado)
+        Try
+            If txtCostoTotal.Text = "" Then txtCostoTotal.Text = 0
+            Dim dtServicios As DataTable = iServicios.consultarServicios(cboServicios.SelectedValue)
+            Dim lstArrayCosto As ArrayList = iServicios.calculoCosto(dtServicios.Rows(0)(2), dtServicios.Rows(0)(3), txtCostoTotal.Text)
+            txtCostoTotal.Text = lstArrayCosto.Item(2)
+            Dim dtCantidad As DataTable = iServicios.consultaNumCobro
+            Dim eServicioBrindado As New Entidades.ServicosBrindados
+            eServicioBrindado.CodCobro = txtCodigoCobro.Text
+            eServicioBrindado.ServiciosBrindados(txtIdentificacionDueno.Text, cboMascota.SelectedValue, cboServicios.SelectedValue, txtFechaServicio.Text, txtCostoNeto.Text)
+            If dtCantidad.Rows(0)(0) < txtCodigoCobro.Text Then
+                iServicios.grabarRegistroServicios(eServicioBrindado)
+            End If
+            iServicios.grabarRegistroServiciosIndividuales(eServicioBrindado)
+            Me.gdvServicios.DataSource = iServicios.consultaServiciosGrabados(txtCodigoCobro.Text)
+            Me.gdvServicios.DataBind()
 
-        ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('Se registro correctamente');", True)
-        Me.Limpiar()
+        Catch ex As Exception
+            'envio a la pag de error porque hubo problemas cuando apenas se estaba construyendo
+            Session("Error") = ex
+            Response.Redirect("~/Paginas/frmPaginaError", False)
+        End Try
     End Sub
     ''' <summary>
     ''' Se limpian los datos de los textbox
@@ -82,10 +97,17 @@
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Protected Sub cboServicios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboServicios.SelectedIndexChanged
-        Dim dtServicios As DataTable = iServicios.consultarServicios(cboServicios.SelectedValue)
-        Dim lstArrayCosto As ArrayList = iServicios.calculoCosto(dtServicios.Rows(0)(2), dtServicios.Rows(0)(3))
-        Me.txtCostoServicio.Text = dtServicios.Rows(0)(2)
-        Me.txtImpuesto.Text = lstArrayCosto.Item(0)
-        Me.txtCostoTotal.Text = lstArrayCosto.Item(1)
+        Try
+            Dim dtServicios As DataTable = iServicios.consultarServicios(cboServicios.SelectedValue)
+            Dim lstArrayCosto As ArrayList = iServicios.calculoCosto(dtServicios.Rows(0)(2), dtServicios.Rows(0)(3), 0)
+            Me.txtCostoServicio.Text = dtServicios.Rows(0)(2)
+            Me.txtImpuesto.Text = lstArrayCosto.Item(0)
+            Me.txtCostoNeto.Text = lstArrayCosto.Item(1)
+        Catch ex As Exception
+            'envio a la pag de error porque hubo problemas cuando apenas se estaba construyendo
+            Session("Error") = ex
+            Response.Redirect("~/Paginas/frmPaginaError", False)
+        End Try
     End Sub
+
 End Class

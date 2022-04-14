@@ -42,22 +42,26 @@
     ''' <param name="intCosto">Costo bruto del servicio</param>
     ''' <param name="intImpuesto">Costo del impuesto</param>
     ''' <returns></returns>
-    Public Function calculoCosto(ByVal intCosto As Integer, ByVal intImpuesto As Integer)
+    Public Function calculoCosto(ByVal intCosto As Integer, ByVal intImpuesto As Integer, ByVal dblTotal As Double)
         Dim lstCosto As New ArrayList
         Dim intCostoImpuesto As Integer
-        Dim intCostoTotal As Double
+        Dim dblCostoNeto As Double
+        Dim dblCostoTotal As Double
 
         intCostoImpuesto = (intImpuesto * intCosto) / 100
-        intCostoTotal = intCostoImpuesto + intCosto
+        dblCostoNeto = intCostoImpuesto + intCosto
+        dblCostoTotal = dblTotal + dblCostoNeto
+
         lstCosto.Add(intCostoImpuesto)
-        lstCosto.Add(intCostoTotal)
+        lstCosto.Add(dblCostoNeto)
+        lstCosto.Add(dblCostoTotal)
 
         Return lstCosto
     End Function
     ''' <summary>
-    ''' Metodo para registrar el servicio brindado
+    ''' Metodo para registrar los datos del servicio
     ''' </summary>
-    ''' <param name="eServiciosBrindados"></param>
+    ''' <param name="eServiciosBrindados">Entidad servicio con los datos para registrar</param>
     Public Sub grabarRegistroServicios(ByVal eServiciosBrindados As Entidades.ServicosBrindados)
         Try
             Dim iServicio As New Datos.DatosServicios
@@ -66,4 +70,45 @@
             Throw ex
         End Try
     End Sub
+    ''' <summary>
+    ''' Metodo para registrar el servicio brindado
+    ''' </summary>
+    ''' <param name="eServiciosBrindados">Entidad servicio con los datos para registrar</param>
+    Public Sub grabarRegistroServiciosIndividuales(ByVal eServiciosBrindados As Entidades.ServicosBrindados)
+        Try
+            Dim iServicio As New Datos.DatosServicios
+            iServicio.RegistroServiciosIndividuales(eServiciosBrindados)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    ''' <summary>
+    ''' Metodo para Consultar los servicios que han sido grabados por codigo de cobro o en general
+    ''' </summary>
+    ''' <param name="shtcodCobro">Codigo de cobro</param>
+    ''' <returns></returns>
+    Public Function consultaServiciosGrabados(ByVal shtcodCobro As Short)
+        Try
+            Dim iServicioDatos As New Datos.DatosServicios
+            Dim dtServicios As DataTable = iServicioDatos.consultaServiciosRegistrados(shtcodCobro)
+            Return dtServicios
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+    ''' <summary>
+    ''' Metodo para conocer el numero de cobro
+    ''' </summary>
+    ''' <returns></returns>
+    Public Function consultaNumCobro()
+        Try
+            Dim iServicioDatos As New Datos.DatosServicios
+            Dim dtServicios As DataTable = iServicioDatos.consultaNumCobro()
+            Return dtServicios
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
 End Class
