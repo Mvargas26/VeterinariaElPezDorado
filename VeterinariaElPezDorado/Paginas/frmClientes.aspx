@@ -8,8 +8,7 @@
                 <asp:MenuItem Text="Menú Clientes " Value="0">
                     <asp:MenuItem Text="Registrar" Value="1"></asp:MenuItem>
                     <asp:MenuItem Text="Eliminar" Value="3"></asp:MenuItem>
-                    <asp:MenuItem Text="Modificar" Value="2"></asp:MenuItem>
-                    
+                    <asp:MenuItem Text="Modificar" Value="2"></asp:MenuItem>                    
                 </asp:MenuItem>
             </Items>
         </asp:Menu>
@@ -102,7 +101,7 @@
 
                <div class="col-md-4 mb-3">
                  <label runat="server" id="lblDireccion" for="txtDireccion">Direccion Exacta</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtDireccion" placeholder="Direccion Exacta" required="requiered" minlength="5" MaxLength="12"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtDireccion" placeholder="Direccion Exacta" required="requiered" minlength="5" MaxLength="400"></asp:TextBox>
                 <div class="invalid-feedback">Indique su dirección</div>
             </div>
 

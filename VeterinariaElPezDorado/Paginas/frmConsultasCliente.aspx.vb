@@ -25,8 +25,8 @@ Public Class ConsultasCliente
                     .Append("<td>" & CStr(drClientes("canton")) & "</td>")
                     .Append("<td>" & CStr(drClientes("distrito")) & "</td>")
                     .Append("<td>" & CStr(drClientes("direccion_Exacta")) & "</td>")
-                    .Append("<td><a class=""btn btn-info"" href=""Clientes.aspx""  role=""button"">Modificar</a></td>")
-                    .Append("<td><a class=""btn btn-danger"" href=""Clientes.aspx""  role=""button"">Eliminar</a></td>")
+                    .Append("<td><a class=""btn btn-info"" href=""frmClientes.aspx""  role=""button"">Modificar</a></td>")
+                    .Append("<td><a class=""btn btn-danger"" href=""frmClientes.aspx""  role=""button"">Eliminar</a></td>")
                     .Append("</tr>")
                 End With
             Next

@@ -41,8 +41,8 @@ Public Class ConsultasMascotas
                     .Append("<td>" & CStr(drMascotas("Peso")) & "</td>")
                     .Append("<td>" & CStr(drMascotas("Estado_Salud")) & "</td>")
                     .Append("<td>" & CStr(drMascotas("Fecha_Nacimiento")) & "</td>")
-                    .Append("<td><a class=""btn btn-info"" href=""Mascotas.aspx""  role=""button"">Modificar</a></td>")
-                    .Append("<td><a class=""btn btn-danger"" href=""Mascotas.aspx""  role=""button"">Eliminar</a></td>")
+                    .Append("<td><a class=""btn btn-info"" href=""frmMascotas.aspx""  role=""button"">Modificar</a></td>")
+                    .Append("<td><a class=""btn btn-danger"" href=""frmMascotas.aspx""  role=""button"">Eliminar</a></td>")
                     .Append("</tr>")
                 End With
             Next
