@@ -28,7 +28,7 @@
            <div class="form-row">
                 <div class="col-md-4 mb-3">
                 <label runat="server" id="Label1" for="txtidentificacionDueno">Identificación dueño</label>
-                <asp:TextBox ID="txtidentificacionDueno" runat="server" class="form-control" placeholder="Identificación Dueño" required="required" pattern="[A-Za-z0-9]{5,40}+"></asp:TextBox>
+                <asp:TextBox ID="txtidentificacionDueno" runat="server" class="form-control" placeholder="Identificación Dueño" required="required" pattern="[A-Za-z0-9]{5,15}+"></asp:TextBox>
                 <div class="invalid-feedback">
                     Por favor indique la identificación del cliente
                 </div>

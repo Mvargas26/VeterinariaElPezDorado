@@ -23,7 +23,7 @@
         <div class="form-row">
             <div class="col-md-4 mb-3">
                 <label for="txtNombreServicio">Nombre del servicio</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtNombreServicio" placeholder="Nombre del Servicio" required="required" pattern="[A-Za-záéíóúÁÉÍÓÚ]{1,40}"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtNombreServicio" placeholder="Nombre del Servicio" required="required" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ ]{2,40}"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique un nombre valido. 
                 </div>

@@ -23,16 +23,16 @@
         <div class="form-row">
             <div class="col-md-4 mb-3">
                 <label for="txtNombreUsuario">Nombre del Usuario</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtNombreUsuario" placeholder="Nombre del Usuario" required="required" pattern="[A-Za-z]{5,40}"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtNombreUsuario" placeholder="Nombre del Usuario" required="required" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ ]{5,40}"></asp:TextBox>
                 <div class="invalid-feedback">
-                    Indique un nombre de usuario valido valido (Minimo 5 caracteres). 
+                    Indique un nombre de usuario valido valido (Mínimo 5 caracteres). 
                 </div>
             </div>
             <div class="col-md-8 mb-3">
                 <label for="txtClaveUsuario">Clave del usuario</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtClaveUsuario" placeholder="Clave del usuario" pattern="[0-9A-Za-z]+" required="required"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtClaveUsuario" placeholder="Clave del usuario" pattern="[0-9A-Za-záéíóúÁÉÍÓÚñÑ]{5,40}" required="required"></asp:TextBox>
                 <div class="invalid-feedback">
-                    Indique el costo del servicio.
+                    Indique una contraseña mínimo 5 caracteres y sin espacios.
                 </div>
             </div>        
         </div>

@@ -23,7 +23,7 @@
         <div class="form-row">
             <div class="col-md-12 mb-3">
                 <label for="txtTipoMascosta">Tipo de Mascota</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtTipoMascosta" placeholder="Tipo de Mascota" required="required" pattern="[A-Za-záéíóúÁÉÍÓÚ ]{1,20}"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtTipoMascosta" placeholder="Tipo de Mascota" required="required" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ ]{2,20}"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique un tipo valido de mascota. 
                 </div>

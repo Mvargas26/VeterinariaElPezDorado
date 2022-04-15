@@ -25,7 +25,7 @@
         <div class="form-row">
             <div class="col-md-4 mb-3">
                 <label runat="server" id="lblNombre" for="Nombre">Nombre</label>
-                <asp:TextBox ID="txtNombre" runat="server" class="form-control" placeholder="Nombre" required="required" pattern="[A-Za-z]+"></asp:TextBox>
+                <asp:TextBox ID="txtNombre" runat="server" class="form-control" placeholder="Nombre" required="required" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ]+"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique solo letras en su nombre
                 </div>
@@ -33,7 +33,7 @@
 
             <div class="col-md-4 mb-3">
                 <label runat="server" id="lblApellidos" for="Apellidos">Apellidos</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtApellidos" placeholder="Apellidos" required="required" pattern="[A-Za-z]+"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtApellidos" placeholder="Apellidos" required="required" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique solo letras en sus apellidos
                 </div>
@@ -96,13 +96,13 @@
 
          <div class="col-md-4 mb-3">
                 <label runat="server" id="lblDistrito" for="txtDistrito">Distrito</label> 
-                <asp:TextBox runat="server" class="form-control" ID="txtDistrito" placeholder="Distrito" required="requiered" pattern="[A-Za-z]{5,25}"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtDistrito" placeholder="Distrito" required="requiered" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ]{5,25}"></asp:TextBox>
                  <div class="invalid-feedback">Indique un distrito</div>
             </div>
 
                <div class="col-md-4 mb-3">
                  <label runat="server" id="lblDireccion" for="txtDireccion">Direccion Exacta</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtDireccion" placeholder="Direccion Exacta" required="requiered"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtDireccion" placeholder="Direccion Exacta" required="requiered" minlength="5" MaxLength="12"></asp:TextBox>
                 <div class="invalid-feedback">Indique su dirección</div>
             </div>
 

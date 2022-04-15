@@ -24,26 +24,31 @@
     Protected Sub btnVerificar_Click(sender As Object, e As EventArgs) Handles btnVerificar.Click
         Try
             Me.lblError.Visible = False
-
             Dim dsServicios As DataSet = iServicios.consultaRegistroServiciosBrindados(txtIdentificacionDueno.Text)
-            Dim lstArrayCosto As ArrayList = iServicios.calculoCosto(dsServicios.Tables(2).Rows(0)(2), dsServicios.Tables(2).Rows(0)(3), 0)
-            Me.txtCodigoCobro.Visible = True
-            Me.lblCodigoCobro.Visible = True
-            Me.txtCodigoCobro.Text = ((dsServicios.Tables(1).Rows(0)(0)) + 1)
-            Me.divRegistroServicios.Visible = True
-            Me.txtIdentificacionDueno.ReadOnly = True
-            Me.btnVerificar.Visible = False
-            Me.cboMascota.DataSource = dsServicios.Tables(0)
-            Me.cboMascota.DataTextField = "nombre_mascota"
-            Me.cboMascota.DataValueField = "identificacion_mascotas"
-            Me.cboMascota.DataBind()
-            Me.cboServicios.DataSource = dsServicios.Tables(2)
-            Me.cboServicios.DataTextField = "nombre_servicio"
-            Me.cboServicios.DataValueField = "cod_servicios"
-            Me.cboServicios.DataBind()
-            Me.txtCostoServicio.Text = dsServicios.Tables(2).Rows(0)(2)
-            Me.txtImpuesto.Text = lstArrayCosto.Item(0)
-            Me.txtCostoNeto.Text = lstArrayCosto.Item(1)
+            If dsServicios.Tables(0).Rows.Count <> 0 Then
+
+                Dim lstArrayCosto As ArrayList = iServicios.calculoCosto(dsServicios.Tables(2).Rows(0)(2), dsServicios.Tables(2).Rows(0)(3), 0)
+                Me.txtCodigoCobro.Visible = True
+                Me.lblCodigoCobro.Visible = True
+                Me.txtCodigoCobro.Text = ((dsServicios.Tables(1).Rows(0)(0)) + 1)
+                Me.divRegistroServicios.Visible = True
+                Me.txtIdentificacionDueno.ReadOnly = True
+                Me.btnVerificar.Visible = False
+                Me.cboMascota.DataSource = dsServicios.Tables(0)
+                Me.cboMascota.DataTextField = "nombre_mascota"
+                Me.cboMascota.DataValueField = "identificacion_mascotas"
+                Me.cboMascota.DataBind()
+                Me.cboServicios.DataSource = dsServicios.Tables(2)
+                Me.cboServicios.DataTextField = "nombre_servicio"
+                Me.cboServicios.DataValueField = "cod_servicios"
+                Me.cboServicios.DataBind()
+                Me.txtCostoServicio.Text = dsServicios.Tables(2).Rows(0)(2)
+                Me.txtImpuesto.Text = lstArrayCosto.Item(0)
+                Me.txtCostoNeto.Text = lstArrayCosto.Item(1)
+
+            Else
+                ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('No hay mascotas registradas para está identificación de cliente.');", True)
+            End If
 
         Catch ex As Exception
             'envio a la pag de error porque hubo problemas cuando apenas se estaba construyendo
@@ -62,21 +67,27 @@
     ''' <param name="e"></param>
     Protected Sub btnMantenimientoRegistrar_Click(sender As Object, e As EventArgs) Handles btnMantenimientoRegistrar.Click
         Try
-            If txtCostoTotal.Text = "" Then txtCostoTotal.Text = 0
-            Dim dtServicios As DataTable = iServicios.consultarServicios(cboServicios.SelectedValue)
-            Dim lstArrayCosto As ArrayList = iServicios.calculoCosto(dtServicios.Rows(0)(2), dtServicios.Rows(0)(3), txtCostoTotal.Text)
-            txtCostoTotal.Text = lstArrayCosto.Item(2)
-            Dim dtCantidad As DataTable = iServicios.consultaNumCobro
-            Dim eServicioBrindado As New Entidades.ServicosBrindados
-            eServicioBrindado.CodCobro = txtCodigoCobro.Text
-            eServicioBrindado.ServiciosBrindados(txtIdentificacionDueno.Text, cboMascota.SelectedValue, cboServicios.SelectedValue, txtFechaServicio.Text, txtCostoNeto.Text)
-            If dtCantidad.Rows(0)(0) < txtCodigoCobro.Text Then
-                iServicios.grabarRegistroServicios(eServicioBrindado)
-            End If
-            iServicios.grabarRegistroServiciosIndividuales(eServicioBrindado)
-            Me.gdvServicios.DataSource = iServicios.consultaServiciosGrabados(txtCodigoCobro.Text)
-            Me.gdvServicios.DataBind()
+            Dim fechaActual As Date = Format(Now, “yyyy-MM-dd”)
+            If Me.txtFechaServicio.Text >= fechaActual Then
+                txtFechaServicio.ReadOnly = True
+                If txtCostoTotal.Text = "" Then txtCostoTotal.Text = 0
+                Dim dtServicios As DataTable = iServicios.consultarServicios(cboServicios.SelectedValue)
+                Dim lstArrayCosto As ArrayList = iServicios.calculoCosto(dtServicios.Rows(0)(2), dtServicios.Rows(0)(3), txtCostoTotal.Text)
+                txtCostoTotal.Text = lstArrayCosto.Item(2)
+                Dim dtCantidad As DataTable = iServicios.consultaNumCobro
+                Dim eServicioBrindado As New Entidades.ServicosBrindados
+                eServicioBrindado.CodCobro = txtCodigoCobro.Text
+                eServicioBrindado.ServiciosBrindados(txtIdentificacionDueno.Text, cboMascota.SelectedValue, cboServicios.SelectedValue, txtFechaServicio.Text, txtCostoNeto.Text)
+                If dtCantidad.Rows(0)(0) < txtCodigoCobro.Text Then
+                    iServicios.grabarRegistroServicios(eServicioBrindado)
+                End If
+                iServicios.grabarRegistroServiciosIndividuales(eServicioBrindado)
+                Me.gdvServicios.DataSource = iServicios.consultaServiciosGrabados(txtCodigoCobro.Text)
+                Me.gdvServicios.DataBind()
 
+            Else
+                ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('La fecha debe ser igual o mayor a la actual.');", True)
+            End If
         Catch ex As Exception
             'envio a la pag de error porque hubo problemas cuando apenas se estaba construyendo
             Session("Error") = ex

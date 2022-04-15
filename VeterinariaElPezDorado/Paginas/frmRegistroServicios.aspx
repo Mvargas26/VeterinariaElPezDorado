@@ -4,7 +4,7 @@
     <div class="form-row">
         <div class="col-md-4 mb-3">
             <label runat="server" id="lblIdentificacion" for="txtIdentificacionDueno">Identificación dueño</label>
-            <asp:TextBox ID="txtIdentificacionDueno" runat="server" class="form-control" placeholder="Identificación dueño" required="required" pattern="[A-Za-z0-9]{5,40}"></asp:TextBox>
+            <asp:TextBox ID="txtIdentificacionDueno" runat="server" class="form-control" placeholder="Identificación dueño" required="required" pattern="[A-Za-z0-9]{5,15}"></asp:TextBox>
             <div class="invalid-feedback">
                 Indique una identificación valida
             </div>            
