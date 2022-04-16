@@ -191,7 +191,7 @@ Public Class Clientes
         Try
             cboCantones.Items.Clear()
 
-            Dim URL As String = "C:\inetpub\wwwroot\VeterinariaElPezDorado\VeterinariaElPezDorado\ArchivosNecesarios\Cantones.xml"
+            Dim URL As String = "C:\Users\Valdo\Downloads\VeterinariaElPezDorado\VeterinariaElPezDorado\ArchivosNecesarios\Cantones.xml"
 
 
             If File.Exists(URL) Then
