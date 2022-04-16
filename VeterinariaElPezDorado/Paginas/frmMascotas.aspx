@@ -28,7 +28,7 @@
            <div class="form-row">
                 <div class="col-md-4 mb-3">
                 <label runat="server" id="Label1" for="txtidentificacionDueno">Identificación dueño</label>
-                <asp:TextBox ID="txtidentificacionDueno" runat="server" class="form-control" placeholder="Identificación Dueño" required="required" pattern="[A-Za-z0-9]{5,15}+"></asp:TextBox>
+                <asp:TextBox ID="txtidentificacionDueno" runat="server" class="form-control" placeholder="Identificación Dueño" required="required" pattern="[A-Za-z0-9]+{5,15}"></asp:TextBox>
                 <div class="invalid-feedback">
                     Por favor indique la identificación del cliente
                 </div>
@@ -38,7 +38,7 @@
         <div class="form-row">
             <div class="col-md-4 mb-3">
                 <label runat="server" id="lblIdentificacionMascota" for="txtidentificacionMascota">Identificación Mascota</label>
-                <asp:TextBox ID="txtidentificacionMascota" runat="server" class="form-control" placeholder="Identificación Mascota" required="required" pattern="[A-Za-z0-9]{5,40}+"></asp:TextBox>
+                <asp:TextBox ID="txtidentificacionMascota" runat="server" class="form-control" placeholder="Identificación Mascota" required="required" pattern="[A-Za-z0-9]+{5,40}"></asp:TextBox>
                 <div class="invalid-feedback">
                     Por favor indique la identificación de la Mascota
                 </div>
@@ -46,7 +46,7 @@
 
             <div class="col-md-4 mb-3">
                 <label runat="server" id="lblNombreMascota" for="txtNombreMascota">Nombre Mascota</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtNombreMascota" placeholder="Nombre Mascota" required="required" pattern="[A-Za-z]{2,40}"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtNombreMascota" placeholder="Nombre Mascota" required="required" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]+{2,40}"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique el nombre de la mascota (Indique solamente letras)
                 </div>
@@ -65,14 +65,14 @@
         <div class="form-row">
             <div class="col-md-4 mb-3">
                 <label runat="server" id="lblRaza" for="txtRaza">Raza</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtRaza" placeholder="Raza" pattern="[A-Za-z]"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtRaza" placeholder="Raza" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]+"></asp:TextBox>
                 <div class="invalid-feedback">
                     Al indicar la raza no utilice números.
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <label runat="server" id="lblPeso" for="txtPeso">Peso</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtPeso" placeholder="Peso" pattern="[0-9]" required="required"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtPeso" placeholder="Peso" pattern="[0-9]+" required="required"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique el peso de la mascota.
                 </div>
@@ -80,7 +80,7 @@
 
             <div class="col-md-4 mb-3">
                 <label runat="server" id="lblEstadoSalud" for="txtEstadoSalud">Estado de salud</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtEstadoSalud" placeholder="Descripción del estado de salud." required="required" pattern="[A-Za-z0-9]"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtEstadoSalud" placeholder="Descripción del estado de salud." required="required" pattern="[A-Za-z0-9ÁÉÍÓÚáéíóúñÑ ]+"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique el estado de salud de la mascota (Máximo 40 caracteres).
                 </div>

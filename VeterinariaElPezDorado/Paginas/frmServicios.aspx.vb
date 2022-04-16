@@ -33,6 +33,9 @@
             Me.divServicios.Visible = False
             Me.cboServicios.Visible = False
             Me.btnConsultar.Visible = False
+            Me.txtCosto.ReadOnly = False
+            Me.txtNombreServicio.ReadOnly = False
+            Me.txtPorcentajeImpuesto.ReadOnly = False
             shtValor = Me.mnSeleccion.SelectedValue
             Select Case Me.mnSeleccion.SelectedValue
                 Case 1
@@ -54,7 +57,9 @@
                     Me.btnMantenimientoServicios.Text = "Eliminar"
                     Me.lblAccionMenu.Visible = True
                     Me.lblAccionMenu.Text = "Eliminar"
-
+                    Me.txtCosto.ReadOnly = True
+                    Me.txtNombreServicio.ReadOnly = True
+                    Me.txtPorcentajeImpuesto.ReadOnly = True
 
                     Me.cargarDatos()
                 Case 4

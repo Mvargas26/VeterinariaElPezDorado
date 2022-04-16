@@ -40,7 +40,7 @@
 
              <div class="col-md-4 mb-3">
                 <label runat="server" id="lblIdentificacion" for="Identificacion">Identificación</label>
-                <asp:TextBox runat="server" class="form-control" ID="txtIdentificacion" placeholder="102340567" required="required" pattern="[A-Za-z0-9]{5,40}"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtIdentificacion" placeholder="102340567" required="required" pattern="[A-Za-z0-9]+{5,40}"></asp:TextBox>
                 <div class="invalid-feedback">
                     Por favor indique su cédula, sin guiones.
                 </div>
@@ -95,7 +95,7 @@
 
          <div class="col-md-4 mb-3">
                 <label runat="server" id="lblDistrito" for="txtDistrito">Distrito</label> 
-                <asp:TextBox runat="server" class="form-control" ID="txtDistrito" placeholder="Distrito" required="requiered" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ]{5,25}"></asp:TextBox>
+                <asp:TextBox runat="server" class="form-control" ID="txtDistrito" placeholder="Distrito" required="requiered" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ]+{5,25}"></asp:TextBox>
                  <div class="invalid-feedback">Indique un distrito</div>
             </div>
 

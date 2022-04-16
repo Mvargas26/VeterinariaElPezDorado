@@ -30,6 +30,7 @@
             Me.divTipoMascotas.Visible = False
             Me.cboTipoMascotas.Visible = False
             Me.btnConsultar.Visible = False
+            Me.txtTipoMascosta.ReadOnly = False
             shtValor = Me.mnSeleccion.SelectedValue
             Select Case Me.mnSeleccion.SelectedValue
                 Case 1

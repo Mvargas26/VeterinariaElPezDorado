@@ -135,6 +135,13 @@ Public Class Clientes
             Me.txtIdentificacionConsulta.Visible = False
             Me.btnConsultar.Visible = False
             shtValor = Me.mnSeleccion.SelectedValue
+            Me.txtIdentificacion.ReadOnly = False
+            Me.txtNombre.ReadOnly = False
+            Me.txtApellidos.ReadOnly = False
+            Me.txtCorreo.ReadOnly = False
+            Me.txtTeléfono.ReadOnly = False
+            Me.txtDistrito.ReadOnly = False
+            Me.txtDireccion.ReadOnly = False
 
             Select Case Me.mnSeleccion.SelectedValue
                 Case 1

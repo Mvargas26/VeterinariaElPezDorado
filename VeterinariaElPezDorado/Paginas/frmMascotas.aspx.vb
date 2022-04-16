@@ -35,7 +35,14 @@ Public Class Mascotas
             Me.txtIndentificacionMascotaAConsultar.Visible = False
             Me.btnConsultar.Visible = False
             shtValor = Me.mnSeleccion.SelectedValue
+            Me.txtidentificacionDueno.ReadOnly = False
+            Me.txtidentificacionMascota.ReadOnly = False
+            Me.txtNombreMascota.ReadOnly = False
 
+            Me.txtPeso.ReadOnly = False
+            Me.txtRaza.ReadOnly = False
+            Me.txtEstadoSalud.ReadOnly = False
+            Me.txtFechaNacimiento.ReadOnly = False
             Select Case Me.mnSeleccion.SelectedValue
                 Case 1
                     Me.Mascotas.Visible = True
