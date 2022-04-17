@@ -142,6 +142,11 @@ Public Class Clientes
             Me.txtTeléfono.ReadOnly = False
             Me.txtDistrito.ReadOnly = False
             Me.txtDireccion.ReadOnly = False
+            Dim iCantones As New CantonesNegocios
+            Me.cboCantones.DataSource = iCantones.ConsultarEnNegociosPorProvincia(1)
+            Me.cboCantones.DataTextField = "nombre_canton"
+            Me.cboCantones.DataValueField = "cod_canton"
+            Me.DataBind()
 
             Select Case Me.mnSeleccion.SelectedValue
                 Case 1
@@ -197,16 +202,18 @@ Public Class Clientes
 
             Dim iCantones As New CantonesNegocios
 
-            Dim dtCantones As DataTable = iCantones.ConsultarEnNegociosPorProvincia(numProvincia)
+            'Dim dtCantones As DataTable = iCantones.ConsultarEnNegociosPorProvincia(numProvincia)
 
 
-            For Each drCanton As DataRow In dtCantones.Rows
+            'For Each drCanton As DataRow In dtCantones.Rows
 
-                Me.cboCantones.Items.Add(drCanton("nombre_canton"))
-                Me.cboCantones.SelectedValue = drCanton("nombre_canton")
-            Next
-
-
+            '    Me.cboCantones.Items.Add(drCanton("nombre_canton"))
+            '    Me.cboCantones.SelectedValue = drCanton("nombre_canton")
+            'Next
+            Me.cboCantones.DataSource = iCantones.ConsultarEnNegociosPorProvincia(numProvincia)
+            Me.cboCantones.DataTextField = "nombre_canton"
+            Me.cboCantones.DataValueField = "cod_canton"
+            Me.DataBind()
         Catch ex As Exception
             Me.lblError.Visible = True
             Me.lblMensajeError.Text = ex.Message
