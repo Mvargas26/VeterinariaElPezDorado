@@ -43,11 +43,14 @@ Public Class Mascotas
             Me.txtRaza.ReadOnly = False
             Me.txtEstadoSalud.ReadOnly = False
             Me.txtFechaNacimiento.ReadOnly = False
+
             Select Case Me.mnSeleccion.SelectedValue
                 Case 1
                     Me.Mascotas.Visible = True
                     Me.btnMantenimientoMascotas.Text = "Registrar"
                     Me.txtFechaNacimiento.Visible = True
+                    Me.txtidentificacionMascota.ReadOnly = True
+                    Me.txtidentificacionMascota.Text = 0
                 Case 2
 
                     Me.txtIdentificacionConsultaCliente.Visible = True

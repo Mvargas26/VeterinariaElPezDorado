@@ -30,7 +30,11 @@
                 Dim lstArrayCosto As ArrayList = iServicios.calculoCosto(dsServicios.Tables(2).Rows(0)(2), dsServicios.Tables(2).Rows(0)(3), 0)
                 Me.txtCodigoCobro.Visible = True
                 Me.lblCodigoCobro.Visible = True
-                Me.txtCodigoCobro.Text = ((dsServicios.Tables(1).Rows(0)(0)) + 1)
+                If IsNumeric(dsServicios.Tables(1).Rows(0)(0)) Then
+                    Me.txtCodigoCobro.Text = (Int(dsServicios.Tables(1).Rows(0)(0)) + 1)
+                Else
+                    Me.txtCodigoCobro.Text = 0
+                End If
                 Me.divRegistroServicios.Visible = True
                 Me.txtIdentificacionDueno.ReadOnly = True
                 Me.btnVerificar.Visible = False
@@ -76,15 +80,23 @@
                 txtCostoTotal.Text = lstArrayCosto.Item(2)
                 Dim dtCantidad As DataTable = iServicios.consultaNumCobro
                 Dim eServicioBrindado As New Entidades.ServicosBrindados
-                eServicioBrindado.CodCobro = txtCodigoCobro.Text
                 eServicioBrindado.ServiciosBrindados(txtIdentificacionDueno.Text, cboMascota.SelectedValue, cboServicios.SelectedValue, txtFechaServicio.Text, txtCostoNeto.Text)
-                If dtCantidad.Rows(0)(0) < txtCodigoCobro.Text Then
-                    iServicios.grabarRegistroServicios(eServicioBrindado)
+                Dim numServicio As Integer
+                If IsNumeric(dtCantidad.Rows(0)(0)) Then
+                    numServicio = dtCantidad.Rows(0)(0)
+                Else
+                    numServicio = -1
                 End If
+                If numServicio < txtCodigoCobro.Text Then
+                    iServicios.grabarRegistroServicios(eServicioBrindado)
+                    dtCantidad = iServicios.consultaNumCobro
+                    Me.txtCodigoCobro.Text = dtCantidad.Rows(0)(0)
+                End If
+                eServicioBrindado.CodCobro = dtCantidad.Rows(0)(0)
                 iServicios.grabarRegistroServiciosIndividuales(eServicioBrindado)
                 Me.gdvServicios.DataSource = iServicios.consultaServiciosGrabados(txtCodigoCobro.Text)
                 Me.gdvServicios.DataBind()
-
+                Dim dsServicios As DataSet = iServicios.consultaRegistroServiciosBrindados(txtIdentificacionDueno.Text)
             Else
                 ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('La fecha debe ser igual o mayor a la actual.');", True)
             End If
