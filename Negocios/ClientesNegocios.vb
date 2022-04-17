@@ -39,8 +39,8 @@ Public Class ClientesNegocios
                     .ApellidosCliente = CStr(drClientes("apellidos")),
                     .Correoelectronico = CStr(drClientes("correo")),
                     .Telefono = CInt(drClientes("telefono")),
-                    .Direccion = New Direccion With {.Provincia = CStr(drClientes("provincia")),
-                    .Canton = CStr(drClientes("canton")),
+                    .Direccion = New Direccion With {.Provincia = CStr(drClientes("cod_provincia")),
+                    .Canton = CStr(drClientes("cod_canton")),
                     .Distrito = CStr(drClientes("distrito")),
                     .DireccionExacta = CStr(drClientes("direccion_Exacta"))}}
 
