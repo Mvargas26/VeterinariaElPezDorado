@@ -44,7 +44,7 @@ Public Class Clientes
                     .Telefono = CInt(IIf(String.IsNullOrEmpty(Me.txtTeléfono.Text.Trim), "0", Me.txtTeléfono.Text)),
                     .Direccion = New Entidades.Direccion With {
                     .Provincia = CShort(Me.cboProvincias.SelectedValue),
-                    .Canton = CShort(ViewState("vsCodCanton")),
+                    .Canton = CShort(Me.cboCantones.SelectedValue),
                     .Distrito = Me.txtDistrito.Text,
                     .DireccionExacta = Me.txtDireccion.Text}}
 
