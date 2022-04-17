@@ -16,13 +16,13 @@ Public Class ConsultasCliente
             For Each drClientes As DataRow In dtClientes.Rows
                 With strClientes
                     .AppendLine("<tr>")
-                    .Append("<th scope=""row"">" & CInt(drClientes("identificacion")) & "</th>")
+                    .Append("<th scope=""row"">" & CStr(drClientes("identificacion")) & "</th>")
                     .Append("<td>" & CStr(drClientes("nombre")) & "</td>")
                     .Append("<td>" & CStr(drClientes("apellidos")) & "</td>")
                     .Append("<td>" & CStr(drClientes("correo")) & "</td>")
                     .Append(" <td>" & If(drClientes("telefono") Is DBNull.Value, 0, CInt(drClientes("Telefono"))) & "</td>") ' si drclientes("telefono") viene vacio, ponga un 0, si no ponga lo que tiene Cint(drClientes("Telefono")
-                    .Append("<td>" & CStr(drClientes("cod_provincia")) & "</td>")
-                    .Append("<td>" & CStr(drClientes("cod_canton")) & "</td>")
+                    .Append("<td>" & CShort(drClientes("cod_provincia")) & "</td>")
+                    .Append("<td>" & CShort(drClientes("cod_canton")) & "</td>")
                     .Append("<td>" & CStr(drClientes("distrito")) & "</td>")
                     .Append("<td>" & CStr(drClientes("direccion_Exacta")) & "</td>")
                     .Append("<td><a class=""btn btn-info"" href=""frmClientes.aspx""  role=""button"">Modificar</a></td>")

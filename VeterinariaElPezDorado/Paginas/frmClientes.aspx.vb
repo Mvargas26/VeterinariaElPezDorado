@@ -43,8 +43,8 @@ Public Class Clientes
                     .Correoelectronico = Me.txtCorreo.Text,
                     .Telefono = CInt(IIf(String.IsNullOrEmpty(Me.txtTeléfono.Text.Trim), "0", Me.txtTeléfono.Text)),
                     .Direccion = New Entidades.Direccion With {
-                    .Provincia = CShort(Me.cboProvincias.SelectedValue),
-                    .Canton = CShort(Me.cboCantones.SelectedValue),
+                    .CodigoProvincia = CShort(Me.cboProvincias.SelectedValue),
+                    .CodigoCanton = CShort(Me.cboCantones.SelectedValue),
                     .Distrito = Me.txtDistrito.Text,
                     .DireccionExacta = Me.txtDireccion.Text}}
 
@@ -142,6 +142,7 @@ Public Class Clientes
             Me.txtTeléfono.ReadOnly = False
             Me.txtDistrito.ReadOnly = False
             Me.txtDireccion.ReadOnly = False
+
             Dim iCantones As New CantonesNegocios
             Me.cboCantones.DataSource = iCantones.ConsultarEnNegociosPorProvincia(1)
             Me.cboCantones.DataTextField = "nombre_canton"

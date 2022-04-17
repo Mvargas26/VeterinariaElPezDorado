@@ -87,7 +87,7 @@
          <!-- cboCantones -->
          <div class="col-md-4 mb-3">
                 <label runat="server" id="lblCantones" for="cboCantones">Cantones</label>                
-                    <asp:DropDownList ID="cboCantones" runat="server" Width=200px CssClass=" form-control" AutoPostBack="True">
+                    <asp:DropDownList ID="cboCantones" runat="server" Width=200px CssClass=" form-control">
                        
                 </asp:DropDownList>
             </div>
