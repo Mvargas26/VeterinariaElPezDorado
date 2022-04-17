@@ -43,8 +43,8 @@ Public Class Clientes
                     .Correoelectronico = Me.txtCorreo.Text,
                     .Telefono = CInt(IIf(String.IsNullOrEmpty(Me.txtTeléfono.Text.Trim), "0", Me.txtTeléfono.Text)),
                     .Direccion = New Entidades.Direccion With {
-                    .Provincia = CStr(Me.cboProvincias.SelectedItem.Text),
-                    .Canton = CStr(Me.cboCantones.SelectedItem.Text),
+                    .Provincia = CShort(Me.cboProvincias.SelectedValue),
+                    .Canton = CShort(ViewState("vsCodCanton")),
                     .Distrito = Me.txtDistrito.Text,
                     .DireccionExacta = Me.txtDireccion.Text}}
 
@@ -201,7 +201,9 @@ Public Class Clientes
 
 
             For Each drCanton As DataRow In dtCantones.Rows
+
                 Me.cboCantones.Items.Add(drCanton("nombre_canton"))
+                Me.cboCantones.SelectedValue = drCanton("nombre_canton")
             Next
 
 
@@ -210,6 +212,7 @@ Public Class Clientes
             Me.lblMensajeError.Text = ex.Message
         End Try
     End Sub
+
 End Class
 'viewSate(" ") es el tipo de variables que nos permite guardar info en memoria para pasarlo a otro metodo o clase (vd 3 min 1:24)
 'nota:esta info viaja en la pag

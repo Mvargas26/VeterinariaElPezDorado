@@ -24,7 +24,7 @@
         <div class="form-row">
             <div class="col-md-4 mb-3">
                 <label runat="server" id="lblNombre" for="Nombre">Nombre</label>
-                <asp:TextBox ID="txtNombre" runat="server" class="form-control" placeholder="Nombre" required="required" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ]+"></asp:TextBox>
+                <asp:TextBox ID="txtNombre" runat="server" class="form-control" placeholder="Nombre" required="required" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"></asp:TextBox>
                 <div class="invalid-feedback">
                     Indique solo letras en su nombre
                 </div>
@@ -87,8 +87,8 @@
          <!-- cboCantones -->
          <div class="col-md-4 mb-3">
                 <label runat="server" id="lblCantones" for="cboCantones">Cantones</label>                
-                    <asp:DropDownList ID="cboCantones" runat="server" Width=200px CssClass=" form-control">
-                        <asp:ListItem Text="Central" Value=1>Central</asp:ListItem>
+                    <asp:DropDownList ID="cboCantones" runat="server" Width=200px CssClass=" form-control" AutoPostBack="True">
+                       
                 </asp:DropDownList>
             </div>
                
