@@ -189,26 +189,21 @@ Public Class Clientes
 
     Protected Sub cboProvincias_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboProvincias.SelectedIndexChanged
         Try
+            Me.btnMantenimientoCliente.Visible = True
             cboCantones.Items.Clear()
 
-            Dim URL As String = "C:\Users\Valdo\Downloads\VeterinariaElPezDorado\VeterinariaElPezDorado\ArchivosNecesarios\Cantones.xml"
+            Dim numProvincia As Short = CShort(cboProvincias.SelectedIndex + 1)
 
 
-            If File.Exists(URL) Then
-                Dim ob_negocios As New ClientesNegocios
-                Dim arr_infoEnInterfaz As ArrayList = ob_negocios.LeerXMLCanton(URL)
+            Dim iCantones As New CantonesNegocios
+
+            Dim dtCantones As DataTable = iCantones.ConsultarEnNegociosPorProvincia(numProvincia)
 
 
-                For Each dato As String() In arr_infoEnInterfaz
-                    If (cboProvincias.SelectedIndex) + 1 = dato(2) Then
-                        Me.cboCantones.Items.Add(dato(0).ToString)
-                    End If
+            For Each drCanton As DataRow In dtCantones.Rows
+                Me.cboCantones.Items.Add(drCanton("nombre_canton"))
+            Next
 
-
-                Next
-            Else
-                Throw New Exception
-            End If
 
         Catch ex As Exception
             Me.lblError.Visible = True

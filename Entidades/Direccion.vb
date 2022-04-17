@@ -13,11 +13,11 @@
 #Region "Properties"
 
 
-    Public Property CodigoProvincia As Integer
+    Public Property CodigoProvincia As Short
         Get
             Return shtCodigoProvincia
         End Get
-        Set(value As Integer)
+        Set(value As Short)
             shtCodigoProvincia = value
         End Set
     End Property

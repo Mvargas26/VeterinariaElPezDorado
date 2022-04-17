@@ -1,7 +1,6 @@
 ﻿Imports Datos
 Imports Entidades
-Imports System.IO
-Imports System.Xml
+
 Public Class ClientesNegocios
     ''' <summary>
     ''' metodo Me va a dar todos los clientes que estan en la tabla que viene de Datos/DatosClientes/consultarClientes(sin parametro)
@@ -59,40 +58,6 @@ Public Class ClientesNegocios
 
     End Function
 
-#Region "Lectura Cantones en Negocios"
-    'funcion que lee el xml de los cantones y los devuelve en un arraylist
-    Public Function LeerXMLCanton(URL As String) As ArrayList
-        Try
-            Dim arr_info As New ArrayList
-            Dim codigoCanton As String = ""
-            Dim codigoProvincia As String = ""
-            Dim nombreCanton As String = ""
-
-            Dim obj_deDatos As New DatosXML
-            Dim doc_xml As New XmlDocument
-
-            doc_xml = obj_deDatos.LeerXMLenDatos(URL)
-
-            Dim xmlNodoListCantones As XmlNodeList = doc_xml.SelectNodes("/Cantones/Canton")
-
-            For Each nodoCanton As XmlNode In xmlNodoListCantones
-                codigoCanton = nodoCanton("CodigoCanton").InnerText
-                codigoProvincia = nodoCanton("CodigoProvincia").InnerText
-                nombreCanton = nodoCanton("NombreCanton").InnerText
-
-                Dim lineaLeida As String = nombreCanton + "/" + codigoCanton + "/" + codigoProvincia
-                Dim vecValores() As String = lineaLeida.Split("/")
-
-                arr_info.Add(vecValores)
-            Next
-
-            Return arr_info
-
-        Catch ex As Exception
-            Throw New Exception("Error al leer el archivo XML Cantones en negocios, cliente")
-        End Try
-    End Function
-#End Region
 
 #Region "Manejo Procedimientos almacenados Agregar,Modificar,Eliminar en Negocios"
 
