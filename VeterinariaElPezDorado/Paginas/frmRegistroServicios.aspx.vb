@@ -49,7 +49,7 @@
                 Me.txtCostoServicio.Text = dsServicios.Tables(2).Rows(0)(2)
                 Me.txtImpuesto.Text = lstArrayCosto.Item(0)
                 Me.txtCostoNeto.Text = lstArrayCosto.Item(1)
-
+                Me.cboServicios.Text
             Else
                 ScriptManager.RegisterStartupScript(Me, GetType(Page), "Alerta", "javascript:alert('No hay mascotas registradas para está identificación de cliente.');", True)
             End If

@@ -70,7 +70,7 @@
                <div class="col-md-4 mb-3">
                 <label runat="server" id="lblProvincias" for="cboProvincias">Provincias</label>                
                     <asp:DropDownList ID="cboProvincias" runat="server" Width=200px CssClass=" form-control" AutoPostBack="True">
-                        <asp:ListItem Text="San Jose" Value=1>sanJose</asp:ListItem>
+                        <asp:ListItem Text="San Jose" Value=1>San José</asp:ListItem>
                         <asp:ListItem Text="Alajuela" Value=2>Alajuela</asp:ListItem>
                         <asp:ListItem Text="Cartago" Value=3>Cartago</asp:ListItem>
                         <asp:ListItem Text="Heredia" Value=4>Heredia</asp:ListItem>
