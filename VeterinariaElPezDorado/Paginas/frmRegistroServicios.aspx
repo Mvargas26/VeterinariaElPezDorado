@@ -64,6 +64,7 @@
             </div>            
         </div>
         <div>
+            <h2>Detalles de los registros</h2>
             <div class="form-row">
                 <asp:GridView ID="gdvServicios" runat="server" AutoGenerateColumns="False" CssClass="mGrid" BorderWidth="30px" BorderColor="White">
                     <Columns>
